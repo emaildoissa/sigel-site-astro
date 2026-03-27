@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    /* Cores do seu projeto */
+    --color-primary: #f65e37;
+    --color-primary-dark: #d54e2b;
+    --color-secondary: #1B2235;
+    --color-accent: #f65e37;
+    --color-accent-dark: #d54e2b;
+    --color-background-light: #FDF9F4;
+    --color-background-dark: #0F121B;
+    --color-surface-dark: #1B2235;
+    --color-text-primary: #0F121B;
+    --color-text-main: #181610;
+    --color-text-secondary: #57534e;
+
+    /* Fontes */
+    --font-sans: "Inter", sans-serif;
+    --font-display: "Plus Jakarta Sans", sans-serif;
+
+    /* Arredondamentos */
+    --radius-DEFAULT: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-full: 9999px;
+}
+
+@layer base {
+    body {
+        @apply bg-black text-gray-100 font-display antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display tracking-tight;
+    }
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+    outline: 2px solid #f65e37;
+    outline-offset: 2px;
+}

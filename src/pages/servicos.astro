@@ -1,0 +1,344 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+---
+
+<Base
+    title="Serviços - Sigel | Web, Copywriting, Automação para PMEs"
+    description="Desenvolvimento web, copywriting estratégico e automação sob medida. Soluções especializadas para pequenas e médias empresas brasileiras."
+    canonical="/servicos"
+>
+    <Header client:load />
+
+    <main class="flex-1 pb-24 md:pb-32 w-full max-w-7xl mx-auto md:px-12">
+        {/* Hero Section - EXATO DO ORIGINAL */}
+        <section
+            class="relative overflow-hidden bg-surface-dark md:rounded-3xl md:mt-8 px-6 py-16 md:py-24 rounded-b-[2rem] shadow-lg w-full"
+        >
+            <div
+                class="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 md:h-96 md:w-96 rounded-full bg-primary/10 blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 md:h-96 md:w-96 rounded-full bg-primary/5 blur-3xl"
+            >
+            </div>
+
+            <div
+                class="relative flex flex-col items-center text-center gap-6 z-10 max-w-3xl mx-auto"
+            >
+                <div
+                    class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-sm border border-white/10"
+                >
+                    <span
+                        class="flex h-2 w-2 rounded-full bg-primary animate-pulse"
+                    ></span>
+                    <span
+                        class="text-xs md:text-sm font-medium text-primary uppercase tracking-wider"
+                        >Especialistas em PMEs</span
+                    >
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight"
+                >
+                    Serviços sob medida para
+                    <span class="text-primary relative inline-block">
+                        PMEs
+                        <svg
+                            class="absolute w-full h-3 md:h-4 -bottom-1 md:-bottom-2 left-0 text-primary opacity-60"
+                            preserveAspectRatio="none"
+                            viewBox="0 0 100 10"
+                        >
+                            <path
+                                d="M0 5 Q 50 10 100 5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"></path>
+                        </svg>
+                    </span>
+                </h1>
+
+                <p
+                    class="text-gray-300 text-base md:text-xl md:max-w-2xl leading-relaxed mx-auto"
+                >
+                    Tecnologia e marketing integrados para impulsionar o seu
+                    crescimento real e sustentável no ambiente digital.
+                </p>
+            </div>
+        </section>
+
+        {/* Services Grid - EXATO */}
+        <section class="px-5 md:px-0 mt-12 md:mt-20">
+            <div
+                class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-12 px-1"
+            >
+                <div>
+                    <h2 class="text-2xl md:text-4xl font-bold text-white mb-2">
+                        Nossos Pilares
+                    </h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        Soluções fundamentais para construir a base do seu
+                        negócio digital.
+                    </p>
+                </div>
+                <span
+                    class="hidden md:inline-block text-sm font-semibold text-gray-400 bg-white/5 px-4 py-2 rounded-full uppercase tracking-wider"
+                    >3 Áreas de Atuação</span
+                >
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                {/* Card 1 */}
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-surface-dark p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-2"
+                >
+                    <div
+                        class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#ffcf3d 1.5px, transparent 1.5px); background-size: 24px 24px;"
+                    >
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full gap-5">
+                        <div
+                            class="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-accent text-white shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >devices</span
+                            >
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h3
+                                class="text-xl md:text-2xl font-bold text-white mb-3"
+                            >
+                                Desenvolvimento Web
+                            </h3>
+                            <p
+                                class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 flex-1"
+                            >
+                                O seu melhor vendedor trabalha 24 horas por dia.
+                                Muito mais que um design bonito: construímos
+                                plataformas de alta performance, otimizadas para
+                                o Google (SEO) e programadas para captar
+                                clientes enquanto você descansa.
+                            </p>
+                            <a
+                                href="/web"
+                                class="inline-flex items-center text-sm md:text-base font-bold text-primary hover:text-white transition-colors gap-1 group-hover:gap-2 w-fit"
+                            >
+                                Saiba mais
+                                <span
+                                    class="material-symbols-outlined text-sm md:text-base"
+                                    >arrow_forward</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 2 */}
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-surface-dark p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-2"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"
+                    >
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full gap-5">
+                        <div
+                            class="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-accent text-white shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >edit_note</span
+                            >
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h3
+                                class="text-xl md:text-2xl font-bold text-white mb-3"
+                            >
+                                Copywriting Estratégico
+                            </h3>
+                            <p
+                                class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 flex-1"
+                            >
+                                Textos persuasivos que conectam sua marca ao
+                                cliente ideal e aumentam monstruosamente suas
+                                vendas diárias.
+                            </p>
+                            <a
+                                href="/copywriting"
+                                class="inline-flex items-center text-sm md:text-base font-bold text-primary hover:text-white transition-colors gap-1 group-hover:gap-2 w-fit"
+                            >
+                                Saiba mais
+                                <span
+                                    class="material-symbols-outlined text-sm md:text-base"
+                                    >arrow_forward</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 3 */}
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-surface-dark p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-2"
+                >
+                    <div
+                        class="absolute bottom-0 right-0 -mb-6 -mr-6 h-32 w-32 rounded-full bg-primary/10 blur-2xl"
+                    >
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full gap-5">
+                        <div
+                            class="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-accent text-white shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >settings_suggest</span
+                            >
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h3
+                                class="text-xl md:text-2xl font-bold text-white mb-3"
+                            >
+                                Automação Sob Medida
+                            </h3>
+                            <p
+                                class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 flex-1"
+                            >
+                                De agendamentos via WhatsApp com IA a fluxos de
+                                atendimento exclusivos, criamos sistemas que
+                                trabalham por você.
+                            </p>
+                            <a
+                                href="/automacao"
+                                class="inline-flex items-center text-sm md:text-base font-bold text-primary hover:text-white transition-colors gap-1 group-hover:gap-2 w-fit"
+                            >
+                                Saiba mais
+                                <span
+                                    class="material-symbols-outlined text-sm md:text-base"
+                                    >arrow_forward</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* For Whom Section - EXATO */}
+        <section
+            class="mt-16 md:mt-24 px-6 md:px-16 py-12 md:py-20 bg-secondary md:rounded-[3rem] rounded-[2rem]"
+        >
+            <div class="md:text-center mb-8 md:mb-12">
+                <h3 class="text-2xl md:text-4xl font-bold text-white mb-3">
+                    Para quem é ideal?
+                </h3>
+                <p class="text-gray-300 md:text-lg max-w-2xl mx-auto">
+                    Nossas soluções foram construídas pensando especificamente
+                    nos desafios de pequenas e médias empresas brasileiras.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <div
+                    class="flex flex-col gap-4 p-6 bg-surface-dark rounded-2xl shadow-sm border border-gray-800 hover:-translate-y-1 transition-transform"
+                >
+                    <div
+                        class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-2xl"
+                            >storefront</span
+                        >
+                    </div>
+                    <div>
+                        <h5
+                            class="font-bold text-white text-lg md:text-xl mb-2"
+                        >
+                            Negócios Locais
+                        </h5>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed"
+                        >
+                            Que precisam ser encontrados facilmente no Google,
+                            Redes Sociais e escalar suas visitas e vendas no
+                            balcão.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col gap-4 p-6 bg-surface-dark rounded-2xl shadow-sm border border-gray-800 hover:-translate-y-1 transition-transform"
+                >
+                    <div
+                        class="bg-blue-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                    >
+                        <span
+                            class="material-symbols-outlined text-blue-500 text-2xl"
+                            >rocket_launch</span
+                        >
+                    </div>
+                    <div>
+                        <h5
+                            class="font-bold text-white text-lg md:text-xl mb-2"
+                        >
+                            Startups em Crescimento
+                        </h5>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed"
+                        >
+                            Que buscam grande velocidade, design de excelência e
+                            uma infraestrutura digital confiável e escalável.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col gap-4 p-6 bg-surface-dark rounded-2xl shadow-sm border border-gray-800 hover:-translate-y-1 transition-transform"
+                >
+                    <div
+                        class="bg-green-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                    >
+                        <span
+                            class="material-symbols-outlined text-green-500 text-2xl"
+                            >handshake</span
+                        >
+                    </div>
+                    <div>
+                        <h5
+                            class="font-bold text-white text-lg md:text-xl mb-2"
+                        >
+                            Prestadores de Serviço
+                        </h5>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed"
+                        >
+                            Que querem sair do manual, automatizando seus
+                            agendamentos, propostas e o relacionamento com a
+                            clientela.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {/* Mobile CTA Bar - EXATO */}
+    <div
+        class="md:hidden fixed bottom-16 sm:bottom-0 left-0 right-0 z-40 w-full p-4 bg-white/90 dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800"
+    >
+        <a
+            href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full flex items-center justify-center gap-2 rounded-xl bg-primary h-14 text-secondary text-base font-bold shadow-lg shadow-primary/25 hover:bg-primary-dark transition-all active:scale-[0.98]"
+        >
+            <span>Solicitar Proposta</span>
+            <span class="material-symbols-outlined">rocket_launch</span>
+        </a>
+    </div>
+
+    <Footer />
+</Base>

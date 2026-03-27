@@ -1,0 +1,62 @@
+---
+// src/components/ServiceGrid.astro
+// Grid com 4 cards de serviços
+import ServiceCard from "./ServiceCard.astro";
+
+const services = [
+    {
+        icon: "laptop",
+        title: "Desenvolvimento Web",
+        description:
+            "Websites modernos, responsivos e otimizados para conversão. Tecnologias como React, Astro, Next.js e integração com suas ferramentas.",
+    },
+    {
+        icon: "edit",
+        title: "Copywriting Estratégico",
+        description:
+            "Textos que vendem. Estruturamos a narrativa do seu site para guiar o visitante à ação, aumentando leads e conversões.",
+    },
+    {
+        icon: "settings", // ← CORRIGIDO (era 'settings_automation')
+        title: "Automação & Integrações",
+        description:
+            "Conectamos suas ferramentas (CRM, email marketing, Zapier, Make). Zero trabalho manual, máxima eficiência.",
+    },
+    {
+        icon: "trending_up", // ← CORRIGIDO (era 'trending_up')
+        title: "SEO Técnico & Performance",
+        description:
+            "Otimizamos velocidade, Core Web Vitals, estrutura de dados. Resultados: mais tráfego orgânico, melhor posicionamento.",
+    },
+];
+---
+
+<section class="px-5 md:px-12 py-16 md:py-24 w-full bg-background-light">
+    <div class="max-w-7xl mx-auto">
+        {/* Header */}
+        <div class="text-center mb-12 md:mb-16">
+            <h2
+                class="text-4xl md:text-5xl font-display font-black text-text-primary mb-4 leading-tight"
+            >
+                Serviços que Entregam Resultados
+            </h2>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                Soluções completas para transformar sua presença digital em
+                vendas reais.
+            </p>
+        </div>
+
+        {/* Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+                services.map((service) => (
+                    <ServiceCard
+                        icon={service.icon}
+                        title={service.title}
+                        description={service.description}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

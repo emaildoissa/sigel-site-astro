@@ -1,0 +1,480 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+---
+
+<Base
+    title="Automação de Processos - Sigel | IA e Fluxos para PMEs Porto Alegre"
+    description="Automação inteligente com IA, agendamento via WhatsApp, fluxos personalizados. Transforme processos manuais em sistemas que trabalham 24/7."
+    canonical="/servicos/automacao"
+>
+    <Header client:load />
+
+    <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-4 md:pt-12">
+        {/* ===== HERO SECTION ===== */}
+        <section
+            class="relative overflow-hidden bg-white/5 py-12 md:py-24 px-6 md:px-16 md:rounded-[3rem] rounded-b-[2rem] shadow-sm border border-white/10 mb-12 md:mb-24 flex flex-col md:flex-row items-center gap-10"
+        >
+            {/* Abstract Background Pattern */}
+            <div
+                class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 md:w-96 md:h-96 bg-primary/20 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 md:w-80 md:h-80 bg-blue-500/20 rounded-full blur-3xl"
+            >
+            </div>
+
+            {/* LEFT: Text Content */}
+            <div class="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
+                <div
+                    class="inline-flex items-center gap-2 self-start bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/10"
+                >
+                    <span
+                        class="material-symbols-outlined text-primary text-[18px] md:text-[20px]"
+                        >bolt</span
+                    >
+                    <span
+                        class="text-xs md:text-sm font-bold uppercase tracking-wider text-white"
+                        >Soluções Focadas na Sua Dor</span
+                    >
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight"
+                >
+                    Automação de Processos para Empresas em <span
+                        class="text-primary block md:inline">Porto Alegre</span
+                    >
+                </h1>
+
+                <p
+                    class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-md"
+                >
+                    Você traz o gargalo da sua operação, nós construímos a
+                    solução. Transformamos processos manuais repetitivos em
+                    fluxos inteligentes que trabalham por você.
+                </p>
+
+                {/* Avatars + Stats */}
+                <div class="mt-4 flex items-center gap-4">
+                    <div class="flex -space-x-4">
+                        <img
+                            alt="User avatar"
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#12141a] object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgoZ-uLoxleL4GjKLORjJqPPEWFZyGD5XhsYigL1hmXbqZ4RvfuFdNuKMdfEB5GJ7Ps8kXC51i3E3n2637fN83YGq7wNx4FeD3nOBsMqPXEJZ0qiqKqZ0P48yWmSxypZBtRZy4mktvjPEl8CQi-QyxiZkcb0S3DarI_nCWtsTw2jBJ7zEJ6lSXTJsoRguU1NWCBV7MztkMMGG4P9UFKJQJTbGiMqc6bCZOmtWJxsfxx7biAgyOjDuPp1WWdHmKxsbC8p8nnCydHcY"
+                            loading="lazy"
+                        />
+                        <img
+                            alt="User avatar"
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#12141a] object-cover relative z-10"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuVD2QPJQVV15YTJzt11ofJrRNuXnC9rgteB_mGWRBk-Rdn3kP2B2HVs2R1ZpyigbgXmhYG2aXU8jVGO57jFRZgDlqgAmbI3jZRmP4NDj1vw_8PW2mN8Ot_wD54byF8uXkUBXwLk3OfyGye256XJnDMxOyvKXzONlqiyv83sn_NXS64YFsoraJLOna31wlNBWWOe7B1qph9qgRJxrzFxg1XPT_fR7z44BAKo9gMHe2lPUI-0VL6WfB4pNdAIjpJDUwZmmaBCBf2iI"
+                            loading="lazy"
+                        />
+                        <img
+                            alt="User avatar"
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#12141a] object-cover relative z-20"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7yZjiVLRZwwz5a68vXxQQSayoNSIwLdRCo7RxNUi999FxMtvoHS4QRebklipzN1To9scvSNrMAetoXP8qLkSIyry5RjPa2_FJ1SvIcKPaMwjUK8a3QZVF2lHYUhXREVoYJy4csdVIgqnANop7tRN26Sfx8NHbZT1Sh-PWETAM2nMDB8wdZwebuYDZFvDEJ30hLPbaI6SPRG1LmciVNr3AA1pR0xWdyGAgOP4F44wODyyibYDtMoRdDxQXi4bLRyy8w7vskeImIQ"
+                            loading="lazy"
+                        />
+                        <div
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#12141a] bg-gray-700 flex items-center justify-center text-sm text-white font-bold relative z-30"
+                        >
+                            +120
+                        </div>
+                    </div>
+                    <span class="text-sm md:text-base text-gray-400 font-medium"
+                        >Processos otimizados</span
+                    >
+                </div>
+            </div>
+
+            {/* RIGHT: Mockup Card (Desktop Only) */}
+            <div
+                class="hidden md:flex flex-col gap-6 w-1/2 items-end justify-center"
+            >
+                <div
+                    class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 w-full max-w-sm shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-500"
+                >
+                    {/* Browser Header */}
+                    <div class="flex gap-4 items-center mb-6">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div class="space-y-4">
+                        <div class="h-4 bg-white/20 rounded w-3/4"></div>
+                        <div class="h-4 bg-white/20 rounded w-1/2"></div>
+                        <div
+                            class="h-20 bg-primary/20 rounded-xl mt-6 border border-primary/30 flex items-center justify-center"
+                        >
+                            <span class="text-primary font-bold"
+                                >Fluxo IA Ativado</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ===== USE CASES / EXAMPLES SECTION ===== */}
+        <section class="px-5 md:px-0 mb-16 md:mb-24">
+            <div
+                class="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+                <div>
+                    <h2
+                        class="text-2xl md:text-4xl font-black text-white mb-2 tracking-tight"
+                    >
+                        Na Prática
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Como transformamos a dificuldade do cliente em sistemas
+                        eficientes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Card 1: WhatsApp com IA */}
+                <div
+                    class="bg-secondary rounded-3xl p-8 border border-white/10 shadow-sm flex flex-col justify-between h-full min-h-[320px] md:min-h-[380px] group hover:-translate-y-2 transition-transform duration-300"
+                >
+                    <div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-green-900/30 flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >smart_toy</span
+                            >
+                        </div>
+
+                        <h3
+                            class="text-xl md:text-2xl font-bold text-white mb-3"
+                        >
+                            Agendamento WhatsApp via IA
+                        </h3>
+
+                        <p class="text-base text-gray-400 leading-relaxed">
+                            Elimine o trabalho manual de marcar horários.
+                            Criamos assistentes virtuais inteligentes que
+                            conversam com o cliente, verificam disponibilidade e
+                            realizam o agendamento de forma 100% autônoma.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Card 2: Fluxos Personalizados */}
+                <div
+                    class="bg-secondary rounded-3xl p-8 border border-white/10 shadow-sm flex flex-col justify-between h-full min-h-[320px] md:min-h-[380px] group hover:-translate-y-2 transition-transform duration-300"
+                >
+                    <div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-blue-900/30 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >alt_route</span
+                            >
+                        </div>
+
+                        <h3
+                            class="text-xl md:text-2xl font-bold text-white mb-3"
+                        >
+                            Fluxos de Primeiro Contato
+                        </h3>
+
+                        <p class="text-base text-gray-400 leading-relaxed">
+                            Desenvolvemos menus interativos e respostas
+                            padronizadas para horários, endereços e triagem. O
+                            cliente é atendido instantaneamente sem perder o
+                            toque humano da sua marca.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Card 3: Soluções Específicas */}
+                <div
+                    class="bg-secondary rounded-3xl p-8 border border-white/10 shadow-sm flex flex-col justify-between h-full min-h-[320px] md:min-h-[380px] group hover:-translate-y-2 transition-transform duration-300"
+                >
+                    <div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-900/30 flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >code_blocks</span
+                            >
+                        </div>
+
+                        <h3
+                            class="text-xl md:text-2xl font-bold text-white mb-3"
+                        >
+                            Programas Personalizados
+                        </h3>
+
+                        <p class="text-base text-gray-400 leading-relaxed">
+                            Sua empresa tem uma dor muito específica?
+                            Construímos a ponte entre o seu problema e a solução
+                            usando sistemas e integrações desenhadas
+                            exclusivamente para você.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ===== PROCESS & DELIVERABLES ===== */}
+        <div
+            class="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-20 px-5 md:px-0"
+        >
+            {/* LEFT: Process Timeline */}
+            <section
+                class="w-full lg:w-1/2 p-8 md:p-12 bg-white/5 rounded-3xl md:rounded-[3rem] border border-white/10 shadow-sm"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-black text-white mb-10 md:mb-12"
+                >
+                    Nossa Metodologia
+                </h2>
+
+                <div
+                    class="relative pl-6 md:pl-8 border-l-2 border-primary/20 space-y-12"
+                >
+                    {/* Step 1 */}
+                    <div class="relative">
+                        <div
+                            class="absolute -left-[45px] top-0 bg-transparent p-1 rounded-full"
+                        >
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center text-base font-bold shadow-lg shadow-secondary/20 border-4 border-surface-dark"
+                            >
+                                1
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white">
+                                Entendimento da Dor
+                            </h3>
+                            <p
+                                class="text-base text-gray-400 mt-2 leading-relaxed"
+                            >
+                                Sentamos com você para entender exatamente qual
+                                é o gargalo operacional que está travando o seu
+                                negócio ou consumindo o seu tempo.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div class="relative">
+                        <div
+                            class="absolute -left-[45px] top-0 bg-transparent p-1 rounded-full"
+                        >
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary text-secondary flex items-center justify-center text-base font-bold shadow-lg shadow-primary/30 border-4 border-surface-dark"
+                            >
+                                2
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white">
+                                Engenharia da Solução
+                            </h3>
+                            <p
+                                class="text-base text-gray-400 mt-2 leading-relaxed"
+                            >
+                                Desenhamos a prancheta de fluxo perfeito
+                                (blueprint) ideal para resolver o problema,
+                                escolhendo as tecnologias mais adequadas para a
+                                sua realidade.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div class="relative">
+                        <div
+                            class="absolute -left-[45px] top-0 bg-transparent p-1 rounded-full"
+                        >
+                            <div
+                                class="w-10 h-10 rounded-full bg-gray-800 text-gray-500 flex items-center justify-center text-base font-bold border-4 border-surface-dark"
+                            >
+                                3
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white">
+                                Implementação Nativa
+                            </h3>
+                            <p
+                                class="text-base text-gray-400 mt-2 leading-relaxed"
+                            >
+                                Configuramos as ferramentas, estruturamos os
+                                robôs e inteligência artificial, e colocamos seu
+                                novo sistema de atendimento para rodar
+                                imediatamente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* RIGHT: Deliverables Checklist */}
+            <section
+                class="w-full lg:w-1/2 p-8 md:p-12 bg-surface-dark rounded-3xl md:rounded-[3rem] shadow-inner border border-gray-800 text-white flex flex-col justify-center"
+            >
+                <h2
+                    class="text-2xl md:text-3xl font-black text-white mb-2 md:mb-4"
+                >
+                    O que está incluso?
+                </h2>
+
+                <p class="text-gray-400 mb-8 md:mb-10 text-lg">
+                    Entregamos muito mais do que respostas automáticas. Criamos
+                    verdadeiros ecossistemas de atendimento.
+                </p>
+
+                <div class="space-y-4 md:space-y-6">
+                    {/* Item 1 */}
+                    <div
+                        class="flex items-start gap-5 p-5 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl border border-white/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[28px] shrink-0 mt-0.5"
+                            >check_circle</span
+                        >
+                        <div>
+                            <h3 class="font-bold text-white text-lg md:text-xl">
+                                Fluxos Robustos com n8n e IA
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1.5 leading-relaxed"
+                            >
+                                Construção de lógicas complexas e personalizadas
+                                integradas a inteligência artificial para que a
+                                automação tome as decisões certas em tempo real.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div
+                        class="flex items-start gap-5 p-5 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl border border-white/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[28px] shrink-0 mt-0.5"
+                            >check_circle</span
+                        >
+                        <div>
+                            <h3 class="font-bold text-white text-lg md:text-xl">
+                                Comunicação e Personalidade
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1.5 leading-relaxed"
+                            >
+                                Desenvolvimento minucioso de textos (copy) para
+                                que o robô converse com o seu cliente mantendo o
+                                tom de voz e a essência da sua marca.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div
+                        class="flex items-start gap-5 p-5 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl border border-white/5 shadow-sm"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[28px] shrink-0 mt-0.5"
+                            >check_circle</span
+                        >
+                        <div>
+                            <h3 class="font-bold text-white text-lg md:text-xl">
+                                Integração Suprema
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1.5 leading-relaxed"
+                            >
+                                Conexão direta dos fluxos com as suas planilhas,
+                                bancos de dados, CRM e agendas, centralizando
+                                totalmente a informação da sua empresa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Desktop Pricing + CTA */}
+                <div class="mt-12 hidden md:block">
+                    <div
+                        class="flex items-center justify-between border-t border-white/10 pt-8"
+                    >
+                        <div>
+                            <span class="block text-gray-400 font-medium mb-1"
+                                >A partir de</span
+                            >
+                            <div
+                                class="flex items-end gap-2 text-white font-black text-3xl"
+                            >
+                                R$ 590
+                                <span
+                                    class="text-lg font-normal text-gray-500 mb-1"
+                                    >/mês</span
+                                >
+                            </div>
+                        </div>
+
+                        <a
+                            href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-accent hover:bg-accent-dark text-white font-bold text-lg h-14 px-8 rounded-xl flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-lg shadow-primary/20 hover:scale-105"
+                        >
+                            <span>Solicitar diagnóstico</span>
+                            <span class="material-symbols-outlined text-[24px]"
+                                >rocket_launch</span
+                            >
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    {/* ===== STICKY BOTTOM CTA (MOBILE ONLY) ===== */}
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-md border-t border-gray-900 px-6 py-4 z-40 shadow-lg"
+    >
+        <div class="flex items-center gap-4">
+            <div class="flex flex-col">
+                <span class="text-xs text-gray-400 font-medium tracking-wide"
+                    >A partir de</span
+                >
+                <span class="text-xl font-black text-white">
+                    R$ 590
+                    <span class="text-xs font-normal text-gray-500">/mês</span>
+                </span>
+            </div>
+
+            <a
+                href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 bg-accent hover:bg-accent-dark text-white font-bold text-base h-12 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20"
+            >
+                <span>Ver plano</span>
+                <span class="material-symbols-outlined text-[20px]"
+                    >arrow_forward</span
+                >
+            </a>
+        </div>
+    </nav>
+
+    <Footer />
+</Base>

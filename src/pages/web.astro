@@ -1,0 +1,737 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+---
+
+<Base
+    title="Desenvolvimento Web - Sigel | Websites para PMEs em Porto Alegre"
+    description="Websites de alta performance para PMEs. Design estratégico, SEO otimizado, ultra rápido. Pronto para gerar vendas 24/7."
+    canonical="/servicos/web"
+>
+    <Header client:load />
+
+    <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-8 md:pt-16">
+        {/* ===== HERO SECTION ===== */}
+        <section
+            class="px-5 md:px-0 pb-12 md:pb-24 flex flex-col md:flex-row gap-10 md:gap-16 items-center"
+        >
+            <div class="flex flex-col gap-6 md:w-1/2">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 w-fit border border-white/10"
+                >
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                    ></span>
+                    <span
+                        class="text-xs md:text-sm font-bold uppercase tracking-wide text-gray-300"
+                        >Web Development</span
+                    >
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white"
+                >
+                    Desenvolvimento Web para PMEs em <span class="text-primary"
+                        >Porto Alegre</span
+                    >
+                </h1>
+
+                <p
+                    class="text-lg md:text-xl leading-relaxed text-gray-300 font-medium"
+                >
+                    Websites de alta performance para PMEs que querem crescer
+                    com design estratégico e foco total em vendas.
+                </p>
+
+                <div class="hidden md:flex gap-4 mt-4">
+                    <a
+                        href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold text-lg h-16 px-8 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-[0.98]"
+                    >
+                        <span>Solicitar Proposta</span>
+                        <span class="material-symbols-outlined text-[24px]"
+                            >arrow_forward</span
+                        >
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-white/5 relative group"
+            >
+                <img
+                    alt="Modern laptop displaying analytics dashboard and code"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftRyDFLEPL_JCZ5K9ezyBFMzDFLBzcufSRTMt2rLi0r26deRSIh41rVZylPGOLfwvlrr4w36zQVEYstH_k263tJIwNoydIe5EcqHG3DTZXRNNJ5VfMbeHBO0YePNfHxsKrK8mD-8nDZWeTx9WG9PyexZsX4IfsQjoaXgnrFsdDAELMYZoCScrj1WmhgZF6MJ56j69Hi7wLsbnUnAIN6wXg4u6k8vY4POf4mUy3YW0-eRn1g1xN4H7YL7uJKVZlo3gMIxfm1JFfM8"
+                    loading="lazy"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-secondary/60 dark:from-background-dark to-transparent opacity-80"
+                >
+                </div>
+            </div>
+        </section>
+
+        {/* ===== PROBLEM VS SOLUTION & DELIVERABLES ===== */}
+        <div
+            class="flex flex-col md:flex-row gap-8 md:gap-12 px-5 md:px-0 mb-12 md:mb-24 items-start"
+        >
+            {/* LEFT: Problem vs Solution (Tabs) */}
+            <section class="w-full md:w-1/3 shrink-0">
+                <div
+                    class="bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-800 h-full"
+                >
+                    <h2
+                        class="text-xl md:text-2xl font-bold mb-6 text-center text-white"
+                    >
+                        O problema vs. Nossa solução
+                    </h2>
+
+                    {/* Tab Buttons */}
+                    <div class="flex p-1 bg-black/40 rounded-xl mb-6 relative">
+                        <button
+                            id="tab-comum"
+                            class="w-1/2 text-center py-2.5 text-sm font-bold rounded-lg cursor-pointer transition-colors z-10 tab-button"
+                            data-tab="comum"
+                        >
+                            Comum
+                        </button>
+
+                        <button
+                            id="tab-sigel"
+                            class="w-1/2 text-center py-2.5 text-sm font-bold rounded-lg cursor-pointer transition-colors z-10 tab-button active"
+                            data-tab="sigel"
+                        >
+                            Sigel Soluções em Informática
+                        </button>
+                    </div>
+
+                    {/* TAB: Sigel (Active by default) */}
+                    <div
+                        id="content-sigel"
+                        class="tab-content active flex flex-col gap-6"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-primary/20 p-2 rounded-full text-primary mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >check</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    Design Estratégico
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Pensado meticulosamente na jornada de compra
+                                    do seu cliente, não apenas "bonito".
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-white/5 w-full"></div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-primary/20 p-2 rounded-full text-primary mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >rocket_launch</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    Velocidade Real
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Otimização profunda de código e imagens para
+                                    carregar em menos de 2 segundos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-white/5 w-full"></div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-primary/20 p-2 rounded-full text-primary mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >trending_up</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    SEO Nativo
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Estrutura semântica pronta para o Google
+                                    ler, amar e ranquear seu site no topo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* TAB: Comum (Hidden by default) */}
+                    <div
+                        id="content-comum"
+                        class="tab-content hidden flex flex-col gap-6"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-red-500/10 p-2 rounded-full text-red-500 mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >close</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    Design Genérico
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Uso de templates prontos que não conversam
+                                    com o seu público-alvo real.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-white/5 w-full"></div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-red-500/10 p-2 rounded-full text-red-500 mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >hourglass_bottom</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    Lentidão que Espanta
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Sites pesados que demoram a carregar e fazem
+                                    o cliente desistir e fechar a aba.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-white/5 w-full"></div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="bg-red-500/10 p-2 rounded-full text-red-500 mt-0.5 shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] md:text-[24px]"
+                                    >visibility_off</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-white text-base md:text-lg"
+                                >
+                                    Invisível no Google
+                                </h3>
+                                <p
+                                    class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                                >
+                                    Código bagunçado que o buscador ignora, te
+                                    deixando escondido na página 10.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* RIGHT: Deliverables Grid */}
+            <section class="w-full md:w-2/3 flex flex-col justify-center">
+                <div class="mb-8 md:mb-12">
+                    <h2
+                        class="text-2xl md:text-4xl font-black text-white mb-3 tracking-tight"
+                    >
+                        Sua vantagem competitiva
+                    </h2>
+                    <p class="text-gray-400 text-lg">
+                        Não entregamos apenas linhas de código. Entregamos uma
+                        verdadeira máquina de vendas trabalhando 24/7 a seu
+                        favor.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 md:gap-6">
+                    {/* Item 1 */}
+                    <div
+                        class="bg-surface-dark rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-800 flex flex-col gap-4 group hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center shadow-sm text-white group-hover:text-primary group-hover:scale-110 transition-all"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[28px] md:text-[32px]"
+                                >smartphone</span
+                            >
+                        </div>
+                        <div>
+                            <h3
+                                class="font-bold text-white text-base md:text-xl md:mb-1"
+                            >
+                                Mobile-First
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                            >
+                                Experiência visual e navegação perfeita em
+                                qualquer tamanho de tela.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div
+                        class="bg-surface-dark rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-800 flex flex-col gap-4 group hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center shadow-sm text-white group-hover:text-primary group-hover:scale-110 transition-all"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[28px] md:text-[32px]"
+                                >search</span
+                            >
+                        </div>
+                        <div>
+                            <h3
+                                class="font-bold text-white text-base md:text-xl md:mb-1"
+                            >
+                                SEO Otimizado
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                            >
+                                Amigável e estruturado para o Google te amar
+                                desde o dia 1 do lançamento.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div
+                        class="bg-surface-dark rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-800 flex flex-col gap-4 group hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center shadow-sm text-white group-hover:text-primary group-hover:scale-110 transition-all"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[28px] md:text-[32px]"
+                                >bolt</span
+                            >
+                        </div>
+                        <div>
+                            <h3
+                                class="font-bold text-white text-base md:text-xl md:mb-1"
+                            >
+                                Ultra Rápido
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                            >
+                                Hospedagem robusta e arquitetura moderna para
+                                carregamento instantâneo.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 4 */}
+                    <div
+                        class="bg-surface-dark rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-800 flex flex-col gap-4 group hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center shadow-sm text-white group-hover:text-primary group-hover:scale-110 transition-all"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[28px] md:text-[32px]"
+                                >dashboard</span
+                            >
+                        </div>
+                        <div>
+                            <h3
+                                class="font-bold text-white text-base md:text-xl md:mb-1"
+                            >
+                                Painel Fácil
+                            </h3>
+                            <p
+                                class="text-sm md:text-base text-gray-400 mt-1 leading-relaxed"
+                            >
+                                Gerencie textos, imagens e posts sem depender de
+                                uma equipe técnica de TI.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {/* ===== PROCESS SECTION (4 STEPS) ===== */}
+        <section
+            class="px-5 md:px-0 py-12 md:py-24 bg-surface-dark rounded-3xl md:rounded-[3rem] border border-gray-800 mb-12 md:mb-24 shadow-sm md:px-16"
+        >
+            <div class="md:text-center md:mb-16 mb-10">
+                <h2
+                    class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4"
+                >
+                    Como funciona na prática
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Trabalhamos com transparência total. Você sabe exatamente
+                    onde estamos e para onde vamos em cada etapa do projeto.
+                </p>
+            </div>
+
+            <div
+                class="relative pl-6 md:pl-0 border-l-2 md:border-l-0 md:border-t-2 border-white/10 md:pt-10 flex flex-col md:flex-row gap-10 md:gap-8 max-w-5xl mx-auto"
+            >
+                {/* Step 1 */}
+                <div class="relative md:flex-1">
+                    <div
+                        class="absolute -left-[29px] md:left-1/2 md:-ml-3 md:-top-[52px] top-0 w-5 md:w-6 h-5 md:h-6 rounded-full bg-primary border-4 border-black shadow-sm"
+                    >
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 md:text-center md:items-center"
+                    >
+                        <span
+                            class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-500 bg-white/5 px-3 py-1 rounded-full w-fit mb-1"
+                            >Fase 01</span
+                        >
+                        <h3 class="text-xl font-bold text-white">
+                            Briefing & Descoberta
+                        </h3>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed max-w-xs"
+                        >
+                            Mapeamos seu cenário, entendemos os concorrentes,
+                            seu público-alvo e os grandes objetivos comerciais
+                            para criar a estratégia certa do zero.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Step 2 */}
+                <div class="relative md:flex-1">
+                    <div
+                        class="absolute -left-[29px] md:left-1/2 md:-ml-3 md:-top-[52px] top-0 w-5 md:w-6 h-5 md:h-6 rounded-full bg-white border-4 border-black shadow-sm"
+                    >
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 md:text-center md:items-center"
+                    >
+                        <span
+                            class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-500 bg-white/5 px-3 py-1 rounded-full w-fit mb-1"
+                            >Fase 02</span
+                        >
+                        <h3 class="text-xl font-bold text-white">
+                            Design & Prototipagem
+                        </h3>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed max-w-xs"
+                        >
+                            Arquitetura de informação completa, wireframes e
+                            desenvolvimento do visual de alta fidelidade focado
+                            puramente na experiência e aprovação.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Step 3 */}
+                <div class="relative md:flex-1">
+                    <div
+                        class="absolute -left-[29px] md:left-1/2 md:-ml-3 md:-top-[52px] top-0 w-5 md:w-6 h-5 md:h-6 rounded-full bg-white border-4 border-black shadow-sm"
+                    >
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 md:text-center md:items-center"
+                    >
+                        <span
+                            class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-500 bg-white/5 px-3 py-1 rounded-full w-fit mb-1"
+                            >Fase 03</span
+                        >
+                        <h3 class="text-xl font-bold text-white">
+                            Desenvolvimento & Testes
+                        </h3>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed max-w-xs"
+                        >
+                            Mão na massa: codificação limpa, responsiva,
+                            integração cuidadosa de ferramentas externas, SEO e
+                            testes intensos de estabilidade.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Step 4 */}
+                <div class="relative md:flex-1">
+                    <div
+                        class="absolute -left-[29px] md:left-1/2 md:-ml-3 md:-top-[52px] top-0 w-5 md:w-6 h-5 md:h-6 rounded-full bg-accent border-4 border-black shadow-sm"
+                    >
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 md:text-center md:items-center"
+                    >
+                        <span
+                            class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-500 bg-white/5 px-3 py-1 rounded-full w-fit mb-1"
+                            >Fase 04</span
+                        >
+                        <h3 class="text-xl font-bold text-white">
+                            Lançamento & Treino
+                        </h3>
+                        <p
+                            class="text-sm md:text-base text-gray-400 leading-relaxed max-w-xs"
+                        >
+                            O grande dia: colocamos a máquina no ar e oferecemos
+                            um treinamento prático para que sua equipe saiba
+                            gerenciar os detalhes no dia a dia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ===== FAQ SECTION ===== */}
+        <section class="px-5 md:px-0 mb-12 md:mb-24">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-2xl md:text-4xl font-black text-white mb-6 md:mb-12 md:text-center tracking-tight"
+                >
+                    Dúvidas Comuns
+                </h2>
+
+                <div class="flex flex-col gap-4 md:gap-6">
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span
+                                >Preciso pagar mensalidade para manter o site?</span
+                            >
+                            <span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
+                            >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Não pela criação ou código do site. O site passa a
+                            ser 100% seu. Você terá apenas os custos normais de
+                            infraestrutura: hospedagem e renovação do domínio
+                            anual, que são serviços pagos diretamente aos
+                            provedores como HostGator, Locaweb, AWS, etc.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span>Em quanto tempo meu site fica pronto?</span>
+                            <span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
+                            >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Para sites corporativos e institucionais padrão,
+                            nosso prazo médio de entrega total é de 15 a 25 dias
+                            úteis, contando a partir do envio completo do
+                            material (como logo, manual da marca e aprovações do
+                            escopo).
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span
+                                >Vocês mesmos criam o conteúdo e os textos?</span
+                            >
+                            <span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
+                            >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Depende de como preferir! Caso não possua equipe,
+                            oferecemos um serviço avulso especializado de
+                            Copywriting focado em vendas. Nossa equipe
+                            entrevistará você e escreverá todos os textos
+                            altamente persuasivos para suas páginas.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        {/* ===== DESKTOP CTA SECTION ===== */}
+        <div
+            class="hidden md:flex flex-col md:flex-row items-center justify-between p-12 bg-surface-dark border border-gray-800 rounded-[2rem] shadow-xl shadow-secondary/10 mb-20"
+        >
+            <div class="flex flex-col max-w-xl">
+                <span
+                    class="text-gray-400 text-base font-medium mb-1 tracking-wide uppercase"
+                    >Investimento inicial focado no resultado</span
+                >
+                <h3 class="text-3xl font-black text-white mb-2">
+                    Construa seu espaço
+                </h3>
+                <p class="text-gray-300 text-lg">
+                    Solicite um orçamento personalizado para entender qual o
+                    melhor caminho técnico para seu tráfego hoje.
+                </p>
+            </div>
+
+            <a
+                href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 max-w-sm ml-8 mt-8 md:mt-0 bg-accent hover:bg-accent-dark text-white font-black text-xl py-6 px-10 rounded-2xl shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+            >
+                <span>Iniciar Projeto Web</span>
+                <span class="material-symbols-outlined text-[28px]"
+                    >rocket_launch</span
+                >
+            </a>
+        </div>
+    </main>
+
+    {/* ===== MOBILE STICKY CTA BAR ===== */}
+    <div
+        class="md:hidden fixed bottom-20 left-0 w-full bg-black/95 backdrop-blur border-t border-gray-900 p-4 flex items-center justify-between gap-4 z-40 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.5)]"
+    >
+        <div class="flex flex-col">
+            <span class="text-xs text-gray-400 font-medium"
+                >Investimento inicial de</span
+            >
+            <span class="text-lg font-black text-white">R$ Consultar</span>
+        </div>
+
+        <a
+            href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 bg-accent hover:bg-accent-dark text-white active:bg-yellow-500 font-bold py-3.5 px-6 rounded-xl shadow-sm transition-all transform active:scale-[0.98] flex items-center justify-center gap-2"
+        >
+            <span>Proposta</span>
+            <span class="material-symbols-outlined text-[20px]"
+                >arrow_forward</span
+            >
+        </a>
+    </div>
+
+    {/* ===== FLOATING WHATSAPP BUTTON ===== */}
+    <a
+        class="fixed bottom-32 md:bottom-8 right-5 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 transition-transform hover:bg-[#20bd5a]"
+        href="https://wa.me/555191305583"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Falar no WhatsApp"
+    >
+        <svg
+            fill="white"
+            class="w-7 h-7 md:w-8 md:h-8"
+            viewBox="0 0 256 256"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Zm59.51-66.21c-2.31-4.9-10.74-8.86-15.07-9.45a33.64,33.64,0,0,0-12-1.09,12.72,12.72,0,0,0-4,1.15c-1.32.57-4.14,2.29-6.3,5-7.33,9.27-16.14,9.66-22.3,9.45a33.37,33.37,0,0,1-13.43-3.61A87.54,87.54,0,0,1,96,134a34.78,34.78,0,0,1-8.58-13.68c-.68-2.22-3.13-11.66,4.6-20.14,2.37-2.6,4.82-3.83,6.34-4.35a11.63,11.63,0,0,0,4-1.2,16.5,16.5,0,0,0,2.16-1.55c3.55-3.07,3.13-6.57,2.83-8.32-.57-3.32-3.41-13.78-6.19-18.78-3.08-5.55-7-5.32-9.49-5.18-5.26.29-10.51,2.5-13.78,6.07-8.31,9-10.23,24.36-4.52,40.15,6.54,18.06,23.33,40.54,52.88,52.89,20.65,8.63,28.62,5.2,33.58,3.72a28,28,0,0,0,14-9.35C175.78,152.19,189.82,154.67,187.51,149.79Z"
+            ></path>
+        </svg>
+    </a>
+
+    <Footer />
+</Base>
+
+{/* Tab Interactivity Script */}
+<script>
+    document.querySelectorAll(".tab-button").forEach((button) => {
+        button.addEventListener("click", () => {
+            // Remove active state from all buttons
+            document.querySelectorAll(".tab-button").forEach((btn) => {
+                btn.classList.remove(
+                    "active",
+                    "bg-surface-dark",
+                    "text-white",
+                    "shadow-sm",
+                    "border",
+                    "border-gray-800",
+                );
+                btn.classList.add("text-gray-400");
+            });
+
+            // Hide all tab contents
+            document.querySelectorAll(".tab-content").forEach((content) => {
+                content.classList.add("hidden");
+                content.classList.remove("active");
+            });
+
+            // Add active state to clicked button
+            button.classList.add(
+                "active",
+                "bg-surface-dark",
+                "text-white",
+                "shadow-sm",
+                "border",
+                "border-gray-800",
+            );
+            button.classList.remove("text-gray-400");
+
+            // Show corresponding tab content
+            const tabName = button.getAttribute("data-tab");
+            const content = document.getElementById(`content-${tabName}`);
+            if (content) {
+                content.classList.remove("hidden");
+                content.classList.add("active");
+            }
+        });
+    });
+</script>
