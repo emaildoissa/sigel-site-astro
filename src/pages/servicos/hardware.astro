@@ -1,0 +1,118 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.astro";
+import HardwareServiceCard from "../../components/HardwareServiceCard.astro";
+
+const services = [
+  {
+    icon: "keyboard",
+    title: "Troca de Teclado",
+    description:
+      "Substituição de teclados danificados ou desgastados para notebooks e desktops, garantindo conforto e precisão na digitação.",
+  },
+  {
+    icon: "smart_display",
+    title: "Troca de Tela",
+    description:
+      "Reparo ou substituição de telas quebradas, com peças originais ou de alta qualidade, restaurando a visualização impecável.",
+  },
+  {
+    icon: "storage",
+    title: "Upgrade de HDD → SSD",
+    description:
+      "Migração de discos rígidos para SSDs de alta performance, aumentando velocidade de boot e carregamento de aplicativos.",
+  },
+  {
+    icon: "construction",
+    title: "Reparo de Carcaça",
+    description:
+      "Conserto de danos na estrutura externa do equipamento, como rachaduras, amassados e substituição de partes plásticas.",
+  },
+  {
+    icon: "settings",
+    title: "Formatação",
+    description:
+      "Instalação limpa do sistema operacional, otimização e configuração personalizada para desempenho máximo.",
+  },
+  {
+    icon: "cloud_download",
+    title: "Recuperação de Dados",
+    description:
+      "Recuperação segura de arquivos perdidos ou corrompidos em discos danificados, com alta taxa de sucesso.",
+  },
+  {
+    icon: "charging_station",
+    title: "Venda de Carregadores",
+    description:
+      "Carregadores originais e compatíveis para notebooks, tablets e smartphones, com garantia de qualidade.",
+  },
+];
+---
+
+<Base
+  title="Serviços de Hardware e Software em Porto Alegre | Sigel"
+  description="Troca de teclado, tela, upgrade SSD, reparo de carcaça, formatação, recuperação de dados e venda de carregadores em Porto Alegre."
+  canonical="/servicos/hardware"
+>
+  <Header client:load />
+
+  <main class="mx-auto w-full max-w-7xl px-5 md:px-12 pt-10 md:pt-16 pb-16">
+    <section class="mx-auto max-w-3xl text-center">
+      <h1 class="text-4xl font-black tracking-tight text-white md:text-5xl">
+        Serviços de Hardware e Software em Porto Alegre
+      </h1>
+
+      <p class="mt-5 text-lg leading-8 text-gray-300">
+        Soluções completas de manutenção, upgrade e recuperação para notebooks, desktops e acessórios.
+      </p>
+
+      <div class="mt-8">
+        <a
+          href="https://wa.me/5551993257923"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-base font-bold text-white shadow-lg transition-all hover:bg-accent-dark hover:scale-[1.02]"
+        >
+          Solicitar Diagnóstico
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="servicos" class="mt-16">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-3xl font-bold text-white md:text-4xl">
+          Nossos serviços
+        </h2>
+        <p class="mt-3 text-gray-300">
+          Principais soluções para manutenção e melhoria de desempenho do seu equipamento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {services.map((s) => (
+          <HardwareServiceCard
+            icon={s.icon}
+            title={s.title}
+            description={s.description}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-16 text-center">
+      <a
+        href="https://wa.me/5551993257923"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent-dark"
+      >
+        Falar no WhatsApp
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

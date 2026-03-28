@@ -1,0 +1,261 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+
+---
+
+<Base
+  title="Copywriting Estratégico - Sigel | Palavras que Vendem em Porto Alegre"
+  description="Copywriting focado em conversão. Anúncios, landing pages, email marketing. Psicologia de vendas e gatilhos mentais testados."
+  canonical="/servicos/copywriting"
+>
+  <Header client:load />
+
+  <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-4 md:pt-12">
+    
+    {/* ===== HERO + STATS & AREAS ===== */}
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12 w-full">
+      
+      {/* LEFT: Hero Section */}
+      <section class="px-4 md:px-0 w-full md:w-1/2 flex flex-col justify-center">
+        
+        <div class="relative bg-white/5 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-sm border border-white/10 h-full min-h-[400px] flex flex-col justify-center group">
+          
+          {/* Abstract Hero Background */}
+          <div
+            class="absolute inset-0 z-0 opacity-20 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            style="background-image: url('https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=2070&auto=format&fit=crop');"
+          ></div>
+
+          <div class="absolute inset-0 z-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-black/95 md:via-black/90"></div>
+
+          <div class="relative z-10 p-6 md:p-12 flex flex-col gap-4">
+            
+            {/* Badge */}
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 text-yellow-200 text-xs font-semibold w-fit">
+              <span class="material-symbols-outlined text-[16px]">psychology</span>
+              Psicologia de Vendas
+            </span>
+
+            {/* Headline */}
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+              Copywriting Estratégico em <span class="text-primary">Porto Alegre</span>: Palavras que Vendem
+            </h1>
+
+            {/* Description */}
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mt-2 max-w-md">
+              Nosso copywriting não é apenas escrita bonita; é uma estratégia de persuasão desenhada para maximizar seus lucros e conectar com a dor do seu cliente.
+            </p>
+
+            {/* Desktop CTA Button */}
+            <div class="hidden md:flex mt-6">
+              <a
+                href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold text-lg h-14 px-8 rounded-xl shadow-lg shadow-green-500/20 active:scale-[0.98] transition-all hover:scale-105"
+              >
+                <span>Falar com um Copywriter</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RIGHT: Stats & Areas */}
+      <div class="w-full md:w-1/2 flex flex-col gap-8 md:gap-12 px-4 md:px-0 justify-center">
+        
+        {/* Stats / Proof Snippet */}
+        <div class="w-full">
+          
+          <h2 class="text-lg md:text-2xl font-bold text-white mb-4 hidden md:block">Resultados Comprovados</h2>
+
+          <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2 md:pb-0 md:grid md:grid-cols-3">
+            
+            {/* Card 1: +40% Conversão */}
+            <div class="min-w-[180px] md:min-w-0 bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 shadow-sm flex flex-col gap-2 hover:border-accent/50 transition-colors group">
+              <div class="flex items-center gap-2 text-accent group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined md:text-3xl">trending_up</span>
+                <span class="font-bold text-xl md:text-2xl">+40%</span>
+              </div>
+              <p class="text-xs md:text-sm text-gray-400 font-medium">Conversão em Landing Pages</p>
+            </div>
+
+            {/* Card 2: 3.5% CTR */}
+            <div class="min-w-[180px] md:min-w-0 bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 shadow-sm flex flex-col gap-2 hover:border-accent/50 transition-colors group">
+              <div class="flex items-center gap-2 text-accent group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined md:text-3xl">ads_click</span>
+                <span class="font-bold text-xl md:text-2xl">3.5%</span>
+              </div>
+              <p class="text-xs md:text-sm text-gray-400 font-medium">CTR Médio em Anúncios</p>
+            </div>
+
+            {/* Card 3: 25% Email */}
+            <div class="min-w-[180px] md:min-w-0 bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 shadow-sm flex flex-col gap-2 hover:border-accent/50 transition-colors group">
+              <div class="flex items-center gap-2 text-accent group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined md:text-3xl">mail</span>
+                <span class="font-bold text-xl md:text-2xl">25%</span>
+              </div>
+              <p class="text-xs md:text-sm text-gray-400 font-medium">Taxa de Abertura Email</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Grid: Onde Aplicamos */}
+        <div class="w-full">
+          
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg md:text-2xl font-bold text-white">Onde aplicamos</h2>
+            <span class="text-xs md:text-sm font-medium text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/5">Estratégia 360º</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 md:gap-4">
+            
+            {/* Anúncios */}
+            <div class="group bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 hover:border-primary/50 hover:shadow-md transition-all">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3 text-yellow-200 group-hover:bg-primary group-hover:text-black transition-colors">
+                <span class="material-symbols-outlined md:text-[28px]">campaign</span>
+              </div>
+              <h3 class="font-bold text-sm md:text-base mb-1 text-white">Anúncios</h3>
+              <p class="text-xs md:text-sm text-gray-400 leading-tight">Meta Ads e Google Ads com foco em clique.</p>
+            </div>
+
+            {/* Landing Pages */}
+            <div class="group bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 hover:border-primary/50 hover:shadow-md transition-all">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3 text-yellow-200 group-hover:bg-primary group-hover:text-black transition-colors">
+                <span class="material-symbols-outlined md:text-[28px]">web</span>
+              </div>
+              <h3 class="font-bold text-sm md:text-base mb-1 text-white">Landing Pages</h3>
+              <p class="text-xs md:text-sm text-gray-400 leading-tight">Páginas de alta conversão e vendas diretas.</p>
+            </div>
+
+            {/* Email Marketing */}
+            <div class="group bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 hover:border-primary/50 hover:shadow-md transition-all">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3 text-yellow-200 group-hover:bg-primary group-hover:text-black transition-colors">
+                <span class="material-symbols-outlined md:text-[28px]">mail_outline</span>
+              </div>
+              <h3 class="font-bold text-sm md:text-base mb-1 text-white">Email Mkt</h3>
+              <p class="text-xs md:text-sm text-gray-400 leading-tight">Sequências de nutrição e recuperação de leads.</p>
+            </div>
+
+            {/* VSL & Scripts */}
+            <div class="group bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 hover:border-primary/50 hover:shadow-md transition-all">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3 text-yellow-200 group-hover:bg-primary group-hover:text-black transition-colors">
+                <span class="material-symbols-outlined md:text-[28px]">article</span>
+              </div>
+              <h3 class="font-bold text-sm md:text-base mb-1 text-white">VSL & Scripts</h3>
+              <p class="text-xs md:text-sm text-gray-400 leading-tight">Roteiros engajantes para vídeos de vendas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* ===== METHODOLOGY & DELIVERABLES ===== */}
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12 mt-8 md:mt-24 mb-20 md:mb-24 px-4 md:px-0">
+      
+      {/* LEFT: Methodology Timeline */}
+      <div class="w-full md:w-1/2 bg-white/5 rounded-2xl md:rounded-[2rem] p-6 md:p-10 shadow-sm border border-white/10">
+        
+        <h2 class="text-xl md:text-3xl font-bold text-white mb-8">O Método Sigel</h2>
+
+        <div class="relative md:pl-6 pl-4 space-y-8 border-l-2 border-primary/30">
+          
+          {/* Step 1 */}
+          <div class="relative pl-6 md:pl-8">
+            <div class="absolute -left-[9px] md:-left-[11px] top-0 md:top-1 w-4 h-4 md:w-5 md:h-5 rounded-full bg-primary border-4 border-[#2f323a]"></div>
+            <h3 class="text-base md:text-xl font-bold text-white">1. Imersão Profunda</h3>
+            <p class="text-sm md:text-base text-gray-400 mt-2 leading-relaxed">
+              Estudamos seu público, dores de mercado e objeções antes de escrever uma única palavra.
+            </p>
+          </div>
+
+          {/* Step 2 */}
+          <div class="relative pl-6 md:pl-8">
+            <div class="absolute -left-[9px] md:-left-[11px] top-0 md:top-1 w-4 h-4 md:w-5 md:h-5 rounded-full bg-primary border-4 border-[#2f323a]"></div>
+            <h3 class="text-base md:text-xl font-bold text-white">2. Estratégia Angular</h3>
+            <p class="text-sm md:text-base text-gray-400 mt-2 leading-relaxed">
+              Definimos o gancho central (Big Idea) que fará seu produto parecer único e irresistível no mercado.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div class="relative pl-6 md:pl-8">
+            <div class="absolute -left-[9px] md:-left-[11px] top-0 md:top-1 w-4 h-4 md:w-5 md:h-5 rounded-full bg-primary border-4 border-[#2f323a]"></div>
+            <h3 class="text-base md:text-xl font-bold text-white">3. Escrita Persuasiva</h3>
+            <p class="text-sm md:text-base text-gray-400 mt-2 leading-relaxed">
+              Desenvolvemos o texto aplicando os mais modernos gatilhos mentais e estruturas testadas de alta conversão.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT: Deliverables Checklist */}
+      <div class="w-full md:w-1/2">
+        
+        <div class="bg-surface-dark rounded-2xl md:rounded-[2rem] p-6 md:p-10 border border-gray-800 h-full flex flex-col justify-center shadow-inner">
+          
+          <h2 class="text-xl md:text-3xl font-bold text-white mb-6 md:mb-8">O que entregamos de fato?</h2>
+
+          <ul class="space-y-4 md:space-y-6">
+            
+            {/* Item 1 */}
+            <li class="flex items-start gap-4 p-3 bg-white/5 rounded-xl border border-white/5 shadow-sm hover:-translate-y-1 transition-transform">
+              <span class="material-symbols-outlined text-accent text-[28px] shrink-0">check_circle</span>
+              <div>
+                <span class="font-bold text-gray-200 block text-base md:text-lg">Pesquisa de persona detalhada</span>
+                <span class="text-sm text-gray-400 mt-0.5 block">Documento completo com os medos e sonhos do cliente.</span>
+              </div>
+            </li>
+
+            {/* Item 2 */}
+            <li class="flex items-start gap-4 p-3 bg-white/5 rounded-xl border border-white/5 shadow-sm hover:-translate-y-1 transition-transform">
+              <span class="material-symbols-outlined text-accent text-[28px] shrink-0">check_circle</span>
+              <div>
+                <span class="font-bold text-gray-200 block text-base md:text-lg">Headlines testadas A/B</span>
+                <span class="text-sm text-gray-400 mt-0.5 block">Múltiplos títulos para validarmos qual gera mais clique.</span>
+              </div>
+            </li>
+
+            {/* Item 3 */}
+            <li class="flex items-start gap-4 p-3 bg-white/5 rounded-xl border border-white/5 shadow-sm hover:-translate-y-1 transition-transform">
+              <span class="material-symbols-outlined text-accent text-[28px] shrink-0">check_circle</span>
+              <div>
+                <span class="font-bold text-gray-200 block text-base md:text-lg">Chamadas para ação (CTAs) certas</span>
+                <span class="text-sm text-gray-400 mt-0.5 block">Botões e comandos focados na ação exata desejada.</span>
+              </div>
+            </li>
+
+            {/* Item 4 */}
+            <li class="flex items-start gap-4 p-3 bg-white/5 rounded-xl border border-white/5 shadow-sm hover:-translate-y-1 transition-transform">
+              <span class="material-symbols-outlined text-accent text-[28px] shrink-0">check_circle</span>
+              <div>
+                <span class="font-bold text-gray-200 block text-base md:text-lg">Revisão estratégica ilimitada</span>
+                <span class="text-sm text-gray-400 mt-0.5 block">Ajustamos os textos até que performem perfeitamente.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {/* ===== STICKY BOTTOM CTA (MOBILE ONLY) ===== */}
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-md border-t border-gray-900 z-50 safe-area-bottom pb-6">
+    
+    <a
+      href="https://wa.me/555191305583?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20neg%C3%B3cio."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-full bg-accent hover:bg-accent-dark text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-green-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+    >
+      <span>Falar com um Copywriter</span>
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+
+  <Footer />
+ 
+</Base>
