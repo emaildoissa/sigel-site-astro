@@ -7,24 +7,24 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sigel.com.br',
+  site: 'https://sigelinformatica.com.br',
   integrations: [
     react(),
     sitemap({
       // Personaliza prioridade e frequência por página
       customPages: [
-        'https://sigel.com.br/',
-        'https://sigel.com.br/servicos/',
-        'https://sigel.com.br/web/',
-        'https://sigel.com.br/automacao/',
-        'https://sigel.com.br/copywriting/',
-        'https://sigel.com.br/planos/',
-        'https://sigel.com.br/sobre/',
-        'https://sigel.com.br/servicos/hardware/',
+        'https://sigelinformatica.com.br/',
+        'https://sigelinformatica.com.br/servicos/',
+        'https://sigelinformatica.com.br/web/',
+        'https://sigelinformatica.com.br/automacao/',
+        'https://sigelinformatica.com.br/copywriting/',
+        'https://sigelinformatica.com.br/planos/',
+        'https://sigelinformatica.com.br/sobre/',
+        'https://sigelinformatica.com.br/servicos/hardware/',
       ],
       serialize(item) {
         // Homepage
-        if (item.url === 'https://sigel.com.br/') {
+        if (item.url === 'https://sigelinformatica.com.br/') {
           return { ...item, changefreq: 'weekly', priority: 1.0 };
         }
         // Serviços principais
@@ -32,7 +32,7 @@ export default defineConfig({
           item.url.includes('/web') ||
           item.url.includes('/automacao') ||
           item.url.includes('/copywriting') ||
-          item.url === 'https://sigel.com.br/servicos/'
+          item.url === 'https://sigelinformatica.com.br/servicos/'
         ) {
           return { ...item, changefreq: 'monthly', priority: 0.9 };
         }
