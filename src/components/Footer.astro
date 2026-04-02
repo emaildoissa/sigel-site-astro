@@ -1,23 +1,31 @@
-Entendido! Vou absorver essa informação e preparar uma resposta que atenda exatamente ao que você precisa. Vamos fazer isso direito desta vez.
-
-Perfeito — aqui vai só o ajuste da fonte, um pouco menor no footer:
-
 ---
 const year = new Date().getFullYear();
 ---
 
-<footer class="relative overflow-hidden bg-black border-t border-white/10 text-white">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,94,55,0.10),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.08),transparent_30%)] pointer-events-none"></div>
+<footer
+  class="relative overflow-hidden bg-black border-t border-white/10 text-white"
+>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,94,55,0.10),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.08),transparent_30%)] pointer-events-none"
+  >
+  </div>
 
   <div class="relative max-w-7xl mx-auto px-5 md:px-12 py-12 md:py-16">
-    <div class="mb-10 md:mb-14 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <!--     <div
+      class="mb-10 md:mb-14 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+    >
       <div class="max-w-2xl">
-        <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Pronto para crescer no digital?</p>
+        <p
+          class="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3"
+        >
+          Pronto para crescer no digital?
+        </p>
         <h2 class="text-xl md:text-2xl font-black leading-tight text-white">
           Quer um diagnóstico gratuito para acelerar resultados?
         </h2>
         <p class="text-gray-400 mt-2 text-[13px] md:text-sm leading-relaxed">
-          Sites, copy, automação e manutenção com foco em performance, conversão e presença digital.
+          Sites, copy, automação e manutenção com foco em performance, conversão
+          e presença digital.
         </p>
       </div>
 
@@ -30,7 +38,7 @@ const year = new Date().getFullYear();
         <span>Solicitar Diagnóstico</span>
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
-    </div>
+    </div> -->
 
     <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
       <div class="md:col-span-4 flex flex-col gap-5">
@@ -43,8 +51,11 @@ const year = new Date().getFullYear();
           loading="lazy"
         />
 
-        <p class="text-gray-400 text-[13px] md:text-sm leading-relaxed max-w-sm">
-          Soluções em desenvolvimento web, copywriting, automação e suporte técnico para empresas que querem crescer com estrutura.
+        <p
+          class="text-gray-400 text-[13px] md:text-sm leading-relaxed max-w-sm"
+        >
+          Soluções em desenvolvimento web, copywriting, automação e suporte
+          técnico para empresas que querem crescer com estrutura.
         </p>
 
         <div class="flex items-center gap-3 pt-1">
@@ -55,7 +66,9 @@ const year = new Date().getFullYear();
             aria-label="Instagram"
             class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 hover:border-primary/40 transition-all"
           >
-            <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+            <span class="material-symbols-outlined text-[18px]"
+              >photo_camera</span
+            >
           </a>
 
           <a
@@ -81,23 +94,67 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="md:col-span-2 flex flex-col gap-4">
-        <h4 class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]">Acesso Rápido</h4>
-        <a href="/" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Início</a>
-        <a href="/servicos" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Serviços</a>
-        <a href="/sobre" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Sobre nós</a>
-        <a href="/contato" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Entre em Contato</a>
+        <h4
+          class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]"
+        >
+          Acesso Rápido
+        </h4>
+        <a
+          href="/"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Início</a
+        >
+        <a
+          href="/servicos"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Serviços</a
+        >
+        <a
+          href="/sobre"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Sobre nós</a
+        >
+        <a
+          href="/contato"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Entre em Contato</a
+        >
       </div>
 
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]">Serviços</h4>
-        <a href="/servicos/web" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Desenvolvimento Web</a>
-        <a href="/servicos/copywriting" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Copywriting</a>
-        <a href="/servicos/automacao" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Automação</a>
-        <a href="/servicos/hardware" class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors">Hardware & Suporte</a>
+        <h4
+          class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]"
+        >
+          Serviços
+        </h4>
+        <a
+          href="/servicos/web"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Desenvolvimento Web</a
+        >
+        <a
+          href="/servicos/copywriting"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Copywriting</a
+        >
+        <a
+          href="/automacao"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Automação</a
+        >
+        <a
+          href="/servicos/hardware"
+          class="text-gray-400 text-[13px] md:text-sm font-medium hover:text-primary transition-colors"
+          >Hardware & Suporte</a
+        >
       </div>
 
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]">Contato</h4>
+        <h4
+          class="font-display font-black text-white text-[12px] uppercase tracking-[0.2em]"
+        >
+          Contato
+        </h4>
 
         <div class="flex flex-col gap-2 text-[13px] md:text-sm text-gray-400">
           <p class="leading-relaxed">
@@ -106,10 +163,10 @@ const year = new Date().getFullYear();
           </p>
 
           <a
-            href="mailto:contato@sigel.com.br"
+            href="mailto:contato@sigelinformatica.com.br"
             class="hover:text-primary transition-colors"
           >
-            contato@sigel.com.br
+            contato@sigelinformatica.com.br
           </a>
 
           <a
@@ -118,13 +175,24 @@ const year = new Date().getFullYear();
             rel="noopener noreferrer"
             class="hover:text-primary transition-colors"
           >
-            +55 (51) 91305-583
+            (51) 991305-583
+          </a>
+
+          <a
+            href="https://wa.me/555193257923"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-primary transition-colors"
+          >
+            (51) 99325-7923
           </a>
         </div>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
+    <div
+      class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3"
+    >
       <p class="text-gray-500 text-[12px] font-medium text-center md:text-left">
         © {year} Sigel Soluções em Informática. Todos os direitos reservados.
       </p>
@@ -138,23 +206,47 @@ const year = new Date().getFullYear();
   </div>
 </footer>
 
-<div class="fixed bottom-24 md:bottom-8 right-6 md:right-8 z-[60]">
-  <a
-    href="https://wa.me/555191305583"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar no WhatsApp"
-    class="flex items-center justify-center w-14 md:w-16 h-14 md:h-16 bg-[#25D366] text-white rounded-full shadow-2xl shadow-green-500/40 hover:bg-[#20bd5a] transition-all hover:scale-110 active:scale-95 group"
+<div
+  class="fixed bottom-24 md:bottom-8 right-6 md:right-8 z-[60] flex flex-col items-end gap-3"
+>
+  {/* Tooltip */}
+  <div
+    class="opacity-0 group-hover:opacity-100 transition-opacity bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap pointer-events-none hidden md:block"
+    id="wpp-tooltip"
   >
-    <svg
-      fill="white"
-      class="w-8 h-8 md:w-9 md:h-9 group-hover:animate-pulse"
-      viewBox="0 0 256 256"
-      xmlns="http://www.w3.org/2000/svg"
+    Fale conosco
+  </div>
+
+  {/* Botão */}
+  <div class="relative group">
+    {/* Anel animado externo */}
+    <span
+      class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"
+    ></span>
+
+    <a
+      href="https://wa.me/555191305583"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp"
+      class="relative flex items-center justify-center w-14 md:w-16 h-14 md:h-16 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-2xl shadow-green-500/50 transition-all duration-300 hover:scale-110 active:scale-95"
+      onmouseenter="document.getElementById('wpp-tooltip').style.opacity='1'"
+      onmouseleave="document.getElementById('wpp-tooltip').style.opacity='0'"
     >
-      <path
-        d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Zm59.51-66.21c-2.31-4.9-10.74-8.86-15.07-9.45a33.64,33.64,0,0,0-12-1.09,12.72,12.72,0,0,0-4,1.15c-1.32.57-4.14,2.29-6.3,5-7.33,9.27-16.14,9.66-22.3,9.45a33.37,33.37,0,0,1-13.43-3.61A87.54,87.54,0,0,1,96,134a34.78,34.78,0,0,1-8.58-13.68c-.68-2.22-3.13-11.66,4.6-20.14,2.37-2.6,4.82-3.83,6.34-4.35a11.63,11.63,0,0,0,4-1.2,16.5,16.5,0,0,0,2.16-1.55c3.55-3.07,3.13-6.57,2.83-8.32-.57-3.32-3.41-13.78-6.19-18.78-3.08-5.55-7-5.32-9.49-5.18-5.26.29-10.51,2.5-13.78,6.07-8.31,9-10.23,24.36-4.52,40.15,6.54,18.06,23.33,40.54,52.88,52.89,20.65,8.63,28.62,5.2,33.58,3.72a28,28,0,0,0,14-9.35C175.78,152.19,189.82,154.67,187.51,149.79Z"
-      ></path>
-    </svg>
-  </a>
+      {/* Logo oficial do WhatsApp */}
+      <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8 md:w-9 md:h-9"
+        fill="white"
+      >
+        <path
+          d="M16 .5C7.437.5.5 7.437.5 16c0 2.72.707 5.404 2.05 7.773L.5 31.5l8.033-2.02A15.45 15.45 0 0 0 16 31.5C24.563 31.5 31.5 24.563 31.5 16S24.563.5 16 .5zm0 28.3a12.73 12.73 0 0 1-6.494-1.78l-.465-.277-4.768 1.198 1.24-4.647-.304-.477A12.752 12.752 0 1 1 16 28.8z"
+        ></path>
+        <path
+          d="M22.003 18.948c-.31-.155-1.836-.904-2.12-.005-.284.9-.284.004-1.015 1.014-.284.31-.568.348-.878.193a11.02 11.02 0 0 1-5.513-4.819c-.31-.542.31-.581.878-1.704.155-.31.077-.58-.038-.735-.116-.155-1.04-2.503-1.427-3.43-.374-.9-.762-.775-1.04-.79-.269-.013-.58-.016-.89-.016-.31 0-.813.116-1.24.58-.426.465-1.626 1.588-1.626 3.872s1.665 4.493 1.897 4.803c.232.31 3.275 4.999 7.936 7.016 4.662 2.016 4.662 1.34 5.502 1.262.84-.077 2.712-1.108 3.097-2.18.387-1.07.387-1.987.271-2.18-.116-.193-.425-.31-.735-.464z"
+        ></path>
+      </svg>
+    </a>
+  </div>
 </div>
