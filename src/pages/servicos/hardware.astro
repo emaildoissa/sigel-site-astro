@@ -4,6 +4,16 @@ import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.astro";
 import HardwareServiceCard from "../../components/HardwareServiceCard.astro";
 
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Serviços de Hardware e Software em Porto Alegre",
+  "description": "Troca de teclado, tela, upgrade SSD, reparo de carcaça, formatação, recuperação de dados e venda de carregadores em Porto Alegre.",
+  "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+  "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+  "serviceType": "Suporte Técnico e Manutenção de Hardware"
+});
+
 const services = [
   {
     icon: "keyboard",
@@ -54,6 +64,11 @@ const services = [
   title="Serviços de Hardware e Software em Porto Alegre | Sigel"
   description="Troca de teclado, tela, upgrade SSD, reparo de carcaça, formatação, recuperação de dados e venda de carregadores em Porto Alegre."
   canonical="/servicos/hardware"
+  breadcrumbs={[
+    { name: "Serviços", path: "/servicos" },
+    { name: "Hardware", path: "/servicos/hardware" },
+  ]}
+  schema={serviceSchema}
 >
   <Header client:load />
 

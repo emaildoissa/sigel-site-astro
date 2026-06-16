@@ -8,6 +8,7 @@ import Footer from "../components/Footer.astro";
     title="Serviços - Sigel | Web, Copywriting, Automação para PMEs"
     description="Desenvolvimento web, copywriting estratégico e automação sob medida. Soluções especializadas para pequenas e médias empresas brasileiras."
     canonical="/servicos"
+    breadcrumbs={[{ name: "Serviços", path: "/servicos" }]}
 >
     <Header client:load />
 
@@ -80,16 +81,16 @@ import Footer from "../components/Footer.astro";
                     </h2>
                     <p class="text-gray-400 text-sm md:text-base">
                         Soluções fundamentais para construir a base do seu
-                        negócio digital.
+                        negócio digital e da sua infraestrutura local.
                     </p>
                 </div>
                 <span
                     class="hidden md:inline-block text-sm font-semibold text-gray-400 bg-white/5 px-4 py-2 rounded-full uppercase tracking-wider"
-                    >3 Áreas de Atuação</span
+                    >4 Áreas de Atuação</span
                 >
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
                 {/* Card 1 */}
                 <div
                     class="group relative overflow-hidden rounded-2xl bg-surface-dark p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-2"
@@ -213,6 +214,51 @@ import Footer from "../components/Footer.astro";
                             </p>
                             <a
                                 href="/automacao"
+                                class="inline-flex items-center text-sm md:text-base font-bold text-primary hover:text-white transition-colors gap-1 group-hover:gap-2 w-fit"
+                            >
+                                Saiba mais
+                                <span
+                                    class="material-symbols-outlined text-sm md:text-base"
+                                    >arrow_forward</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 4 */}
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-surface-dark p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-2"
+                >
+                    <div
+                        class="absolute inset-0 opacity-10"
+                        style="background-image: repeating-linear-gradient(45deg, #10b981 0, #10b981 1px, transparent 0, transparent 50%); background-size: 20px 20px;"
+                    >
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full gap-5">
+                        <div
+                            class="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-xl bg-green-500 text-white shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[32px] md:text-[36px]"
+                                >memory</span
+                            >
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h3
+                                class="text-xl md:text-2xl font-bold text-white mb-3"
+                            >
+                                Hardware & Suporte de TI
+                            </h3>
+                            <p
+                                class="text-gray-400 text-sm md:text-base leading-relaxed mb-6 flex-1"
+                            >
+                                Manutenção de computadores, redes e suporte
+                                técnico local e remoto para garantir que a
+                                operação da sua empresa não pare nunca.
+                            </p>
+                            <a
+                                href="/servicos/hardware"
                                 class="inline-flex items-center text-sm md:text-base font-bold text-primary hover:text-white transition-colors gap-1 group-hover:gap-2 w-fit"
                             >
                                 Saiba mais

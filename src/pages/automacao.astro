@@ -2,12 +2,24 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automação de Processos para Empresas em Porto Alegre",
+  "description": "Automação inteligente com IA, agendamento via WhatsApp, fluxos personalizados. Transforme processos manuais em sistemas que trabalham 24/7.",
+  "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+  "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+  "serviceType": "Automação de Processos"
+});
 ---
 
 <Base
     title="Automação de Processos - Sigel | IA e Fluxos para PMEs Porto Alegre"
     description="Automação inteligente com IA, agendamento via WhatsApp, fluxos personalizados. Transforme processos manuais em sistemas que trabalham 24/7."
     canonical="/automacao"
+    breadcrumbs={[{ name: "Automação", path: "/automacao" }]}
+    schema={serviceSchema}
 >
     <Header client:load />
 

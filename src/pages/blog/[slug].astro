@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+const articleSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": post.data.image ? [`https://sigelinformatica.com.br${post.data.image}`] : [],
+  "author": {
+    "@type": "Organization",
+    "name": post.data.author
+  },
+  "datePublished": post.data.pubDate.toISOString()
+});
+---
+
+<Base
+  title={`${post.data.title} | Sigel Informática`}
+  description={post.data.description}
+  canonical={`/blog/${post.id}`}
+  ogType="article"
+  ogImage={post.data.image}
+  schema={articleSchema}
+  breadcrumbs={[
+    { name: "Blog", path: "/blog" },
+    { name: post.data.title, path: `/blog/${post.id}` },
+  ]}
+>
+  <Header client:load />
+
+  <article class="px-5 md:px-12 py-32 md:py-40 bg-[#050505] min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      {/* Header do Post */}
+      <header class="mb-12">
+        <time class="text-sm text-primary font-bold tracking-wider uppercase mb-4 block">
+          {post.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+        </time>
+        <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+          {post.data.title}
+        </h1>
+        <p class="text-xl text-gray-400 leading-relaxed mb-8">
+          {post.data.description}
+        </p>
+
+        {post.data.image && (
+          <div class="w-full rounded-2xl overflow-hidden aspect-video border border-white/10">
+            <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover" />
+          </div>
+        )}
+      </header>
+
+      {/* Grid com TOC na Esquerda e Conteúdo na Direita (desktop) */}
+      <div class="flex flex-col lg:flex-row gap-12 relative">
+        
+        {/* Table of Contents (Índice) Lateral Fixo */}
+        {headings.length > 0 && (
+          <aside class="lg:w-64 shrink-0">
+            <div class="lg:sticky lg:top-32 bg-surface-dark border border-white/10 p-6 rounded-2xl">
+              <h3 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Índice do Artigo</h3>
+              <ul class="flex flex-col gap-3 text-sm">
+                {headings.map((heading) => (
+                  <li class={heading.depth > 2 ? 'pl-4' : ''}>
+                    <a href={`#${heading.slug}`} class="text-gray-400 hover:text-primary transition-colors line-clamp-2">
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        )}
+
+        {/* Conteúdo Principal */}
+        <div class="flex-1 min-w-0 prose prose-invert prose-lg prose-headings:font-bold prose-a:text-primary hover:prose-a:text-accent prose-img:rounded-xl">
+          {/* Key Takeaways */}
+          {post.data.keyTakeaways && post.data.keyTakeaways.length > 0 && (
+             <div class="bg-primary/10 border border-primary/20 rounded-2xl p-6 mb-10 not-prose">
+               <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                 <span class="material-symbols-outlined text-primary">lightbulb</span>
+                 Principais Pontos (Key Takeaways)
+               </h3>
+               <ul class="flex flex-col gap-2">
+                 {post.data.keyTakeaways.map((point: string) => (
+                   <li class="flex items-start gap-2 text-gray-300">
+                     <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+                     <span>{point}</span>
+                   </li>
+                 ))}
+               </ul>
+             </div>
+          )}
+
+          {/* Markdown / MDX */}
+          <Content />
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>

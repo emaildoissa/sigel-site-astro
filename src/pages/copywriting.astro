@@ -3,12 +3,23 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
 
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Copywriting Estratégico em Porto Alegre",
+  "description": "Copywriting focado em conversão. Anúncios, landing pages, email marketing. Psicologia de vendas e gatilhos mentais testados.",
+  "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+  "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+  "serviceType": "Copywriting"
+});
 ---
 
 <Base
   title="Copywriting Estratégico - Sigel | Palavras que Vendem em Porto Alegre"
   description="Copywriting focado em conversão. Anúncios, landing pages, email marketing. Psicologia de vendas e gatilhos mentais testados."
   canonical="/copywriting"
+  breadcrumbs={[{ name: "Copywriting", path: "/copywriting" }]}
+  schema={serviceSchema}
 >
   <Header client:load />
 

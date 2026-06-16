@@ -1,12 +1,20 @@
 ---
 import "../styles/global.css";
 
+interface Breadcrumb {
+  name: string;
+  path: string;
+}
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   ogType?: "website" | "article";
   canonical?: string;
+  schema?: string;
+  robots?: string;
+  breadcrumbs?: Breadcrumb[];
 }
 
 const {
@@ -15,9 +23,46 @@ const {
   ogImage,
   ogType = "website",
   canonical,
+  schema,
+  robots = "index, follow",
+  breadcrumbs,
 } = Astro.props;
 const siteUrl = "https://sigelinformatica.com.br";
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+const ogImageUrl = ogImage ? (ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/images/logo.png`;
+
+const breadcrumbSchema = breadcrumbs
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+        ...breadcrumbs.map((b, i) => ({
+          "@type": "ListItem" as const,
+          "position": i + 2,
+          "name": b.name,
+          "item": `${siteUrl}${b.path}`,
+        })),
+      ],
+    }
+  : null;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sigel Soluções em Informática",
+  "image": `${siteUrl}/images/logo.png`,
+  "url": siteUrl,
+  "telephone": "+5551991305583",
+  "email": "contato@sigelinformatica.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Icaraí, 1428 - Cristal",
+    "addressLocality": "Porto Alegre",
+    "addressRegion": "RS",
+    "addressCountry": "BR"
+  }
+};
 ---
 
 <!doctype html>
@@ -28,19 +73,27 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={robots} />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content={canonicalUrl} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {schema && <script type="application/ld+json" set:html={schema} />}
 
     <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

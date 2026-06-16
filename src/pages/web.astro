@@ -2,12 +2,57 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Desenvolvimento Web para PMEs em Porto Alegre",
+      "description": "Websites de alta performance para PMEs. Design estratégico, SEO otimizado, ultra rápido. Pronto para gerar vendas 24/7.",
+      "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+      "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+      "serviceType": "Desenvolvimento Web"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Preciso pagar mensalidade para manter o site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não pela criação ou código do site. O site passa a ser 100% seu. Você terá apenas os custos normais de infraestrutura: hospedagem e renovação do domínio anual, que são serviços pagos diretamente aos provedores como HostGator, Locaweb, AWS, etc."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Em quanto tempo meu site fica pronto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para sites corporativos e institucionais padrão, nosso prazo médio de entrega total é de 15 a 25 dias úteis, contando a partir do envio completo do material (como logo, manual da marca e aprovações do escopo)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês mesmos criam o conteúdo e os textos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de como preferir! Caso não possua equipe, oferecemos um serviço avulso especializado de Copywriting focado em vendas. Nossa equipe entrevistará você e escreverá todos os textos altamente persuasivos para suas páginas."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <Base
     title="Desenvolvimento Web - Sigel | Websites para PMEs em Porto Alegre"
     description="Websites de alta performance para PMEs. Design estratégico, SEO otimizado, ultra rápido. Pronto para gerar vendas 24/7."
     canonical="/web"
+    breadcrumbs={[{ name: "Desenvolvimento Web", path: "/web" }]}
+    schema={pageSchema}
 >
     <Header client:load />
 
