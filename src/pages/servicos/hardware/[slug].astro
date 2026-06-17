@@ -108,7 +108,7 @@ const servicos = {
 };
 
 const { slug } = Astro.props;
-const { titulo, description, h1, conteudo, preco, prazo, faqPergunta, faqResposta, icone } = servicos[slug];
+const { titulo, description, h1, conteudo, preco, prazo, faqPergunta, faqResposta, icone } = servicos[slug as keyof typeof servicos];
 
 const landingSchema = JSON.stringify({
   "@context": "https://schema.org",

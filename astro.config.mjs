@@ -29,7 +29,7 @@ export default defineConfig({
       serialize(item) {
         // Homepage
         if (item.url === 'https://sigelinformatica.com.br/') {
-          return { ...item, changefreq: 'weekly', priority: 1.0 };
+          return { ...item, changefreq: /** @type {any} */ ('weekly'), priority: 1.0 };
         }
         // Serviços principais
         if (
@@ -38,17 +38,17 @@ export default defineConfig({
           item.url.includes('/copywriting') ||
           item.url === 'https://sigelinformatica.com.br/servicos/'
         ) {
-          return { ...item, changefreq: 'monthly', priority: 0.9 };
+          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.9 };
         }
         // Planos e Sobre
         if (item.url.includes('/planos') || item.url.includes('/sobre')) {
-          return { ...item, changefreq: 'monthly', priority: 0.8 };
+          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.8 };
         }
         // Hardware/manutenção — incluída mas com menor prioridade
         if (item.url.includes('/hardware')) {
-          return { ...item, changefreq: 'monthly', priority: 0.6 };
+          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.6 };
         }
-        return { ...item, changefreq: 'monthly', priority: 0.7 };
+        return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.7 };
       },
     }),
   ],

@@ -70,3 +70,24 @@ body {
     outline: 2px solid #f65e37;
     outline-offset: 2px;
 }
+
+/* Floating WhatsApp Button Positioning */
+.wpp-float-container {
+    bottom: 1.5rem; /* ~24px (default for mobile) */
+    transition: bottom 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .wpp-float-container {
+        bottom: 2rem; /* ~32px (default for desktop) */
+    }
+}
+
+@media (max-w: 767px) {
+    body.has-mobile-cta .wpp-float-container {
+        bottom: 5.5rem !important; /* Clears standard bottom bar (~88px) */
+    }
+    body.has-mobile-cta-high .wpp-float-container {
+        bottom: 7.5rem !important; /* Clears high bottom bar (~120px) */
+    }
+}

@@ -16,6 +16,7 @@ interface Props {
   robots?: string;
   breadcrumbs?: Breadcrumb[];
   preloadImages?: string[];
+  bodyClass?: string;
 }
 
 const {
@@ -28,10 +29,11 @@ const {
   robots = "index, follow",
   breadcrumbs,
   preloadImages,
+  bodyClass,
 } = Astro.props;
 const siteUrl = "https://sigelinformatica.com.br";
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
-const ogImageUrl = ogImage ? (ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/images/logo.png`;
+const ogImageUrl = ogImage ? (ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/images/logo.webp`;
 
 const breadcrumbSchema = breadcrumbs
   ? {
@@ -53,7 +55,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Sigel Soluções em Informática",
-  "image": `${siteUrl}/images/logo.png`,
+  "image": `${siteUrl}/images/logo.webp`,
   "url": siteUrl,
   "telephone": "+5551991305583",
   "email": "contato@sigelinformatica.com.br",
@@ -137,7 +139,7 @@ const localBusinessSchema = {
     </script>
   </head>
 
-  <body>
+  <body class={bodyClass}>
     <slot />
   </body>
 </html>
