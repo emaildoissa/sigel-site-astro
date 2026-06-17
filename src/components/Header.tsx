@@ -19,7 +19,6 @@ export default function Header() {
         { label: 'Planos', href: '/planos' },
         { label: 'Blog', href: '/blog' },
         { label: 'Sobre nós', href: '/sobre' },
-        { label: 'Serviços de Hardware e Software', href: '/servicos/hardware' },
     ];
 
     return (

@@ -1,0 +1,283 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Header from "../../../components/Header.tsx";
+import Footer from "../../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: "troca-de-tela" }, props: { slug: "troca-de-tela" } },
+    { params: { slug: "formatacao-pc" }, props: { slug: "formatacao-pc" } },
+    { params: { slug: "troca-de-teclado" }, props: { slug: "troca-de-teclado" } },
+    { params: { slug: "upgrade-ssd" }, props: { slug: "upgrade-ssd" } },
+    { params: { slug: "manutencao-notebook" }, props: { slug: "manutencao-notebook" } },
+    { params: { slug: "assistencia-tecnica" }, props: { slug: "assistencia-tecnica" } },
+    { params: { slug: "recuperacao-dados" }, props: { slug: "recuperacao-dados" } },
+    { params: { slug: "reparo-carcaca" }, props: { slug: "reparo-carcaca" } },
+  ];
+}
+
+const servicos = {
+  "troca-de-tela": {
+    titulo: "Troca de Tela de Notebook em Porto Alegre | Sigel",
+    description: "Troca de tela de notebook quebrada ou trincada em Porto Alegre. Orçamento rápido, peças originais e garantia. Atendimento nos bairros Cristal, Tristeza e Centro.",
+    h1: "Troca de Tela de Notebook em Porto Alegre",
+    conteudo: "Se a tela do seu notebook quebrou, trincou ou está com manchas escuras, não precisa se desesperar. A troca de tela é um serviço rápido e resolve o problema por completo. Trabalhamos com telas originais e de alta qualidade para as principais marcas: Dell, Lenovo, HP, Acer, Samsung, Apple e outras. O serviço inclui remoção da tela danificada, instalação da nova peça e teste completo de funcionamento antes da entrega.",
+    preco: "R$ 250 a R$ 800",
+    prazo: "1 a 3 dias úteis",
+    faqPergunta: "Quanto custa trocar a tela do notebook em Porto Alegre?",
+    faqResposta: "O valor da troca de tela varia conforme o modelo do notebook e a disponibilidade da peça. Em média, o serviço custa entre <strong>R$ 250 e R$ 800</strong>, incluindo mão de obra e garantia. Peças muito específicas ou de modelos Apple podem ter valor maior.",
+    icone: "smart_display"
+  },
+  "formatacao-pc": {
+    titulo: "Formatação de PC e Notebook em Porto Alegre | Sigel",
+    description: "Formatação de computador em Porto Alegre com backup de dados. Windows lento ou com vírus? Formatamos seu PC sem perder seus arquivos. Atendimento presencial e remoto.",
+    h1: "Formatação de PC e Notebook em Porto Alegre",
+    conteudo: "Seu computador está lento, cheio de vírus ou apresentando erros estranhos? A formatação é a solução mais eficaz para devolver a performance original do seu PC. Nosso serviço inclui backup completo dos seus dados, instalação limpa do Windows com todas as atualizações, drivers atualizados e programas essenciais. Seu computador volta a funcionar como novo.",
+    preco: "A partir de R$ 120",
+    prazo: "4 a 8 horas",
+    faqPergunta: "Quanto custa formatar um notebook em Porto Alegre?",
+    faqResposta: "A formatação com instalação limpa do Windows e drivers custa a partir de <strong>R$ 120</strong>. Inclui backup básico dos arquivos, otimização do sistema e instalação de antivírus. Se precisar de backup avançado ou recuperação de dados, consulte valores adicionais.",
+    icone: "settings"
+  },
+  "troca-de-teclado": {
+    titulo: "Troca de Teclado de Notebook em Porto Alegre | Sigel",
+    description: "Troca de teclado de notebook com defeito em Porto Alegre. Teclas presas, derramamento de líquido ou falha elétrica? Orçamento sem compromisso.",
+    h1: "Troca de Teclado de Notebook em Porto Alegre",
+    conteudo: "Teclas presas, falhando ou pararam de funcionar? O teclado do notebook é um dos componentes mais usados e também um dos mais propensos a defeitos. Seja por derramamento de líquido, desgaste natural ou acúmulo de sujeira, a troca do teclado é a solução definitiva. Instalamos teclados originais e compatíveis para todas as marcas, devolvendo a digitação precisa e confortável para o seu dia a dia.",
+    preco: "R$ 150 a R$ 400",
+    prazo: "1 a 2 dias úteis",
+    faqPergunta: "Quanto custa trocar o teclado do notebook?",
+    faqResposta: "O valor da troca de teclado varia conforme o modelo do notebook. Em média, o serviço custa entre <strong>R$ 150 e R$ 400</strong>, incluindo a peça e a mão de obra. Modelos mais raros ou Apple podem ter valor superior.",
+    icone: "keyboard"
+  },
+  "upgrade-ssd": {
+    titulo: "Upgrade de HDD para SSD em Porto Alegre | Sigel",
+    description: "Upgrade de SSD em Porto Alegre. Transforme seu notebook lento em uma máquina rápida. Migração completa do sistema e dados. A partir de 2 horas.",
+    h1: "Upgrade de HDD para SSD em Porto Alegre",
+    conteudo: "O upgrade de HDD para SSD é a melhoria mais impactante que você pode fazer no seu computador. A diferença é gritante: o Windows inicia em segundos, programas abrem instantaneamente e o notebook parece novo. Realizamos a migração completa do seu sistema operacional e dados para o novo SSD, preservando todos os seus arquivos, configurações e programas exatamente como estavam.",
+    preco: "Mão de obra a partir de R$ 100 (SSD não incluso)",
+    prazo: "2 a 4 horas",
+    faqPergunta: "Vale a pena trocar HD por SSD?",
+    faqResposta: "Sim, é o upgrade com melhor custo-benefício para qualquer computador. Um SSD pode tornar um notebook de 10 anos mais rápido que um novo com HD tradicional. A mão de obra de migração custa a partir de <strong>R$ 100</strong>. O valor do SSD é cobrado à parte — consulte nossos preços.",
+    icone: "storage"
+  },
+  "manutencao-notebook": {
+    titulo: "Manutenção de Notebook em Porto Alegre | Sigel",
+    description: "Manutenção de notebook em Porto Alegre. Conserto, limpeza, upgrade e reparo de todas as marcas. Diagnóstico gratuito e orçamento sem compromisso.",
+    h1: "Manutenção de Notebook em Porto Alegre",
+    conteudo: "Seu notebook está com problemas? Oferecemos manutenção completa para notebooks em Porto Alegre: desde limpeza preventiva e troca de pasta térmica até reparos complexos em placas. Atendemos todas as marcas (Dell, Lenovo, HP, Acer, Samsung, Apple) e realizamos diagnóstico gratuito para identificar o problema antes de qualquer serviço. Trabalhamos com garantia em todos os serviços.",
+    preco: "Sob consulta (diagnóstico gratuito)",
+    prazo: "1 a 5 dias úteis conforme complexidade",
+    faqPergunta: "Quanto custa a manutenção de um notebook em Porto Alegre?",
+    faqResposta: "O valor depende do tipo de manutenção necessária. Oferecemos <strong>diagnóstico gratuito</strong> para identificar o problema. Manutenções preventivas (limpeza + troca de pasta térmica) a partir de <strong>R$ 80</strong>. Reparos mais complexos são orçados após a análise.",
+    icone: "build"
+  },
+  "assistencia-tecnica": {
+    titulo: "Assistência Técnica de Informática em Porto Alegre | Sigel",
+    description: "Assistência técnica de computadores e notebooks em Porto Alegre. Conserto, formatação, upgrade e suporte. Atendemos nos bairros Cristal, Tristeza, Menino Deus e Centro.",
+    h1: "Assistência Técnica de Informática em Porto Alegre",
+    conteudo: "Precisando de assistência técnica em Porto Alegre? A Sigel resolve. Somos especialistas em manutenção de computadores e notebooks há mais de 7 anos. Atendemos tanto presencialmente em nossa sede no bairro Cristal quanto via suporte remoto para toda a região metropolitana. Cuidamos desde problemas simples como formatação e limpeza até reparos complexos em placas-mãe e recuperação de dados.",
+    preco: "Sob consulta",
+    prazo: "Variável conforme o serviço",
+    faqPergunta: "Vocês atendem em domicílio em Porto Alegre?",
+    faqResposta: "Sim! Atendemos presencialmente em Porto Alegre, especialmente nos bairros <strong>Cristal, Tristeza, Menino Deus e Centro</strong>. Também oferecemos suporte remoto para toda a região metropolitana. Entre em contato pelo WhatsApp para agendar.",
+    icone: "support_agent"
+  },
+  "recuperacao-dados": {
+    titulo: "Recuperação de Dados em Porto Alegre | Sigel",
+    description: "Recuperação de dados de HD, SSD, pen drive e cartão de memória em Porto Alegre. Arquivos perdidos, apagados ou corrompidos? Nós recuperamos.",
+    h1: "Recuperação de Dados em Porto Alegre",
+    conteudo: "Perdeu arquivos importantes? Fotos, documentos do trabalho, projetos ou dados do cliente? Nossa equipe especializada em recuperação de dados utiliza ferramentas profissionais para resgatar informações de HDs, SSDs, pen drives e cartões de memória com problemas lógicos ou físicos. Trabalhamos em ambiente controlado para maximizar a taxa de sucesso sem danificar ainda mais o dispositivo.",
+    preco: "Sob consulta (orçamento após análise)",
+    prazo: "1 a 5 dias conforme gravidade",
+    faqPergunta: "É possível recuperar dados de um HD que queimou?",
+    faqResposta: "Depende do tipo de dano. Danos lógicos (arquivos apagados, formatados ou corrompidos) têm alta taxa de recuperação — acima de <strong>95%</strong>. Danos físicos (HD com clique, cabeçote danificado) exigem ambiente especializado e o valor é calculado após análise. Oferecemos orçamento gratuito.",
+    icone: "cloud_download"
+  },
+  "reparo-carcaca": {
+    titulo: "Reparo de Carcaça de Notebook em Porto Alegre | Sigel",
+    description: "Reparo de carcaça de notebook em Porto Alegre. Rachaduras, dobradiças quebradas, clips soltos. Conserto estético e funcional com peças de reposição.",
+    h1: "Reparo de Carcaça de Notebook em Porto Alegre",
+    conteudo: "A carcaça do notebook está rachada, a dobradiça soltou ou os clips de fixação quebraram? O reparo de carcaça é um serviço que vai além da estética — uma carcaça danificada pode comprometer a proteção dos componentes internos e até causar danos à tela ou placa. Realizamos reparos estruturais e substituição de peças plásticas para devolver a rigidez e segurança ao seu equipamento.",
+    preco: "R$ 80 a R$ 350",
+    prazo: "1 a 3 dias úteis",
+    faqPergunta: "Vale a pena consertar a carcaça do notebook?",
+    faqResposta: "Sim, principalmente se a carcaça danificada estiver comprometendo o funcionamento — como dobradiças soltas que forçam a tela ou rachaduras que expõem componentes internos. O reparo custa entre <strong>R$ 80 e R$ 350</strong> dependendo da extensão do dano e da necessidade de reposição de peças.",
+    icone: "construction"
+  }
+};
+
+const { slug } = Astro.props;
+const { titulo, description, h1, conteudo, preco, prazo, faqPergunta, faqResposta, icone } = servicos[slug];
+
+const landingSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": h1,
+      "description": description,
+      "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+      "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+      "serviceType": h1
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": faqPergunta,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faqResposta.replace(/<[^>]*>/g, "")
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o prazo de entrega do serviço?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `O prazo estimado é de ${prazo.toLowerCase()}, podendo variar conforme a demanda e disponibilidade de peças.`
+          }
+        }
+      ]
+    }
+  ]
+});
+---
+
+<Base
+  title={titulo}
+  description={description}
+  canonical={`/servicos/hardware/${slug}`}
+  breadcrumbs={[
+    { name: "Serviços", path: "/servicos" },
+    { name: "Hardware", path: "/servicos/hardware" },
+    { name: h1, path: `/servicos/hardware/${slug}` }
+  ]}
+  schema={landingSchema}
+>
+  <Header client:idle />
+
+  <main class="mx-auto w-full max-w-7xl px-5 md:px-12 pt-10 md:pt-16 pb-16">
+    {/* Hero */}
+    <section class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full w-fit mb-6">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-gray-300">Serviço em Porto Alegre</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+        <div class="flex-1">
+          <h1 class="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">{h1}</h1>
+          <p class="mt-4 text-lg text-gray-300 leading-relaxed">{conteudo}</p>
+
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Preciso%20de%20${encodeURIComponent(h1.toLowerCase())}%20em%20Porto%20Alegre."
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent hover:bg-accent-dark text-white font-bold text-lg h-14 px-8 shadow-lg transition-all hover:scale-105 active:scale-[0.98]"
+            >
+              <span class="material-symbols-outlined">chat</span>
+              <span>Solicitar Orçamento</span>
+            </a>
+            <a
+              href="/servicos/hardware"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-transparent border border-gray-700 hover:bg-white/5 text-white font-bold text-lg h-14 px-8 transition-all"
+            >
+              <span>Ver Todos os Serviços</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full md:w-72 shrink-0">
+          <div class="bg-surface-dark border border-white/10 rounded-3xl p-8 text-center">
+            <div class="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-5">
+              <span class="material-symbols-outlined text-primary text-5xl">{icone}</span>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Investimento</p>
+                <p class="text-xl font-black text-white">{preco}</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Prazo</p>
+                <p class="text-lg font-bold text-white">{prazo}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section class="mt-20 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-8">Dúvidas sobre {h1.replace(/ em Porto Alegre$/, "")}</h2>
+      <div class="flex flex-col gap-4">
+        <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+          <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+            <span>{faqPergunta}</span>
+            <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+          </summary>
+          <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed" set:html={faqResposta} />
+        </details>
+        <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+          <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+            <span>Qual o prazo de entrega do serviço?</span>
+            <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+          </summary>
+          <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+            O prazo estimado é de {prazo.toLowerCase()}, podendo variar conforme a demanda e disponibilidade de peças.
+          </div>
+        </details>
+        <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+          <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+            <span>Vocês dão garantia?</span>
+            <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+          </summary>
+          <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+            Sim! Todo serviço realizado pela Sigel tem garantia. Se o problema persistir após o reparo, você volta sem custo adicional. Consulte os prazos de garantia no momento do orçamento.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    {/* Outros serviços de hardware */}
+    <section class="mt-20">
+      <h2 class="text-2xl font-bold text-white mb-6">Outros Serviços de Hardware</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {Object.entries(servicos).filter(([key]) => key !== slug).slice(0, 4).map(([key, s]) => (
+          <a
+            href={`/servicos/hardware/${key}`}
+            class="bg-surface-dark border border-white/10 rounded-2xl p-6 text-center hover:border-primary/50 transition-all hover:-translate-y-1 group"
+          >
+            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-2xl">{s.icone}</span>
+            </div>
+            <p class="text-sm font-bold text-white">{s.titulo.replace(" em Porto Alegre | Sigel", "")}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* CTA Final */}
+    <section class="mt-20 text-center">
+      <div class="bg-surface-dark border border-gray-800 rounded-[2rem] p-10 md:p-16">
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Solicite um Orçamento</h2>
+        <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">Diagnóstico gratuito e orçamento sem compromisso. Respondemos em poucos minutos.</p>
+        <a
+          href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Preciso%20de%20${encodeURIComponent(h1.toLowerCase())}%20em%20Porto%20Alegre."
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-accent hover:bg-accent-dark text-white font-bold text-lg h-16 px-10 shadow-lg transition-all hover:scale-105 active:scale-[0.98]"
+        >
+          <span class="material-symbols-outlined">chat</span>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
