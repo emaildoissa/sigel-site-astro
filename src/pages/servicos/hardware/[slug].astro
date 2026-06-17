@@ -1,6 +1,6 @@
 ---
 import Base from "../../../layouts/Base.astro";
-import Header from "../../../components/Header.tsx";
+import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 
 export async function getStaticPaths() {
@@ -157,7 +157,7 @@ const landingSchema = JSON.stringify({
   ]}
   schema={landingSchema}
 >
-  <Header client:idle />
+  <Header />
 
   <main class="mx-auto w-full max-w-7xl px-5 md:px-12 pt-10 md:pt-16 pb-16">
     {/* Hero */}

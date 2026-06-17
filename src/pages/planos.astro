@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 // Dados de capacidade
@@ -15,7 +15,7 @@ const progressPercent = Math.round((filledVagas / totalVagas) * 100);
     canonical="/planos"
     breadcrumbs={[{ name: "Planos", path: "/planos" }]}
 >
-    <Header client:idle />
+    <Header />
 
     <main
         class="flex-1 w-full max-w-7xl mx-auto px-5 md:px-12 md:pt-16 md:pb-24 flex flex-col gap-12 md:gap-20"

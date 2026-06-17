@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import Header from "../../components/Header.tsx";
+import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
 const blogSchema = JSON.stringify({
@@ -26,7 +26,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   breadcrumbs={[{ name: "Blog", path: "/blog" }]}
   schema={blogSchema}
 >
-  <Header client:idle />
+  <Header />
 
   <section class="px-5 md:px-12 py-32 md:py-40 bg-[#050505] min-h-screen">
     <div class="max-w-7xl mx-auto">

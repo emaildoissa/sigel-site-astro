@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const serviceSchema = JSON.stringify({
@@ -21,7 +21,7 @@ const serviceSchema = JSON.stringify({
     breadcrumbs={[{ name: "Automação", path: "/automacao" }]}
     schema={serviceSchema}
 >
-    <Header client:idle />
+    <Header />
 
     <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-4 md:pt-12">
         {/* ===== HERO SECTION ===== */}

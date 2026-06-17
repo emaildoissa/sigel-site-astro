@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const contactSchema = JSON.stringify({
@@ -18,10 +18,10 @@ const contactSchema = JSON.stringify({
   breadcrumbs={[{ name: "Contato", path: "/contato" }]}
   schema={contactSchema}
 >
-  <Header client:idle />
+  <Header />
 
   <section class="relative px-5 md:px-12 pt-32 pb-16 md:pt-40 md:pb-24 w-full bg-[#050505] overflow-hidden min-h-[70vh] flex items-center">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 4px 4px;"></div>
     <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
     
     <div class="max-w-7xl mx-auto w-full relative z-10 flex flex-col md:flex-row gap-12 md:gap-24">

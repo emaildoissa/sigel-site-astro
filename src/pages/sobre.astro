@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const aboutSchema = JSON.stringify({
@@ -25,7 +25,7 @@ const aboutSchema = JSON.stringify({
     breadcrumbs={[{ name: "Sobre", path: "/sobre" }]}
     schema={aboutSchema}
 >
-    <Header client:idle />
+    <Header />
 
     <main
         <main

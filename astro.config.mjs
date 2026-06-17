@@ -2,14 +2,12 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sigelinformatica.com.br',
   integrations: [
-    react(),
     sitemap({
       // Personaliza prioridade e frequência por página
       customPages: [
@@ -50,8 +48,5 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: ['@astrojs/react'],
-    },
   },
 });

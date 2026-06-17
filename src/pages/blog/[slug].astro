@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import Header from "../../components/Header.tsx";
+import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
@@ -51,7 +51,7 @@ const articleSchema = JSON.stringify({
     { name: post.data.title, path: `/blog/${post.id}` },
   ]}
 >
-  <Header client:idle />
+  <Header />
 
   <article class="px-5 md:px-12 py-32 md:py-40 bg-[#050505] min-h-screen">
     <div class="max-w-4xl mx-auto">

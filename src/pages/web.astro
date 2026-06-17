@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const pageSchema = JSON.stringify({
@@ -55,7 +55,7 @@ const pageSchema = JSON.stringify({
     schema={pageSchema}
     preloadImages={["https://lh3.googleusercontent.com/aida-public/AB6AXuBftRyDFLEPL_JCZ5K9ezyBFMzDFLBzcufSRTMt2rLi0r26deRSIh41rVZylPGOLfwvlrr4w36zQVEYstH_k263tJIwNoydIe5EcqHG3DTZXRNNJ5VfMbeHBO0YePNfHxsKrK8mD-8nDZWeTx9WG9PyexZsX4IfsQjoaXgnrFsdDAELMYZoCScrj1WmhgZF6MJ56j69Hi7wLsbnUnAIN6wXg4u6k8vY4POf4mUy3YW0-eRn1g1xN4H7YL7uJKVZlo3gMIxfm1JFfM8"]}
 >
-    <Header client:idle />
+    <Header />
 
     <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-8 md:pt-16">
         {/* ===== HERO SECTION ===== */}

@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.tsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const webSchema = JSON.stringify({
@@ -56,7 +56,7 @@ const webSchema = JSON.stringify({
   schema={webSchema}
   preloadImages={["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"]}
 >
-  <Header client:idle />
+  <Header />
 
   {/* ===== HERO SECTION ===== */}
   <section
@@ -64,7 +64,8 @@ const webSchema = JSON.stringify({
   >
     {/* Stardust Pattern Background */}
     <div
-      class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"
+      class="absolute inset-0 opacity-20"
+      style="background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 4px 4px;"
     >
     </div>
 
@@ -163,13 +164,15 @@ const webSchema = JSON.stringify({
         </div>
 
         {/* RIGHT: Laptop Image with Floating Cards */}
-        <div class="hidden md:flex w-full md:w-1/2 relative justify-center">
+        <div class="flex w-full md:w-1/2 relative justify-center mt-10 md:mt-0">
           <div
-            class="relative w-full max-w-lg aspect-square rounded-[3rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-2xl group"
+            class="relative w-full max-w-sm md:max-w-lg aspect-square rounded-[3rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-2xl group"
           >
             <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
               alt="Dashboard overview"
+              width="600"
+              height="600"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               fetchpriority="high"
             />
@@ -238,7 +241,8 @@ const webSchema = JSON.stringify({
     class="bg-gradient-to-r from-surface-dark to-[#0f1424] border-y border-white/5 text-white py-12 md:py-16 px-5 md:px-12 w-full relative overflow-hidden"
   >
     <div
-      class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 blur-[1px]"
+      class="absolute top-0 left-0 w-full h-full opacity-[0.04]"
+      style="background-image: linear-gradient(45deg, rgba(255,255,255,0.5) 25%, transparent 25%), linear-gradient(-45deg, rgba(255,255,255,0.5) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.5) 75%), linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.5) 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px;"
     >
     </div>
 
