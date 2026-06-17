@@ -30,13 +30,16 @@ const whatsappUrl = `https://wa.me/${telefone}?text=${whatsappMsg}`;
           </button>
         )}
         <a href="/" class="cursor-pointer flex items-center gap-4">
-          <img
-            src="/images/logo.png"
-            alt="Sigel Soluções em Informática"
-            width="283"
-            height="170"
-            class="h-24 md:h-32 lg:h-[9rem] w-auto object-contain py-1"
-          />
+          <picture>
+            <source srcset="/images/logo.webp" type="image/webp" />
+            <img
+              src="/images/logo.png"
+              alt="Sigel Soluções em Informática"
+              width="283"
+              height="170"
+              class="h-24 md:h-32 lg:h-[9rem] w-auto object-contain py-1"
+            />
+          </picture>
         </a>
       </div>
 

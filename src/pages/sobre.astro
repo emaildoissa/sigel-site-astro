@@ -36,11 +36,14 @@ const aboutSchema = JSON.stringify({
             <div
                 class="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-sm mb-6 bg-gray-200"
             >
-                <img
-                    alt="Equipe Sigel Soluções em Informática"
-                    class="w-full h-full object-cover"
-                    src="/images/quemsomos.jpeg"
-                />
+                <picture>
+                    <source srcset="/images/quemsomos.webp" type="image/webp" />
+                    <img
+                        alt="Equipe Sigel Soluções em Informática"
+                        class="w-full h-full object-cover"
+                        src="/images/quemsomos.jpeg"
+                    />
+                </picture>
 
                 {/* Gradient Overlay */}
                 <div
