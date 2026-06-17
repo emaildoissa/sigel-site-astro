@@ -2,15 +2,23 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+const contactSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contato Sigel | Criação de Sites e Manutenção de TI em Porto Alegre",
+  "description": "Entre em contato com a Sigel Soluções em Informática para criação de sites, programas e manutenção em Porto Alegre, RS."
+});
 ---
 
 <Base
-  title="Contato Sigel | Sites e TI em Porto Alegre"
+  title="Contato Sigel | Criação de Sites e Manutenção de TI em Porto Alegre"
   description="Entre em contato com a Sigel Soluções em Informática para criação de sites, programas e manutenção em Porto Alegre, RS."
   canonical="/contato"
   breadcrumbs={[{ name: "Contato", path: "/contato" }]}
+  schema={contactSchema}
 >
-  <Header client:load />
+  <Header client:idle />
 
   <section class="relative px-5 md:px-12 pt-32 pb-16 md:pt-40 md:pb-24 w-full bg-[#050505] overflow-hidden min-h-[70vh] flex items-center">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
@@ -23,7 +31,7 @@ import Footer from "../components/Footer.astro";
           Fale com a <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Sigel</span>
         </h1>
         <p class="text-gray-400 text-lg leading-relaxed">
-          Sediados em <strong class="text-white">Porto Alegre, RS</strong>, mas atendendo todo o Brasil. Pronto para escalar suas vendas com um novo site ou garantir a melhor manutenção de TI para sua empresa?
+          Sediados em <strong class="text-white">Porto Alegre, RS</strong>, mas atendendo todo o Brasil. Pronto para escalar suas vendas com um <a href="/web" class="text-primary hover:text-accent transition-colors">novo site</a>, contratar <a href="/copywriting" class="text-primary hover:text-accent transition-colors">copywriting estratégico</a>, <a href="/automacao" class="text-primary hover:text-accent transition-colors">automatizar processos</a> ou garantir a melhor <a href="/servicos" class="text-primary hover:text-accent transition-colors">manutenção de TI</a> para sua empresa?
         </p>
 
         <div class="mt-8 flex flex-col gap-8">
@@ -32,7 +40,7 @@ import Footer from "../components/Footer.astro";
               <span class="material-symbols-outlined">location_on</span>
             </div>
             <div>
-              <h3 class="text-white font-bold text-xl mb-1">Nosso Endereço</h3>
+              <h2 class="text-white font-bold text-xl mb-1">Nosso Endereço</h2>
               <p class="text-gray-400">
                 Av. Icaraí, 1428 - Cristal<br />
                 Porto Alegre - RS, 90810-000<br />
@@ -46,7 +54,7 @@ import Footer from "../components/Footer.astro";
               <span class="material-symbols-outlined">call</span>
             </div>
             <div>
-              <h3 class="text-white font-bold text-xl mb-1">Telefones (WhatsApp)</h3>
+              <h2 class="text-white font-bold text-xl mb-1">Telefones (WhatsApp)</h2>
               <a href="https://wa.me/555191305583" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-colors">
                 (51) 99130-5583
               </a>
@@ -61,7 +69,7 @@ import Footer from "../components/Footer.astro";
               <span class="material-symbols-outlined">mail</span>
             </div>
             <div>
-              <h3 class="text-white font-bold text-xl mb-1">E-mail</h3>
+              <h2 class="text-white font-bold text-xl mb-1">E-mail</h2>
               <a href="mailto:contato@sigelinformatica.com.br" class="text-gray-400 hover:text-white transition-colors">
                 contato@sigelinformatica.com.br
               </a>
@@ -73,7 +81,7 @@ import Footer from "../components/Footer.astro";
       {/* Right Content - CTA Card */}
       <div class="w-full md:w-1/2 flex items-center justify-center">
         <div class="bg-surface-dark border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl w-full max-w-md">
-          <h3 class="text-2xl font-bold text-white mb-4">Suporte Ágil e Direto</h3>
+          <h2 class="text-2xl font-bold text-white mb-4">Suporte Ágil e Direto</h2>
           <p class="text-gray-400 mb-8">
             Não gostamos de formulários longos. Clique no botão abaixo e fale diretamente com um especialista pelo WhatsApp.
           </p>

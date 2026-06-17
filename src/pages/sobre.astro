@@ -2,6 +2,20 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Sobre a Sigel Soluções em Informática",
+  "description": "Conheça a Sigel Soluções em Informática. Desde 2018 ajudamos PMEs a crescer no digital com tecnologia, design e copywriting estratégico.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Sigel Soluções em Informática",
+    "description": "Desde 2018 descomplicando tecnologia e marketing para PMEs brasileiras.",
+    "foundingDate": "2018",
+    "url": "https://sigelinformatica.com.br"
+  }
+});
 ---
 
 <Base
@@ -9,8 +23,9 @@ import Footer from "../components/Footer.astro";
     description="Conheça a Sigel Soluções em Informática. Desde 2018 ajudamos PMEs a crescer no digital com tecnologia, design e copywriting estratégico."
     canonical="/sobre"
     breadcrumbs={[{ name: "Sobre", path: "/sobre" }]}
+    schema={aboutSchema}
 >
-    <Header client:load />
+    <Header client:idle />
 
     <main
         <main
@@ -63,8 +78,8 @@ import Footer from "../components/Footer.astro";
                     Em um mundo cada vez mais digital, percebemos que muitos
                     empreendedores se sentiam perdidos. Decidimos ser o parceiro
                     que traduz "tecnês" para resultados reais de negócios,
-                    unindo design de altíssimo padrão, tecnologia de ponta e
-                    copywriting focado inteiramente em conversão.
+                    unindo <a href="/web" class="text-primary hover:text-accent transition-colors">design e desenvolvimento web</a> de altíssimo padrão, tecnologia de ponta e
+                    <a href="/copywriting" class="text-primary hover:text-accent transition-colors">copywriting estratégico</a> focado inteiramente em conversão.
                 </p>
             </div>
         </div>
@@ -96,7 +111,9 @@ import Footer from "../components/Footer.astro";
                         Focados em elevar o patamar de Pequenas e Médias
                         Empresas (PMEs) de norte a sul do país, garantindo
                         suporte remoto impecável e presença dedicada em capitais
-                        selecionadas. Atuamos em todo o Brasil.
+                        selecionadas. Oferecemos <a href="/automacao" class="text-primary hover:text-accent transition-colors">automação de processos</a>,
+                        <a href="/web" class="text-primary hover:text-accent transition-colors">desenvolvimento web</a>, <a href="/copywriting" class="text-primary hover:text-accent transition-colors">copywriting</a> e
+                        <a href="/servicos" class="text-primary hover:text-accent transition-colors">suporte de TI</a> em todo o Brasil.
                     </p>
                 </div>
             </div>

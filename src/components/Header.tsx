@@ -11,12 +11,13 @@ export default function Header() {
     };
 
     const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
-    const isActive = (path: string) => currentPath === path || (path === '/servicos' && currentPath.startsWith('/servicos'));
+    const isActive = (path: string) => currentPath === path || (path === '/servicos' && currentPath.startsWith('/servicos')) || (path === '/blog' && currentPath.startsWith('/blog'));
 
     const navLinks = [
         { label: 'Início', href: '/' },
         { label: 'Serviços', href: '/servicos' },
         { label: 'Planos', href: '/planos' },
+        { label: 'Blog', href: '/blog' },
         { label: 'Sobre nós', href: '/sobre' },
         { label: 'Serviços de Hardware e Software', href: '/servicos/hardware' },
     ];

@@ -2,6 +2,19 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
+
+const servicesSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Serviços da Sigel",
+  "description": "Desenvolvimento web, copywriting estratégico e automação sob medida para PMEs brasileiras.",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Desenvolvimento Web", "url": "https://sigelinformatica.com.br/web" },
+    { "@type": "ListItem", "position": 2, "name": "Copywriting Estratégico", "url": "https://sigelinformatica.com.br/copywriting" },
+    { "@type": "ListItem", "position": 3, "name": "Automação Sob Medida", "url": "https://sigelinformatica.com.br/automacao" },
+    { "@type": "ListItem", "position": 4, "name": "Hardware e Suporte de TI", "url": "https://sigelinformatica.com.br/servicos/hardware" }
+  ]
+});
 ---
 
 <Base
@@ -9,8 +22,9 @@ import Footer from "../components/Footer.astro";
     description="Desenvolvimento web, copywriting estratégico e automação sob medida. Soluções especializadas para pequenas e médias empresas brasileiras."
     canonical="/servicos"
     breadcrumbs={[{ name: "Serviços", path: "/servicos" }]}
+    schema={servicesSchema}
 >
-    <Header client:load />
+    <Header client:idle />
 
     <main class="flex-1 pb-24 md:pb-32 w-full max-w-7xl mx-auto md:px-12">
         {/* Hero Section - EXATO DO ORIGINAL */}

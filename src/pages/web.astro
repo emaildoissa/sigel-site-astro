@@ -53,8 +53,9 @@ const pageSchema = JSON.stringify({
     canonical="/web"
     breadcrumbs={[{ name: "Desenvolvimento Web", path: "/web" }]}
     schema={pageSchema}
+    preloadImages={["https://lh3.googleusercontent.com/aida-public/AB6AXuBftRyDFLEPL_JCZ5K9ezyBFMzDFLBzcufSRTMt2rLi0r26deRSIh41rVZylPGOLfwvlrr4w36zQVEYstH_k263tJIwNoydIe5EcqHG3DTZXRNNJ5VfMbeHBO0YePNfHxsKrK8mD-8nDZWeTx9WG9PyexZsX4IfsQjoaXgnrFsdDAELMYZoCScrj1WmhgZF6MJ56j69Hi7wLsbnUnAIN6wXg4u6k8vY4POf4mUy3YW0-eRn1g1xN4H7YL7uJKVZlo3gMIxfm1JFfM8"]}
 >
-    <Header client:load />
+    <Header client:idle />
 
     <main class="flex-1 w-full max-w-7xl mx-auto md:px-12 pt-8 md:pt-16">
         {/* ===== HERO SECTION ===== */}
@@ -110,7 +111,7 @@ const pageSchema = JSON.stringify({
                     alt="Modern laptop displaying analytics dashboard and code"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftRyDFLEPL_JCZ5K9ezyBFMzDFLBzcufSRTMt2rLi0r26deRSIh41rVZylPGOLfwvlrr4w36zQVEYstH_k263tJIwNoydIe5EcqHG3DTZXRNNJ5VfMbeHBO0YePNfHxsKrK8mD-8nDZWeTx9WG9PyexZsX4IfsQjoaXgnrFsdDAELMYZoCScrj1WmhgZF6MJ56j69Hi7wLsbnUnAIN6wXg4u6k8vY4POf4mUy3YW0-eRn1g1xN4H7YL7uJKVZlo3gMIxfm1JFfM8"
-                    loading="lazy"
+                    fetchpriority="high"
                 />
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-secondary/60 dark:from-background-dark to-transparent opacity-80"
@@ -648,7 +649,7 @@ const pageSchema = JSON.stringify({
                         >
                             Depende de como preferir! Caso não possua equipe,
                             oferecemos um serviço avulso especializado de
-                            Copywriting focado em vendas. Nossa equipe
+                            <a href="/copywriting" class="text-primary hover:text-accent transition-colors">Copywriting focado em vendas</a>. Nossa equipe
                             entrevistará você e escreverá todos os textos
                             altamente persuasivos para suas páginas.
                         </div>
@@ -671,7 +672,7 @@ const pageSchema = JSON.stringify({
                 </h3>
                 <p class="text-gray-300 text-lg">
                     Solicite um orçamento personalizado para entender qual o
-                    melhor caminho técnico para seu tráfego hoje.
+                    melhor caminho técnico para seu tráfego hoje. Quer <a href="/automacao" class="text-primary hover:text-accent transition-colors">automatizar processos</a> ou precisa de <a href="/servicos/hardware" class="text-primary hover:text-accent transition-colors">suporte de TI</a>? Também atendemos.
                 </p>
             </div>
 

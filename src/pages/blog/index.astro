@@ -4,17 +4,29 @@ import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.astro";
 
+const blogSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog Sigel | Artigos sobre Web, TI e Negócios para PMEs",
+  "description": "Insights, tutoriais e dicas de negócio para acelerar o crescimento da sua empresa no digital.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": []
+  }
+});
+
 const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Base
-  title="Blog Sigel | Artigos sobre Desenvolvimento Web e TI"
+  title="Blog Sigel | Artigos sobre Web, TI e Negócios para PMEs"
   description="Fique por dentro das novidades sobre criação de sites, automação, copywriting e manutenção de informática em Porto Alegre."
   canonical="/blog"
   breadcrumbs={[{ name: "Blog", path: "/blog" }]}
+  schema={blogSchema}
 >
-  <Header client:load />
+  <Header client:idle />
 
   <section class="px-5 md:px-12 py-32 md:py-40 bg-[#050505] min-h-screen">
     <div class="max-w-7xl mx-auto">

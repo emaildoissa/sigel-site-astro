@@ -3,45 +3,60 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
 
-const faqSchema = JSON.stringify({
+const webSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Qual o prazo de entrega padrão?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende estritamente do escopo do projeto e funcionalidades pedidas. No entanto, para sites institucionais completos, costumam ser entregues entre 15 a 30 dias úteis após a aprovação do briefing inicial."
+      "@type": "WebSite",
+      "name": "Sigel Soluções em Informática",
+      "url": "https://sigelinformatica.com.br",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sigelinformatica.com.br/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     },
     {
-      "@type": "Question",
-      "name": "Vocês atendem clientes fora da região de origem?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Totalmente! Somos uma agência digital nativa, por isso atendemos empresas e clientes em todo o Brasil (e no exterior) de forma 100% remota com a mesma proximidade, suporte e eficiência de um trabalho local."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto custa o serviço na média?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nossos projetos são criados sob medida de acordo com as metas e necessidades de cada negócio, não acreditamos em \"pacotes prontos\". Para entender melhor, recomendamos solicitar o nosso diagnóstico gratuito para traçarmos um orçamento de alta precisão."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual o prazo de entrega padrão?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende estritamente do escopo do projeto e funcionalidades pedidas. No entanto, para sites institucionais completos, costumam ser entregues entre 15 a 30 dias úteis após a aprovação do briefing inicial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem clientes fora da região de origem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Totalmente! Somos uma agência digital nativa, por isso atendemos empresas e clientes em todo o Brasil (e no exterior) de forma 100% remota com a mesma proximidade, suporte e eficiência de um trabalho local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa o serviço na média?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nossos projetos são criados sob medida de acordo com as metas e necessidades de cada negócio, não acreditamos em \"pacotes prontos\". Para entender melhor, recomendamos solicitar o nosso diagnóstico gratuito para traçarmos um orçamento de alta precisão."
+          }
+        }
+      ]
     }
   ]
 });
 ---
 
 <Base
-  title="Sigel | Sites e Manutenção de Informática em Porto Alegre"
-  description="Criação de sites e programas e manutenção de informática. Soluções completas para a sua empresa em Porto Alegre."
+  title="Sigel | Criação de Sites e Manutenção de Informática em Porto Alegre"
+  description="Criação de sites, sistemas e manutenção de informática em Porto Alegre. Soluções completas para PMEs crescerem no digital."
   canonical="/"
-  schema={faqSchema}
+  schema={webSchema}
+  preloadImages={["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"]}
 >
-  <Header client:load />
+  <Header client:idle />
 
   {/* ===== HERO SECTION ===== */}
   <section
@@ -156,7 +171,7 @@ const faqSchema = JSON.stringify({
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
               alt="Dashboard overview"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              loading="lazy"
+              fetchpriority="high"
             />
 
             <div

@@ -15,7 +15,7 @@ const progressPercent = Math.round((filledVagas / totalVagas) * 100);
     canonical="/planos"
     breadcrumbs={[{ name: "Planos", path: "/planos" }]}
 >
-    <Header client:load />
+    <Header client:idle />
 
     <main
         class="flex-1 w-full max-w-7xl mx-auto px-5 md:px-12 md:pt-16 md:pb-24 flex flex-col gap-12 md:gap-20"
@@ -182,7 +182,7 @@ const progressPercent = Math.round((filledVagas / totalVagas) * 100);
                                 >
                                 <span
                                     class="font-bold text-white text-base md:text-lg"
-                                    >Website Institucional</span
+                                    ><a href="/web" class="hover:text-primary transition-colors">Website Institucional</a></span
                                 >
                             </div>
                             <span
@@ -202,7 +202,7 @@ const progressPercent = Math.round((filledVagas / totalVagas) * 100);
                                 >
                                 <span
                                     class="font-bold text-white text-base md:text-lg"
-                                    >E-commerce / Lojas</span
+                                    ><a href="/web" class="hover:text-primary transition-colors">E-commerce / Lojas</a></span
                                 >
                             </div>
                             <span
@@ -242,7 +242,7 @@ const progressPercent = Math.round((filledVagas / totalVagas) * 100);
                                 >
                                 <span
                                     class="font-bold text-white text-base md:text-lg"
-                                    >Automação & Copy</span
+                                    ><a href="/automacao" class="hover:text-primary transition-colors">Automação</a> & <a href="/copywriting" class="hover:text-primary transition-colors">Copy</a></span
                                 >
                             </div>
                             <span

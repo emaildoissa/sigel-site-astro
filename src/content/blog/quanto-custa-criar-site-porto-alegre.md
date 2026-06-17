@@ -1,6 +1,6 @@
 ---
 title: "Quanto Custa Criar um Site em Porto Alegre? [Guia 2026]"
-description: "Descubra os preços, prazos e tipos de site para pequenas empresas em Porto Alegre. Guia completo com tabela de custos, dicas para economizar e como escolher a melhor agência."
+description: "Preços e prazos para criar site profissional em Porto Alegre. Guia com tabela de custos, dicas para economizar e como escolher a melhor agência."
 pubDate: 2026-06-16
 author: "Equipe Sigel"
 image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
@@ -44,7 +44,7 @@ Quando você contrata a criação de um site profissional, estes itens normalmen
 Alguns fatores aumentam o investimento:
 
 ### Integrações com Sistemas
-Conectar o site com seu CRM, sistema de agendamento ou ferramentas de pagamento exige mais horas de desenvolvimento.
+Conectar o site com seu CRM, sistema de agendamento ou ferramentas de pagamento exige mais horas de desenvolvimento. Para empresas que buscam [automação de processos](/automacao), criamos fluxos inteligentes que integram o site com WhatsApp, agendas e bancos de dados.
 
 ### Prazos Apertados
 Precisa do site em 7 dias? A alocação prioritária da equipe tem custo adicional.
@@ -56,8 +56,8 @@ Precisa do site em 7 dias? A alocação prioritária da equipe tem custo adicion
 
 Muitas empresas em Porto Alegre caem na tentação dos "sites prontos" de plataformas como Wix ou GoDaddy. Eles são mais baratos? Sim. Mas trazem desvantagens sérias:
 
-| Aspecto | Site Pronto (Wix, GoDaddy) | Site Personalizado |
-|---|---|---|
+| Aspecto | Site Pronto (Wix, GoDaddy) | [Site Personalizado](/web) |
+|---|---|---|---|
 | SEO | Limitado, difícil de ranquear | Estrutura otimizada para o Google |
 | Velocidade | Lento, cheio de código desnecessário | Rápido, carrega em menos de 2s |
 | Design | Template igual ao de milhares de sites | Exclusivo para sua marca |
@@ -79,7 +79,7 @@ Sim! Somos uma agência digital nativa — atendemos empresas em todo o Brasil d
 Procure por: portfólio com cases reais, transparência nos prazos, suporte pós-entrega e, principalmente, uma agência que entenda do seu negócio, não só de tecnologia.
 
 ### Vocês criam o conteúdo do site também?
-Oferecemos serviço de **copywriting estratégico** separadamente. Se você não tem equipe de marketing, nossa equipe de redatores entrevista você e produz textos persuasivos focados em conversão.
+Oferecemos serviço de **[copywriting estratégico](/copywriting)** separadamente. Se você não tem equipe de marketing, nossa equipe de redatores entrevista você e produz textos persuasivos focados em conversão.
 
 ---
 
