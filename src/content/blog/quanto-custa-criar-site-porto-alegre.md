@@ -9,6 +9,8 @@ keyTakeaways:
   - "Lojas virtuais (e-commerce) têm investimento inicial a partir de R$ 5.000"
   - "O prazo médio de entrega é de 15 a 30 dias úteis"
   - "Manutenção mensal não é obrigatória — você pode pagar só quando precisar"
+category: "web"
+readingTime: 8
 ---
 
 Se você é dono de uma pequena ou média empresa em **Porto Alegre** e quer saber **quanto custa criar um site profissional**, este guia é para você.

@@ -3,11 +3,14 @@ title: "Teclado com Defeito? Como Resolver e Vantagens de Trocar"
 description: "Teclado do notebook falhando? Guia com causas comuns, soluções rápidas e benefícios da troca. Assistência técnica em Porto Alegre."
 pubDate: 2026-06-17
 author: "Equipe Sigel"
+image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1200&q=80"
 keyTakeaways:
   - "Sujeira e líquidos são as causas mais comuns de defeitos no teclado"
   - "Teclado digitando números em vez de letras é apenas Num Lock ativo, não defeito"
   - "Limpeza com ar comprimido resolve casos superficiais"
   - "Trocar o teclado restaura a produtividade e valoriza o notebook"
+category: "hardware"
+readingTime: 5
 ---
 
 O teclado é a ferramenta principal para a inserção de informações em um notebook, sendo essencial para a produtividade diária. No entanto, por ser um componente exposto, ele é suscetível a diversos problemas que podem variar de simples falhas de configuração a danos físicos permanentes. Entender se o seu teclado precisa de uma limpeza, um ajuste de software ou uma substituição completa é fundamental para manter o bom funcionamento do seu equipamento.

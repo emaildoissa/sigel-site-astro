@@ -10,6 +10,8 @@ const blog = defineCollection({
     author: z.string().default('Equipe Sigel'),
     image: z.string().optional(),
     keyTakeaways: z.array(z.string()).optional(),
+    category: z.enum(["web", "hardware", "automacao", "copywriting", "negocios"]).optional(),
+    readingTime: z.number().optional(),
   }),
 });
 

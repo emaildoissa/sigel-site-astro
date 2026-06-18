@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import BlogCard from "../../components/BlogCard.astro";
 
 const blogSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -17,6 +18,14 @@ const blogSchema = JSON.stringify({
 
 const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = [
+  { id: "all", label: "Todas" },
+  { id: "web", label: "Web" },
+  { id: "hardware", label: "Hardware" },
+  { id: "automacao", label: "Automação" },
+  { id: "copywriting", label: "Copywriting" },
+];
 ---
 
 <Base
@@ -26,48 +35,119 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   breadcrumbs={[{ name: "Blog", path: "/blog" }]}
   schema={blogSchema}
 >
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
   <Header />
 
-  <section class="px-5 md:px-12 py-32 md:py-40 bg-[#050505] min-h-screen">
+  <section class="px-5 md:px-12 py-28 md:py-36 bg-[#050505] min-h-screen">
     <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Blog</h1>
-      <p class="text-gray-400 text-lg mb-12 max-w-2xl">
-        Insights, tutoriais e dicas de negócio para acelerar o crescimento da sua empresa no digital.
-      </p>
+      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-8 font-['DM_Sans',sans-serif]">
+        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40"><polyline points="9 18 15 12 9 6"/></svg>
+        <span class="text-gray-400">Blog</span>
+      </nav>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="group flex flex-col bg-surface-dark border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-1">
-            {post.data.image ? (
-              <div class="w-full h-48 overflow-hidden">
-                <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-              </div>
-            ) : (
-              <div class="w-full h-48 bg-white/5 flex items-center justify-center">
-                <span class="material-symbols-outlined text-4xl text-gray-600">article</span>
-              </div>
-            )}
-            <div class="p-6 flex flex-col flex-1">
-              <time class="text-xs text-primary font-bold tracking-wider uppercase mb-2">
-                {post.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
-              </time>
-              <h2 class="text-xl font-bold text-white mb-3 line-clamp-2">{post.data.title}</h2>
-              <p class="text-gray-400 text-sm line-clamp-3 mb-4">{post.data.description}</p>
-              <div class="mt-auto flex items-center text-primary text-sm font-semibold gap-1 group-hover:gap-2 transition-all">
-                Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </div>
-            </div>
-          </a>
-        ))}
-
-        {posts.length === 0 && (
-          <div class="col-span-full py-12 text-center border border-white/10 rounded-2xl bg-white/5">
-            <p class="text-gray-400">Nenhum artigo publicado ainda.</p>
-          </div>
-        )}
+      <div class="mb-14">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4" style="font-family: 'Sora', sans-serif;">
+          Blog
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl leading-relaxed" style="font-family: 'DM Sans', sans-serif;">
+          Insights, tutoriais e dicas de negócio para acelerar o crescimento da sua empresa no digital.
+        </p>
+        <div class="flex items-center gap-3 mt-6">
+          <span class="text-xs text-gray-500 font-medium uppercase tracking-wider" style="font-family: 'DM Sans', sans-serif;">
+            {posts.length} {posts.length === 1 ? "artigo" : "artigos"}
+          </span>
+          <span class="w-6 h-px bg-white/10"></span>
+        </div>
       </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12 pb-6 border-b border-white/5">
+        <div class="flex items-center gap-6 overflow-x-auto no-scrollbar" id="category-filter">
+          {categories.map((cat) => (
+            <button
+              class="blog-filter-btn text-sm font-medium transition-colors whitespace-nowrap"
+              data-category={cat.id}
+              style={`font-family: 'DM Sans', sans-serif; ${cat.id === "all" ? "color: #f65e37;" : "color: rgba(255,255,255,0.35);"}`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        <div class="relative w-full sm:w-56">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            type="text"
+            id="blog-search"
+            placeholder="Buscar artigos..."
+            class="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder-gray-500 outline-none focus:border-white/20 transition-colors"
+            style="font-family: 'DM Sans', sans-serif;"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="blog-grid">
+        {posts.map((post, i) => (
+          <div class="blog-grid-item" data-category={post.data.category || "web"}>
+            <BlogCard post={post} index={i} />
+          </div>
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="text-center py-24">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/5 flex items-center justify-center">
+            <svg class="text-gray-600" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <p class="text-gray-400 text-lg" style="font-family: 'DM Sans', sans-serif;">Nenhum artigo publicado ainda.</p>
+          <p class="text-gray-600 text-sm mt-2" style="font-family: 'DM Sans', sans-serif;">Volte em breve para conferir as novidades.</p>
+        </div>
+      )}
     </div>
   </section>
 
   <Footer />
 </Base>
+
+<script>
+  const filterBtns = document.querySelectorAll(".blog-filter-btn");
+  const gridItems = document.querySelectorAll(".blog-grid-item");
+  const searchInput = document.getElementById("blog-search");
+  let activeCategory = "all";
+
+  function filterPosts() {
+    const query = (searchInput?.value || "").toLowerCase().trim();
+
+    gridItems.forEach((item) => {
+      const cat = item.dataset.category || "web";
+      const card = item.querySelector(".blog-card");
+      const title = card?.querySelector(".blog-card__title")?.textContent?.toLowerCase() || "";
+      const desc = card?.querySelector(".blog-card__desc")?.textContent?.toLowerCase() || "";
+
+      const matchesCategory = activeCategory === "all" || cat === activeCategory;
+      const matchesSearch = !query || title.includes(query) || desc.includes(query);
+
+      if (matchesCategory && matchesSearch) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => {
+        b.style.color = "rgba(255,255,255,0.35)";
+      });
+      btn.style.color = "#f65e37";
+      activeCategory = btn.dataset.category;
+      filterPosts();
+    });
+  });
+
+  searchInput?.addEventListener("input", filterPosts);
+</script>

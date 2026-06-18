@@ -2,50 +2,55 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const latestPosts = posts.slice(0, 3);
 
 const webSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "name": "Sigel Soluções em Informática",
-      "url": "https://sigelinformatica.com.br",
-      "potentialAction": {
+      name: "Sigel Soluções em Informática",
+      url: "https://sigelinformatica.com.br",
+      potentialAction: {
         "@type": "SearchAction",
-        "target": "https://sigelinformatica.com.br/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+        target: "https://sigelinformatica.com.br/?s={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "Qual o prazo de entrega padrão?",
-          "acceptedAnswer": {
+          name: "Qual o prazo de entrega padrão?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Depende estritamente do escopo do projeto e funcionalidades pedidas. No entanto, para sites institucionais completos, costumam ser entregues entre 15 a 30 dias úteis após a aprovação do briefing inicial."
-          }
+            text: "Depende estritamente do escopo do projeto e funcionalidades pedidas. No entanto, para sites institucionais completos, costumam ser entregues entre 15 a 30 dias úteis após a aprovação do briefing inicial.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Vocês atendem clientes fora da região de origem?",
-          "acceptedAnswer": {
+          name: "Vocês atendem clientes fora da região de origem?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Totalmente! Somos uma agência digital nativa, por isso atendemos empresas e clientes em todo o Brasil (e no exterior) de forma 100% remota com a mesma proximidade, suporte e eficiência de um trabalho local."
-          }
+            text: "Totalmente! Somos uma agência digital nativa, por isso atendemos empresas e clientes em todo o Brasil (e no exterior) de forma 100% remota com a mesma proximidade, suporte e eficiência de um trabalho local.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Quanto custa o serviço na média?",
-          "acceptedAnswer": {
+          name: "Quanto custa o serviço na média?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Nossos projetos são criados sob medida de acordo com as metas e necessidades de cada negócio, não acreditamos em \"pacotes prontos\". Para entender melhor, recomendamos solicitar o nosso diagnóstico gratuito para traçarmos um orçamento de alta precisão."
-          }
-        }
-      ]
-    }
-  ]
+            text: 'Nossos projetos são criados sob medida de acordo com as metas e necessidades de cada negócio, não acreditamos em "pacotes prontos". Para entender melhor, recomendamos solicitar o nosso diagnóstico gratuito para traçarmos um orçamento de alta precisão.',
+          },
+        },
+      ],
+    },
+  ],
 });
 ---
 
@@ -54,7 +59,9 @@ const webSchema = JSON.stringify({
   description="Criação de sites, sistemas e manutenção de informática em Porto Alegre. Soluções completas para PMEs crescerem no digital."
   canonical="/"
   schema={webSchema}
-  preloadImages={["https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"]}
+  preloadImages={[
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+  ]}
 >
   <Header />
 
@@ -261,20 +268,12 @@ const webSchema = JSON.stringify({
             PMEs Atendidas
           </p>
         </div>
-        <div class="text-center">
+        <div class="text-right md:text-left">
           <p class="text-primary text-4xl md:text-5xl font-black mb-1 md:mb-2">
             500+
           </p>
           <p class="text-sm md:text-base text-gray-300 font-medium">
             Notebooks Consertados
-          </p>
-        </div>
-        <div class="text-right md:text-left">
-          <p class="text-primary text-4xl md:text-5xl font-black mb-1 md:mb-2">
-            98%
-          </p>
-          <p class="text-sm md:text-base text-gray-300 font-medium">
-            Retenção de Clientes
           </p>
         </div>
       </div>
@@ -595,6 +594,86 @@ const webSchema = JSON.stringify({
             gratuito para traçarmos um orçamento de alta precisão.
           </div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  {/* ===== BLOG SECTION ===== */}
+  <section class="px-5 md:px-12 py-16 md:py-24 w-full bg-[#050505]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10 md:mb-14">
+        <div>
+          <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight mb-3">
+            Últimos do Blog
+          </h2>
+          <p class="text-gray-400 text-base md:text-lg max-w-xl">
+            Artigos, tutoriais e insights para acelerar o crescimento do seu negócio.
+          </p>
+        </div>
+        <a
+          href="/blog"
+          class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-white transition-colors shrink-0"
+        >
+          Ver todos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {latestPosts.map((post) => {
+          const catColors = {
+            web: "#f65e37", hardware: "#3b82f6", automacao: "#10b981",
+            copywriting: "#8b5cf6", negocios: "#f59e0b",
+          };
+          const catLabels = {
+            web: "Web", hardware: "Hardware", automacao: "Automação",
+            copywriting: "Copywriting", negocios: "Negócios",
+          };
+          const cat = post.data.category || "web";
+          const catColor = catColors[cat] || "#f65e37";
+          return (
+            <a
+              href={`/blog/${post.id}`}
+              class="group block bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/20 transition-all hover:-translate-y-0.5"
+            >
+              {post.data.image ? (
+                <div class="w-full h-44 overflow-hidden">
+                  <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+              ) : (
+                <div class="w-full h-44 bg-white/[0.02]"></div>
+              )}
+              <div class="p-5 md:p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider" style={`color: ${catColor}`}>
+                    <span class="w-1.5 h-1.5 rounded-full" style={`background: ${catColor}`}></span>
+                    {catLabels[cat] || cat}
+                  </span>
+                  <span class="text-[11px] text-gray-600">·</span>
+                  <span class="text-[11px] text-gray-500">
+                    {post.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}
+                  </span>
+                </div>
+                <h3 class="text-white font-bold text-base leading-snug mb-2 group-hover:text-gray-200 transition-colors line-clamp-2">
+                  {post.data.title}
+                </h3>
+                <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="mt-10 text-center sm:hidden">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+        >
+          Ver todos os artigos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>

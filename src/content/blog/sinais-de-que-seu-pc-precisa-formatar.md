@@ -9,6 +9,8 @@ keyTakeaways:
   - "Telas azuis frequentes (BSOD) indicam sistema corrompido"
   - "Formatar não precisa significar perder seus arquivos — backup é obrigatório"
   - "Após a formatação, o PC volta a funcionar como novo por pelo menos 1 ano"
+category: "hardware"
+readingTime: 6
 ---
 
 Seu computador está cada vez mais lento, programas abrem aos trancos e barrancos, e aquela tela azul aparece com frequência? Pode ser hora de formatar.
