@@ -3,10 +3,12 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) =>
   currentPath === path ||
   (path === "/servicos" && currentPath.startsWith("/servicos")) ||
-  (path === "/blog" && currentPath.startsWith("/blog"));
+  (path === "/blog" && currentPath.startsWith("/blog")) ||
+  (path === "/contratos" && currentPath.startsWith("/contratos"));
 const navLinks = [
   { label: "Início", href: "/" },
   { label: "Serviços", href: "/servicos" },
+  { label: "Contratos", href: "/contratos" },
   { label: "Planos", href: "/planos" },
   { label: "Blog", href: "/blog" },
   { label: "Sobre nós", href: "/sobre" },

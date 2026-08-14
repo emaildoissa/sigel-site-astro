@@ -1,0 +1,719 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Contratos de Manutenção Preventiva de TI",
+  "description": "Suporte técnico premium, monitoramento antifalhas, backup automatizado e acesso remoto prioritário para empresas em Porto Alegre por um valor mensal fixo.",
+  "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
+  "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
+  "serviceType": "Manutenção Preventiva de TI",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planos de Assinatura",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Starter", "price": "97", "priceCurrency": "BRL" },
+      { "@type": "Offer", "name": "Business", "price": "247", "priceCurrency": "BRL" },
+      { "@type": "Offer", "name": "Corporate", "price": "497", "priceCurrency": "BRL" }
+    ]
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Preciso assinar por quanto tempo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos 3 meses para sentir os benefícios reais da manutenção preventiva."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se nenhum computador quebrar, ainda assim pago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, porque o objetivo do plano é exatamente evitar que quebrem. O valor mensal cobre monitoramento contínuo, backup automatizado e acesso remoto — o que reduz drasticamente a chance de falhas. É como um seguro: você paga para não precisar usar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês atendem em domicílio em Porto Alegre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados é resolvida por acesso remoto em minutos, mas quando necessário vamos até sua empresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso cancelar quando quiser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Sem multa, sem burocracia. Basta avisar com 30 dias de antecedência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O backup é incluso ou pago à parte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O backup automatizado em nuvem está incluso em todos os planos. O limite de armazenamento varia conforme o plano: 50GB no Starter, 200GB no Business e 1TB no Corporate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para ativar o plano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O onboarding completo leva de 2 a 5 dias úteis. Instalamos os agentes de monitoramento em todas as máquinas, configuramos o backup e fazemos uma limpeza física inicial. Enquanto isso, você já tem suporte remoto ativo."
+      }
+    }
+  ]
+});
+
+const quizSteps = [
+  {
+    question: "Quantos computadores sua empresa usa?",
+    options: [
+      { label: "Apenas o meu", value: "1-3", risk: 2 },
+      { label: "De 4 a 10", value: "4-10", risk: 4 },
+      { label: "Mais de 10", value: "10+", risk: 6 },
+    ],
+  },
+  {
+    question: "Você já perdeu dados importantes?",
+    options: [
+      { label: "Nunca perdi", value: "nao", risk: 1 },
+      { label: "Já perdi uma vez", value: "uma-vez", risk: 5 },
+      { label: "Já perdi mais de uma vez", value: "multiplas", risk: 8 },
+    ],
+  },
+  {
+    question: "Tem backup automatizado hoje?",
+    options: [
+      { label: "Sim, cloud automático", value: "sim", risk: 1 },
+      { label: "Faço backup manual", value: "manual", risk: 5 },
+      { label: "Não tenho backup", value: "nao", risk: 9 },
+    ],
+  },
+  {
+    question: "Quando um PC para, quanto tempo até resolver?",
+    options: [
+      { label: "Resolvo em horas", value: "horas", risk: 2 },
+      { label: "Leva dias", value: "dias", risk: 6 },
+      { label: "Mais de uma semana", value: "semanas", risk: 9 },
+    ],
+  },
+];
+
+const planos = [
+  {
+    name: "Starter",
+    tagline: "Para profissionais liberais",
+    price: 97,
+    description: "Mantenha seu computador protegido e com suporte remoto rápido sem sair de casa.",
+    features: [
+      "Suporte remoto ilimitado",
+      "Monitoramento de saúde do PC",
+      "Antivírus gerenciado",
+      "Relatório mensal de desempenho",
+      "Atendimento em horário comercial",
+    ],
+    cta: "Quero o Plano Starter",
+    highlight: false,
+  },
+  {
+    name: "Business",
+    tagline: "Para pequenas e médias empresas",
+    price: 247,
+    description: "Sua empresa com todos os computadores protegidos, com backup e suporte presencial prioritário.",
+    features: [
+      "Tudo do Starter",
+      "Até 5 computadores",
+      "Limpeza física semestral",
+      "Atendimento presencial prioritário",
+      "Suporte estendido até 20h",
+      "Relatório executivo mensal",
+    ],
+    cta: "Quero o Plano Business",
+    highlight: true,
+  },
+  {
+    name: "Corporate",
+    tagline: "Para empresas com infraestrutura crítica",
+    price: 497,
+    description: "Gestão completa de TI com SLA de 2 horas, incluindo servidores, rede e suporte dedicado.",
+    features: [
+      "Tudo do Business",
+      "Até 10+ computadores",
+      "Monitoramento de servidor e rede",
+      "SLA de 2 horas úteis",
+      "Engenheiro de suporte dedicado",
+      "Relatório semanal de compliance",
+      "Auditoria de segurança trimestral",
+    ],
+    cta: "Quero o Plano Corporate",
+    highlight: false,
+  },
+];
+---
+
+<Base
+  title="Contratos de Manutenção de TI | Sigel"
+  description="Suporte técnico premium para empresas em Porto Alegre. Monitoramento antifalhas, backup em nuvem e acesso remoto prioritário por um valor mensal fixo."
+  canonical="/contratos"
+  breadcrumbs={[{ name: "Contratos", path: "/contratos" }]}
+  schema={serviceSchema}
+  bodyClass="has-mobile-cta"
+>
+  <Header />
+
+  <main class="w-full px-5 md:px-12 pt-8 md:pt-16 pb-12 md:pb-24">
+    <div class="max-w-7xl mx-auto flex flex-col gap-12 md:gap-16">
+      {/* ===== HERO ===== */}
+      <section class="flex flex-col gap-4">
+        <nav class="flex items-center gap-2 text-sm text-gray-500 mb-2 md:mb-4 font-medium">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="text-gray-400">Contratos</span>
+        </nav>
+
+        <div class="inline-flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full w-fit">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Para Empresas</span>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl lg:text-6xl text-white font-black leading-[1.1] tracking-tight max-w-4xl">
+          Sua empresa não<br class="hidden md:block" />
+          pode <span class="text-primary">parar</span>
+        </h1>
+        <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
+          Suporte técnico preventivo, monitoramento inteligente, backup automatizado e
+          acesso remoto prioritário por um valor mensal fixo. <strong class="text-white">Sem sustos, sem horas extras.</strong>
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-4">
+          <a href="#quiz" class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-base h-14 px-8 shadow-lg transition-all hover:scale-105 active:scale-95">
+            <span class="material-symbols-outlined">monitoring</span>
+            <span>Diagnóstico Gratuito</span>
+          </a>
+          <a href="#planos" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base h-14 px-8 border border-white/10 transition-all hover:scale-105 active:scale-95">
+            <span>Ver Planos</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </section>
+
+      {/* ===== QUIZ RADAR ===== */}
+      <section id="quiz" class="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-surface-dark">
+        <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-10 pointer-events-none" style="background: radial-gradient(circle, #f65e37 0%, transparent 70%);"></div>
+        <div class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full opacity-5 pointer-events-none" style="background: radial-gradient(circle, #f65e37 0%, transparent 70%);"></div>
+
+        <div id="quiz-container" class="relative z-10 p-8 md:p-10 lg:p-12" data-max-risk={quizSteps.length * 9}>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="material-symbols-outlined text-primary">speed</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">Diagnóstico Rápido</span>
+          </div>
+
+          <h2 class="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight">
+            Qual o nível de risco da sua empresa?
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base mb-8 max-w-xl">
+            Responda 4 perguntas rápidas e descubra. Leva menos de 1 minuto.
+          </p>
+
+          {/* Steps indicator */}
+          <div class="flex gap-2 mb-8" id="steps-bar">
+            {quizSteps.map((_, i) => (
+              <div
+                class="step-dot h-1.5 flex-1 rounded-full transition-all duration-500"
+                style={`background: ${i === 0 ? '#f65e37' : 'rgba(255,255,255,0.1)'}`}
+              ></div>
+            ))}
+          </div>
+
+          {/* Quiz content */}
+          <div id="quiz-content">
+            {quizSteps.map((step, i) => (
+              <div
+                class={`quiz-step ${i === 0 ? '' : 'hidden'}`}
+                data-step={i}
+              >
+                <p class="text-gray-400 text-sm font-medium mb-3">Passo {i + 1} de {quizSteps.length}</p>
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-6">{step.question}</h3>
+                <div class="flex flex-col gap-3">
+                  {step.options.map((opt) => (
+                    <button
+                      class="quiz-option group text-left w-full p-4 md:p-5 rounded-xl border border-white/10 bg-black/40 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex items-center justify-between cursor-pointer"
+                      data-risk={opt.risk}
+                      data-step={i}
+                    >
+                      <span class="text-white font-medium group-hover:text-primary transition-colors">{opt.label}</span>
+                      <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">arrow_forward</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Result */}
+          <div id="quiz-result" class="hidden">
+            <div class="flex flex-col items-center text-center py-8">
+              <div class="mb-6 relative">
+                <svg class="w-32 h-32 -rotate-90" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8" />
+                  <circle id="risk-ring" cx="60" cy="60" r="54" fill="none" stroke="#f65e37" stroke-width="8" stroke-linecap="round"
+                    stroke-dasharray="339.292" stroke-dashoffset="339.292" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span id="risk-percent" class="text-4xl md:text-5xl font-black text-white">0%</span>
+                </div>
+              </div>
+              <h3 id="risk-title" class="text-2xl font-bold text-white mb-2">Risco Calculado</h3>
+              <p id="risk-desc" class="text-gray-400 max-w-md mb-8"></p>
+
+              <a
+                id="quiz-cta"
+                href="https://wa.me/555193257923?text=Ol%C3%A1%21%20Fiz%20o%20diagn%C3%B3stico%20de%20risco%20no%20site%20da%20Sigel%20e%20gostaria%20de%20receber%20um%20diagn%C3%B3stico%20completo%20gratuito%20para%20minha%20empresa."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-base h-14 px-10 shadow-lg transition-all hover:scale-105 active:scale-95 animate-pulse"
+              >
+                <span class="material-symbols-outlined">chat</span>
+                <span>Quero um Diagnóstico Completo Grátis</span>
+              </a>
+              <button id="quiz-restart" class="mt-4 text-sm text-gray-500 hover:text-white transition-colors cursor-pointer underline underline-offset-2">
+                Refazer o teste
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROBLEM / SOLUTION ===== */}
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div class="rounded-2xl border border-red-900/40 bg-red-950/20 p-8 md:p-10">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-red-400 text-3xl">warning</span>
+            <h3 class="text-xl font-bold text-white">Modelo Reativo</h3>
+          </div>
+          <ul class="flex flex-col gap-3">
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
+              <span>PC para por dias até você conseguir um técnico</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
+              <span>Custo por hora parada pode superar R$ 500/dia</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
+              <span>Sem backup = risco real de perder dados</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
+              <span>Urgência vira hora extra e estresse</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+            <h3 class="text-xl font-bold text-white">Modelo Preventivo</h3>
+          </div>
+          <ul class="flex flex-col gap-3">
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span>Monitoramento detecta falhas <strong class="text-white">antes</strong> de parar</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span>Custo fixo previsível: <strong class="text-white">R$ 97 a R$ 497/mês</strong></span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span>Backup automático em nuvem incluso</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span>Suporte remoto em <strong class="text-white">minutos</strong>, sem deslocamento</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ===== BENEFITS ===== */}
+      <section class="flex flex-col gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+            O que está incluso
+          </h2>
+          <p class="text-gray-400 mt-2 text-base">Mais do que manutenção — uma operação de TI completa para sua empresa.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
+            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">remote_gen</span>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Acesso Remoto Premium</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Técnico conectado em minutos. Resolve a maioria dos problemas sem sair da sua empresa.
+            </p>
+          </div>
+          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
+            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">cloud_upload</span>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Backup Automático em Nuvem</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Seus dados seguros fora da empresa. Recuperação rápida em caso de roubo, falha ou ataque.
+            </p>
+          </div>
+          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
+            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">monitoring</span>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Monitoramento 24/7</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Sensor de saúde do PC acusa problemas antes de se tornarem críticos. Agimos antes de você sentir.
+            </p>
+          </div>
+          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
+            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">cleaning_services</span>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Limpeza Física Semestral</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Poeira interna, pasta térmica ressecada e fans obstruídos encurtam a vida do equipamento. Limpeza preventiva incluso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PLANOS ===== */}
+      <section id="planos" class="flex flex-col gap-6 md:gap-10 pt-6">
+        <div class="text-center max-w-2xl mx-auto mb-2 md:mb-4">
+          <div class="inline-flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full w-fit mx-auto mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary">Planos</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight">
+            Escolha o plano ideal para sua empresa
+          </h2>
+          <p class="text-gray-400 mt-3 text-base leading-relaxed">
+            Todos os planos incluem suporte remoto, monitoramento e backup.
+            Cancele quando quiser, sem multa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pt-4 md:pt-6">
+          {planos.map((plano) => (
+            <div
+              class={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 hover:-translate-y-1 ${
+                plano.highlight
+                  ? 'border-primary/40 bg-primary/5 shadow-lg shadow-primary/10 md:scale-105 z-10 my-3 md:my-0'
+                  : 'border-gray-800 bg-surface-dark hover:border-gray-600'
+              }`}
+            >
+              {plano.highlight && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
+                  Mais Popular
+                </div>
+              )}
+              <div class="mb-2">
+                <span class={`text-xs font-bold uppercase tracking-widest ${plano.highlight ? 'text-primary' : 'text-gray-500'}`}>
+                  {plano.tagline}
+                </span>
+              </div>
+              <h3 class="text-2xl font-black text-white">{plano.name}</h3>
+              <div class="mt-4 mb-6">
+                <span class="text-4xl font-black text-white">R$ {plano.price}</span>
+                <span class="text-gray-400 text-sm font-medium">/mês</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">{plano.description}</p>
+              <ul class="flex flex-col gap-3 mb-8 flex-1">
+                {plano.features.map((feat) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-300">
+                    <span class={`material-symbols-outlined text-base shrink-0 ${plano.highlight ? 'text-primary' : 'text-gray-500'}`}>check</span>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={`https://wa.me/555193257923?text=${encodeURIComponent(`Olá! Tenho interesse no Plano ${plano.name} da Sigel. Gostaria de saber mais detalhes.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`w-full inline-flex items-center justify-center gap-2 rounded-xl font-bold text-sm h-12 px-6 transition-all active:scale-95 ${
+                  plano.highlight
+                    ? 'bg-primary hover:bg-primary-dark text-white shadow-lg shadow-primary/20'
+                    : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
+                }`}
+              >
+                <span class="material-symbols-outlined">chat</span>
+                <span>{plano.cta}</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== HOW IT WORKS ===== */}
+      <section class="flex flex-col gap-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Como funciona</h2>
+          <p class="text-gray-400 mt-2 text-base">Simples, rápido e sem burocracia.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-surface-dark border border-white/10 rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
+              <span class="material-symbols-outlined text-primary text-3xl">assignment</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">1. Onboarding</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Agendamos uma visita para diagnosticar todos os equipamentos, instalar os
+              agentes de monitoramento e configurar o backup em nuvem.
+            </p>
+          </div>
+          <div class="bg-surface-dark border border-white/10 rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
+              <span class="material-symbols-outlined text-primary text-3xl">radar</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">2. Monitoramento</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Acompanhamos a saúde dos seus equipamentos 24/7. Se algo anormal aparecer,
+              agimos antes de virar problema.
+            </p>
+          </div>
+          <div class="bg-surface-dark border border-white/10 rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
+              <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">3. Suporte Prioritário</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Quando precisar, chama no WhatsApp. Resolução remota em minutos ou
+              presencial em até 4 horas úteis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section class="max-w-3xl mx-auto w-full flex flex-col gap-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Dúvidas Frequentes</h2>
+          <p class="text-gray-400 mt-2 text-base">Tudo que você precisa saber antes de contratar.</p>
+        </div>
+        <script type="application/ld+json" set:html={faqSchema} />
+        <div class="flex flex-col gap-4">
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>Preciso assinar por quanto tempo?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos <strong class="text-white">3 meses</strong> para sentir os benefícios reais da manutenção preventiva.
+            </div>
+          </details>
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>E se nenhum computador quebrar, ainda assim pago?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              Sim — porque o objetivo do plano é exatamente <strong class="text-white">evitar que quebrem</strong>. O valor mensal cobre monitoramento contínuo, backup automatizado e acesso remoto, o que reduz drasticamente a chance de falhas. É como um seguro: você paga para não precisar usar.
+            </div>
+          </details>
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>Vocês atendem em domicílio em Porto Alegre?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados é resolvida por acesso remoto em minutos, mas quando necessário vamos até sua empresa.
+            </div>
+          </details>
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>Posso cancelar quando quiser?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              Sim. <strong class="text-white">Sem multa, sem burocracia.</strong> Basta avisar com 30 dias de antecedência.
+            </div>
+          </details>
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>O backup é incluso ou pago à parte?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              O backup automatizado em nuvem está <strong class="text-white">incluso em todos os planos</strong>. O limite de armazenamento varia: 50GB no Starter, 200GB no Business e 1TB no Corporate.
+            </div>
+          </details>
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>Quanto tempo leva para ativar o plano?</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
+              O onboarding completo leva de <strong class="text-white">2 a 5 dias úteis</strong>. Instalamos os agentes de monitoramento em todas as máquinas, configuramos o backup e fazemos uma limpeza física inicial. Enquanto isso, você já tem suporte remoto ativo.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      {/* ===== CTA DESKTOP ===== */}
+      <section class="hidden md:block">
+        <div class="relative rounded-[2rem] overflow-hidden p-8 md:p-14" style="background: linear-gradient(135deg, #141110 0%, #1a1512 100%);">
+          <div class="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 pointer-events-none" style="background: radial-gradient(circle, #f65e37 0%, transparent 70%);"></div>
+          <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 pointer-events-none" style="background: radial-gradient(circle, #f65e37 0%, transparent 70%);"></div>
+          <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+            <div class="flex flex-col gap-3 max-w-xl">
+              <h3 class="text-3xl md:text-4xl text-white font-black tracking-tight leading-tight">
+                Pronto para proteger sua empresa?
+              </h3>
+              <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+                Agende um diagnóstico gratuito e descubra o plano ideal para seus equipamentos.
+                Sem compromisso.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/555193257923?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20de%20TI%20para%20minha%20empresa."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="shrink-0 inline-flex items-center justify-center gap-3 py-4 px-8 md:px-10 rounded-xl font-bold text-base md:text-lg text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
+              style="background: linear-gradient(135deg, #f65e37, #d54e2b);"
+            >
+              <span class="material-symbols-outlined text-[24px]">chat</span>
+              <span>Falar com Especialista</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  {/* ===== STICKY MOBILE CTA BAR ===== */}
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-md border-t border-gray-900 z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+    <div class="w-full flex flex-col gap-2 relative">
+      <a
+        href="https://wa.me/555193257923?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20Sigel%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%20de%20TI%20para%20minha%20empresa."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full bg-accent hover:bg-accent-dark text-white font-bold text-lg h-14 rounded-xl shadow-lg shadow-primary/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+      >
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span>Diagnóstico Gratuito</span>
+      </a>
+      <p class="text-[11px] text-center text-gray-400 font-medium tracking-wide">
+        Sem compromisso. Atendimento em minutos.
+      </p>
+    </div>
+  </div>
+
+  <Footer />
+
+  <script>
+    (function() {
+      const quizContainer = document.getElementById("quiz-container");
+      if (!quizContainer) return;
+
+      const steps = document.querySelectorAll(".quiz-step");
+      const dots = document.querySelectorAll(".step-dot");
+      const options = document.querySelectorAll(".quiz-option");
+      const resultDiv = document.getElementById("quiz-result");
+      const quizContent = document.getElementById("quiz-content");
+      const restartBtn = document.getElementById("quiz-restart");
+      const riskRing = document.getElementById("risk-ring");
+      const riskPercent = document.getElementById("risk-percent");
+      const riskTitle = document.getElementById("risk-title");
+      const riskDesc = document.getElementById("risk-desc");
+      const quizCta = document.getElementById("quiz-cta");
+
+      let currentStep = 0;
+      let totalRisk = 0;
+      const maxRisk = parseInt(quizContainer.dataset.maxRisk) || 36;
+
+      function goToStep(stepIndex) {
+        steps.forEach((s, i) => {
+          s.classList.toggle("hidden", i !== stepIndex);
+        });
+        dots.forEach((dot, i) => {
+          dot.style.background = i <= stepIndex ? "#f65e37" : "rgba(255,255,255,0.1)";
+        });
+      }
+
+      function showResult() {
+        quizContent.classList.add("hidden");
+        resultDiv.classList.remove("hidden");
+
+        const percent = Math.round((totalRisk / maxRisk) * 100);
+        const circumference = 339.292;
+        const offset = circumference - (percent / 100) * circumference;
+
+        setTimeout(() => {
+          riskRing.style.transition = "stroke-dashoffset 1s ease-out";
+          riskRing.style.strokeDashoffset = offset;
+        }, 100);
+
+        riskPercent.textContent = `${percent}%`;
+
+        if (percent <= 30) {
+          riskTitle.textContent = "Risco Baixo";
+          riskDesc.textContent = "Sua empresa está bem encaminhada, mas a manutenção preventiva garante que continue assim. Que tal garantir essa tranquilidade?";
+          riskRing.style.stroke = "#22c55e";
+        } else if (percent <= 60) {
+          riskTitle.textContent = "Risco Moderado";
+          riskDesc.textContent = "Você já sentiu algum susto, mas ainda dá tempo de estruturar uma proteção sólida antes do próximo problema.";
+          riskRing.style.stroke = "#eab308";
+        } else {
+          riskTitle.textContent = "Risco Alto";
+          riskDesc.textContent = "Sua empresa está exposta. Um PC parado por alguns dias pode custar caro. Hora de agir.";
+          riskRing.style.stroke = "#ef4444";
+        }
+
+        const ctaMsg = encodeURIComponent(
+          `Olá! Fiz o diagnóstico de risco no site da Sigel e meu nível foi ${percent}% (${riskTitle.textContent}). Gostaria de agendar um diagnóstico completo gratuito para minha empresa.`
+        );
+        quizCta.href = `https://wa.me/555193257923?text=${ctaMsg}`;
+      }
+
+      function resetQuiz() {
+        currentStep = 0;
+        totalRisk = 0;
+        resultDiv.classList.add("hidden");
+        quizContent.classList.remove("hidden");
+        riskRing.style.transition = "none";
+        riskRing.style.strokeDashoffset = 339.292;
+        goToStep(0);
+      }
+
+      options.forEach((btn) => {
+        btn.addEventListener("click", function() {
+          const step = parseInt(this.dataset.step);
+          const risk = parseInt(this.dataset.risk);
+          totalRisk += risk;
+
+          if (step < steps.length - 1) {
+            currentStep = step + 1;
+            goToStep(currentStep);
+          } else {
+            showResult();
+          }
+        });
+      });
+
+      restartBtn.addEventListener("click", resetQuiz);
+
+      // Init
+      goToStep(0);
+    })();
+  </script>
+</Base>

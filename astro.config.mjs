@@ -25,6 +25,7 @@ export default defineConfig({
         'https://sigelinformatica.com.br/planos/',
         'https://sigelinformatica.com.br/sobre/',
         'https://sigelinformatica.com.br/servicos/hardware/',
+        'https://sigelinformatica.com.br/contratos/',
       ],
       serialize(item) {
         // Homepage
@@ -43,6 +44,10 @@ export default defineConfig({
         // Planos e Sobre
         if (item.url.includes('/planos') || item.url.includes('/sobre')) {
           return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.8 };
+        }
+        // Contratos — página de assinatura B2B
+        if (item.url.includes('/contratos')) {
+          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.9 };
         }
         // Hardware/manutenção — incluída mas com menor prioridade
         if (item.url.includes('/hardware')) {
