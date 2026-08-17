@@ -7,7 +7,7 @@ const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Contratos de Manutenção Preventiva de TI",
-  "description": "Suporte técnico premium, monitoramento antifalhas, backup automatizado e acesso remoto prioritário para empresas em Porto Alegre por um valor mensal fixo.",
+  "description": "Suporte técnico ágil, help desk remoto, otimização contínua de desempenho e manutenção física preventiva para empresas em Porto Alegre por um valor mensal fixo.",
   "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
   "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
   "serviceType": "Manutenção Preventiva de TI",
@@ -31,7 +31,7 @@ const faqSchema = JSON.stringify({
       "name": "Preciso assinar por quanto tempo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos 3 meses para sentir os benefícios reais da manutenção preventiva."
+        "text": "Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos 3 meses para sentir os benefícios reais da manutenção preventiva e otimização contínua."
       }
     },
     {
@@ -39,15 +39,15 @@ const faqSchema = JSON.stringify({
       "name": "E se nenhum computador quebrar, ainda assim pago?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, porque o objetivo do plano é exatamente evitar que quebrem. O valor mensal cobre monitoramento contínuo, backup automatizado e acesso remoto — o que reduz drasticamente a chance de falhas. É como um seguro: você paga para não precisar usar."
+        "text": "Sim, porque o objetivo da manutenção preventiva é exatamente evitar que as máquinas quebrem ou fiquem lentas. Realizamos otimizações periódicas de sistema, limpeza física preventiva e você tem help desk imediato para qualquer dúvida do dia a dia."
       }
     },
     {
       "@type": "Question",
-      "name": "Vocês atendem em domicílio em Porto Alegre?",
+      "name": "Vocês atendem presencialmente em Porto Alegre?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados é resolvida por acesso remoto em minutos, mas quando necessário vamos até sua empresa."
+        "text": "Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados e dúvidas de rotina é resolvida por acesso remoto em minutos, e realizamos visitas para limpeza física periódica ou problemas que exijam suporte no local."
       }
     },
     {
@@ -60,10 +60,10 @@ const faqSchema = JSON.stringify({
     },
     {
       "@type": "Question",
-      "name": "O backup é incluso ou pago à parte?",
+      "name": "O que está incluso na manutenção preventiva?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O backup automatizado em nuvem está incluso em todos os planos. O limite de armazenamento varia conforme o plano: 50GB no Starter, 200GB no Business e 1TB no Corporate."
+        "text": "Inclui suporte remoto e help desk para problemas do dia a dia (impressoras, rede, e-mail, lentidão), otimização periódica do Windows, limpeza de arquivos desnecessários, manutenção física com troca de pasta térmica e consultoria para upgrades de equipamentos."
       }
     },
     {
@@ -71,7 +71,7 @@ const faqSchema = JSON.stringify({
       "name": "Quanto tempo leva para ativar o plano?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O onboarding completo leva de 2 a 5 dias úteis. Instalamos os agentes de monitoramento em todas as máquinas, configuramos o backup e fazemos uma limpeza física inicial. Enquanto isso, você já tem suporte remoto ativo."
+        "text": "O onboarding completo leva de 2 a 5 dias úteis. Realizamos um diagnóstico inicial em todas as máquinas, fazemos a primeira otimização de sistema e alinhamos o canal direto de suporte no WhatsApp."
       }
     }
   ]
@@ -115,14 +115,15 @@ const quizSteps = [
 const planos = [
   {
     name: "Starter",
-    tagline: "Para profissionais liberais",
+    tagline: "Para profissionais liberais e home office",
     price: 97,
-    description: "Mantenha seu computador protegido e com suporte remoto rápido sem sair de casa.",
+    description: "Mantenha seu computador sempre rápido e com help desk prioritário direto no WhatsApp.",
     features: [
-      "Suporte remoto ilimitado",
-      "Monitoramento de saúde do PC",
-      "Antivírus gerenciado",
-      "Relatório mensal de desempenho",
+      "Suporte remoto e help desk ágil",
+      "Otimização periódica do sistema",
+      "Limpeza de lixo digital e arquivos temporários",
+      "Gestão de atualizações do Windows",
+      "Consultoria para compras e upgrades",
       "Atendimento em horário comercial",
     ],
     cta: "Quero o Plano Starter",
@@ -132,31 +133,32 @@ const planos = [
     name: "Business",
     tagline: "Para pequenas e médias empresas",
     price: 247,
-    description: "Sua empresa com todos os computadores protegidos, com backup e suporte presencial prioritário.",
+    description: "Sua empresa com computadores otimizados, suporte presencial e manutenção física periódica.",
     features: [
-      "Tudo do Starter",
-      "Até 5 computadores",
-      "Limpeza física semestral",
+      "Tudo do Plano Starter",
+      "Até 5 computadores inclusos",
+      "Limpeza física semestral e troca de pasta térmica",
       "Atendimento presencial prioritário",
+      "Suporte a impressoras e rede do escritório",
+      "Diagnóstico de saúde das máquinas",
       "Suporte estendido até 20h",
-      "Relatório executivo mensal",
     ],
     cta: "Quero o Plano Business",
     highlight: true,
   },
   {
     name: "Corporate",
-    tagline: "Para empresas com infraestrutura crítica",
+    tagline: "Para empresas com múltiplos equipamentos",
     price: 497,
-    description: "Gestão completa de TI com SLA de 2 horas, incluindo servidores, rede e suporte dedicado.",
+    description: "Gestão técnica completa para o escritório, com SLA ágil de 2 horas e suporte total a infraestrutura.",
     features: [
-      "Tudo do Business",
-      "Até 10+ computadores",
-      "Monitoramento de servidor e rede",
-      "SLA de 2 horas úteis",
-      "Engenheiro de suporte dedicado",
-      "Relatório semanal de compliance",
-      "Auditoria de segurança trimestral",
+      "Tudo do Plano Business",
+      "Até 10+ computadores e notebooks",
+      "SLA de atendimento prioritário em 2 horas",
+      "Visitas técnicas preventivas programadas",
+      "Gestão de rede local e roteadores",
+      "Planejamento de upgrades e infraestrutura",
+      "Canal de suporte direto prioritário",
     ],
     cta: "Quero o Plano Corporate",
     highlight: false,
@@ -166,7 +168,7 @@ const planos = [
 
 <Base
   title="Contratos de Manutenção de TI | Sigel"
-  description="Suporte técnico premium para empresas em Porto Alegre. Monitoramento antifalhas, backup em nuvem e acesso remoto prioritário por um valor mensal fixo."
+  description="Suporte técnico ágil para empresas em Porto Alegre. Help desk remoto, otimização contínua de desempenho e manutenção física preventiva por valor fixo."
   canonical="/contratos"
   breadcrumbs={[{ name: "Contratos", path: "/contratos" }]}
   schema={serviceSchema}
@@ -194,8 +196,8 @@ const planos = [
           pode <span class="text-primary">parar</span>
         </h1>
         <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
-          Suporte técnico preventivo, monitoramento inteligente, backup automatizado e
-          acesso remoto prioritário por um valor mensal fixo. <strong class="text-white">Sem sustos, sem horas extras.</strong>
+          Suporte técnico ágil, otimização contínua de desempenho, manutenção física preventiva e
+          help desk prioritário por um valor mensal fixo. <strong class="text-white">Sem sustos, sem horas extras.</strong>
         </p>
 
         <div class="flex flex-wrap gap-4 mt-4">
@@ -307,19 +309,15 @@ const planos = [
           <ul class="flex flex-col gap-3">
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
-              <span>PC para por dias até você conseguir um técnico</span>
+              <span>Custo imprevisível: perdas que podem superar R$ 500/dia com máquina parada</span>
             </li>
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
-              <span>Custo por hora parada pode superar R$ 500/dia</span>
+              <span>PC acumula lentidão, poeira e trava na hora que você mais precisa</span>
             </li>
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
-              <span>Sem backup = risco real de perder dados</span>
-            </li>
-            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
-              <span class="material-symbols-outlined text-red-400 text-lg shrink-0">close</span>
-              <span>Urgência vira hora extra e estresse</span>
+              <span>Espera por técnico avulso, horas extras e estresse na rotina</span>
             </li>
           </ul>
         </div>
@@ -331,19 +329,15 @@ const planos = [
           <ul class="flex flex-col gap-3">
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
-              <span>Monitoramento detecta falhas <strong class="text-white">antes</strong> de parar</span>
-            </li>
-            <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
-              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
               <span>Custo fixo previsível: <strong class="text-white">R$ 97 a R$ 497/mês</strong></span>
             </li>
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
-              <span>Backup automático em nuvem incluso</span>
+              <span>Otimização periódica de desempenho e limpeza do sistema</span>
             </li>
             <li class="flex items-start gap-3 text-gray-400 text-sm leading-relaxed">
               <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
-              <span>Suporte remoto em <strong class="text-white">minutos</strong>, sem deslocamento</span>
+              <span>Suporte remoto em <strong class="text-white">minutos</strong> + manutenção física</span>
             </li>
           </ul>
         </div>
@@ -361,38 +355,38 @@ const planos = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
             <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
-              <span class="material-symbols-outlined text-2xl md:text-3xl">remote_gen</span>
+              <span class="material-symbols-outlined text-2xl md:text-3xl">headset_mic</span>
             </div>
-            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Acesso Remoto Premium</h3>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Help Desk & Suporte Remoto</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Técnico conectado em minutos. Resolve a maioria dos problemas sem sair da sua empresa.
+              Atendimento ágil no WhatsApp para resolver travamentos, impressoras, e-mails, rede e dúvidas do dia a dia.
             </p>
           </div>
           <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
             <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
-              <span class="material-symbols-outlined text-2xl md:text-3xl">cloud_upload</span>
+              <span class="material-symbols-outlined text-2xl md:text-3xl">speed</span>
             </div>
-            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Backup Automático em Nuvem</h3>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Otimização Periódica</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Seus dados seguros fora da empresa. Recuperação rápida em caso de roubo, falha ou ataque.
-            </p>
-          </div>
-          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
-            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
-              <span class="material-symbols-outlined text-2xl md:text-3xl">monitoring</span>
-            </div>
-            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Monitoramento 24/7</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Sensor de saúde do PC acusa problemas antes de se tornarem críticos. Agimos antes de você sentir.
+              Limpeza de arquivos temporários, ajuste de inicialização e rotinas para manter o computador sempre rápido.
             </p>
           </div>
           <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
             <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
               <span class="material-symbols-outlined text-2xl md:text-3xl">cleaning_services</span>
             </div>
-            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Limpeza Física Semestral</h3>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Limpeza Física & Térmica</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Poeira interna, pasta térmica ressecada e fans obstruídos encurtam a vida do equipamento. Limpeza preventiva incluso.
+              Desobstrução de coolers e troca periódica de pasta térmica para evitar superaquecimento e queima de peças.
+            </p>
+          </div>
+          <div class="group relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-surface-dark transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
+            <div class="shrink-0 size-12 md:size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">memory</span>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2 tracking-tight">Consultoria de Upgrades</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Diagnóstico da saúde das peças e recomendação de upgrades (SSD, RAM) para investir com segurança.
             </p>
           </div>
         </div>
@@ -408,7 +402,7 @@ const planos = [
             Escolha o plano ideal para sua empresa
           </h2>
           <p class="text-gray-400 mt-3 text-base leading-relaxed">
-            Todos os planos incluem suporte remoto, monitoramento e backup.
+            Todos os planos incluem suporte remoto ágil, otimização contínua de sistema e consultoria técnica.
             Cancele quando quiser, sem multa.
           </p>
         </div>
@@ -475,30 +469,27 @@ const planos = [
             <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
               <span class="material-symbols-outlined text-primary text-3xl">assignment</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">1. Onboarding</h3>
+            <h3 class="text-xl font-bold text-white mb-2">1. Diagnóstico & Check-up</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Agendamos uma visita para diagnosticar todos os equipamentos, instalar os
-              agentes de monitoramento e configurar o backup em nuvem.
+              Avaliamos o estado dos computadores, limpamos o sistema e organizamos o ambiente para máximo rendimento.
             </p>
           </div>
           <div class="bg-surface-dark border border-white/10 rounded-2xl p-8 text-center">
             <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
-              <span class="material-symbols-outlined text-primary text-3xl">radar</span>
+              <span class="material-symbols-outlined text-primary text-3xl">tune</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">2. Monitoramento</h3>
+            <h3 class="text-xl font-bold text-white mb-2">2. Manutenção Contínua</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Acompanhamos a saúde dos seus equipamentos 24/7. Se algo anormal aparecer,
-              agimos antes de virar problema.
+              Realizamos otimizações periódicas de desempenho e agendamos manutenções físicas e térmicas preventivas.
             </p>
           </div>
           <div class="bg-surface-dark border border-white/10 rounded-2xl p-8 text-center">
             <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-5">
               <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">3. Suporte Prioritário</h3>
+            <h3 class="text-xl font-bold text-white mb-2">3. Help Desk Prioritário</h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Quando precisar, chama no WhatsApp. Resolução remota em minutos ou
-              presencial em até 4 horas úteis.
+              Surgindo qualquer dúvida, lentidão ou problema no escritório, é só chamar no WhatsApp para resolução rápida.
             </p>
           </div>
         </div>
@@ -518,7 +509,7 @@ const planos = [
               <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
             </summary>
             <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
-              Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos <strong class="text-white">3 meses</strong> para sentir os benefícios reais da manutenção preventiva.
+              Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos <strong class="text-white">3 meses</strong> para sentir os benefícios reais da manutenção preventiva e do aumento de estabilidade.
             </div>
           </details>
           <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
@@ -527,16 +518,16 @@ const planos = [
               <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
             </summary>
             <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
-              Sim — porque o objetivo do plano é exatamente <strong class="text-white">evitar que quebrem</strong>. O valor mensal cobre monitoramento contínuo, backup automatizado e acesso remoto, o que reduz drasticamente a chance de falhas. É como um seguro: você paga para não precisar usar.
+              Sim — porque o objetivo da manutenção preventiva é exatamente <strong class="text-white">evitar que quebrem ou fiquem lentos</strong>. O valor mensal cobre otimizações contínuas de sistema, limpeza preventiva física e help desk ilimitado para tirar dúvidas e resolver problemas de rotina.
             </div>
           </details>
           <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
             <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
-              <span>Vocês atendem em domicílio em Porto Alegre?</span>
+              <span>Vocês atendem presencialmente em Porto Alegre?</span>
               <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
             </summary>
             <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
-              Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados é resolvida por acesso remoto em minutos, mas quando necessário vamos até sua empresa.
+              Sim, atendemos presencialmente em Porto Alegre e região metropolitana. Problemas de rotina (impressoras, travamentos, configurações) são resolvidos remotamente em minutos, e realizamos visitas para manutenção física ou quando necessário.
             </div>
           </details>
           <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
@@ -550,11 +541,11 @@ const planos = [
           </details>
           <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
             <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
-              <span>O backup é incluso ou pago à parte?</span>
+              <span>O que está incluso na manutenção preventiva?</span>
               <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
             </summary>
             <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
-              O backup automatizado em nuvem está <strong class="text-white">incluso em todos os planos</strong>. O limite de armazenamento varia: 50GB no Starter, 200GB no Business e 1TB no Corporate.
+              Inclui <strong class="text-white">suporte remoto e help desk</strong> para problemas do dia a dia (impressoras, rede, travamentos), otimização periódica do sistema, limpeza física com troca de pasta térmica e consultoria para upgrades seguros.
             </div>
           </details>
           <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm">
@@ -563,7 +554,7 @@ const planos = [
               <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
             </summary>
             <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
-              O onboarding completo leva de <strong class="text-white">2 a 5 dias úteis</strong>. Instalamos os agentes de monitoramento em todas as máquinas, configuramos o backup e fazemos uma limpeza física inicial. Enquanto isso, você já tem suporte remoto ativo.
+              O onboarding completo leva de <strong class="text-white">2 a 5 dias úteis</strong>. Realizamos um diagnóstico inicial dos equipamentos, executamos a primeira otimização de sistema e seu canal de help desk prioritário já fica ativo imediatamente.
             </div>
           </details>
         </div>
