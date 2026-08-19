@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [
     partytown({
       config: {
-        forward: ["dataLayer.push"],
+        forward: ["dataLayer.push", "gtag"],
       },
     }),
     sitemap({
@@ -37,9 +37,10 @@ export default defineConfig({
           item.url.includes('/web') ||
           item.url.includes('/automacao') ||
           item.url.includes('/copywriting') ||
+          item.url.includes('/hardware') ||
           item.url === 'https://sigelinformatica.com.br/servicos/'
         ) {
-          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.9 };
+          return { ...item, changefreq: /** @type {any} */ ('weekly'), priority: 0.9 };
         }
         // Planos e Sobre
         if (item.url.includes('/planos') || item.url.includes('/sobre')) {
@@ -49,11 +50,7 @@ export default defineConfig({
         if (item.url.includes('/contratos')) {
           return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.9 };
         }
-        // Hardware/manutenção — incluída mas com menor prioridade
-        if (item.url.includes('/hardware')) {
-          return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.6 };
-        }
-        return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.7 };
+        return { ...item, changefreq: /** @type {any} */ ('monthly'), priority: 0.8 };
       },
     }),
   ],

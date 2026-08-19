@@ -63,7 +63,7 @@ Se você não tem experiência ou não quer arriscar perder seus dados, a Sigel 
 - **Otimização pós-formatação** para desempenho máximo
 - **Garantia** de que o serviço foi bem executado
 
-<a href="/servicos/hardware" class="text-primary hover:text-accent transition-colors">Solicite um orçamento sem compromisso</a> para formatar seu PC ou notebook.
+<a href="/servicos/hardware/formatacao-pc" class="text-primary hover:text-accent font-bold transition-colors">Solicite a formatação por R$ 110 com backup e aplicativos (pronto em 24h)</a> para seu PC ou notebook no Bairro Cristal em Porto Alegre.
 
 ---
 

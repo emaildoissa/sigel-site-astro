@@ -57,7 +57,7 @@ const localBusinessSchema = {
   "name": "Sigel Soluções em Informática",
   "image": `${siteUrl}/images/logo.webp`,
   "url": siteUrl,
-  "telephone": "+5551991305583",
+  "telephone": "+5551993257923",
   "email": "contato@sigelinformatica.com.br",
   "address": {
     "@type": "PostalAddress",
@@ -130,12 +130,54 @@ const localBusinessSchema = {
     </noscript>
 
     <!-- Google tag (gtag.js) -->
-    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-YEFCC96J8B"></script>
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=AW-1002033487"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-YEFCC96J8B');
+      gtag('config', 'AW-1002033487');
+    </script>
+
+    <!-- Global Conversion Tracker for Google Ads & GA4 -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+
+      window.trackLeadConversion = function(channel, details) {
+        try {
+          window.dataLayer.push({
+            event: 'lead_conversion',
+            conversion_channel: channel || 'whatsapp',
+            conversion_details: details || window.location.pathname
+          });
+
+          window.gtag('event', 'generate_lead', {
+            event_category: 'contact',
+            event_label: channel || 'whatsapp',
+            page_path: window.location.pathname
+          });
+
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-1002033487'
+          });
+        } catch (err) {
+          console.debug('Conversion tracking notice:', err);
+        }
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('a');
+          if (!target) return;
+          const href = target.getAttribute('href') || '';
+          if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+            window.trackLeadConversion('whatsapp', href);
+          } else if (href.startsWith('tel:')) {
+            window.trackLeadConversion('phone_call', href);
+          }
+        });
+      });
     </script>
   </head>
 
