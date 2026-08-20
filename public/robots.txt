@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://sigelinformatica.com.br/sitemap.xml
 Sitemap: https://sigelinformatica.com.br/sitemap-index.xml
