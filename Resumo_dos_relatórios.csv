@@ -1,0 +1,97 @@
+# ----------------------------------------
+# Resumo dos relatórios
+# Conta: sigel
+# Propriedade: Pagina Sigel Informática
+# ----------------------------------------
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Usuários ativos,Novos usuários,Tempo médio de engajamento por usuário ativo,Contagem de eventos
+28,27,1.3928571428571428,104
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Título da página e classe da tela,Visualizações,Usuários ativos,Contagem de eventos,Taxa de rejeição
+Sigel | Criação de Sites e Manutenção de Informática em Porto Alegre,27,22,77,0.8
+Serviços de Hardware e Software em Porto Alegre | Sigel,5,3,10,0.6
+"Serviços - Sigel | Web, Copywriting, Automação para PMEs",3,3,4,0
+"Blog Sigel | Artigos sobre Web, TI e Negócios para PMEs",2,2,6,1
+Teclado com Defeito? Como Resolver e Vantagens de Trocar - Sigel,2,2,6,1
+"Planos - Sigel | Prazos, Capacidade e Orçamentos",1,1,1,0
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Primera origem / mídia do usuário,Usuários ativos
+(direct) / (none),13
+google / organic,11
+l.instagram.com / referral,4
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Origem / mídia da sessão,Sessões
+(direct) / (none),16
+google / organic,13
+l.instagram.com / referral,4
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Nº dia,new,returning
+0000,1,0
+0001,0,0
+0002,0,0
+0003,1,0
+0004,6,0
+0005,3,0
+0006,0,0
+0007,0,0
+0008,3,1
+0009,0,0
+0010,1,0
+0011,0,0
+0012,1,0
+0013,0,1
+0014,0,1
+0015,0,0
+0016,1,0
+0017,1,0
+0018,2,0
+0019,1,0
+0020,2,0
+0021,2,0
+0022,1,0
+0023,0,0
+0024,0,0
+0025,0,0
+0026,0,1
+0027,1,0
+
+# Quais são as diferenças entre as atividades nas suas plataformas?
+# Data de início: 20260723
+# Data de término: 20260819
+Plataforma,Eventos principais
+
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Cidade,Usuários ativos
+Porto Alegre,13
+Viamao,3
+Cachoeirinha,1
+Dreieich,1
+Manaus,1
+New York,1
+Reston,1
+San Jose,1
+Sao Jose dos Pinhais,1
+Sao Paulo,1
+
+#  
+# Data de início: 20260723
+# Data de término: 20260819
+Nome do público-alvo,Usuários ativos
+All Users,28
