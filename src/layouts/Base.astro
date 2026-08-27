@@ -134,16 +134,27 @@ const localBusinessSchema = {
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
 
       gtag('config', 'G-YEFCC96J8B');
       gtag('config', 'AW-1002033487');
-    </script>
 
-    <!-- Global Conversion Tracker for Google Ads & GA4 -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined' && url) {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-1002033487/WS7uCITI--gcEM-i590D',
+            'value': 1.0,
+            'currency': 'BRL',
+            'event_callback': callback
+        });
+        return false;
+      }
+      window.gtag_report_conversion = gtag_report_conversion;
 
       window.trackLeadConversion = function(channel, details) {
         try {
@@ -153,26 +164,16 @@ const localBusinessSchema = {
             conversion_details: details || window.location.pathname
           });
 
-          window.gtag('event', 'generate_lead', {
+          gtag('event', 'generate_lead', {
             event_category: 'contact',
             event_label: channel || 'whatsapp',
             page_path: window.location.pathname
           });
 
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-1002033487/WS7uCITI--gcEM-i590D',
-            value: 1.0,
-            currency: 'BRL',
-            transport_type: 'beacon'
-          });
+          gtag_report_conversion();
         } catch (err) {
           console.debug('Conversion tracking notice:', err);
         }
-      };
-
-      window.gtag_report_conversion = function(url) {
-        window.trackLeadConversion('whatsapp', url);
-        return false;
       };
 
       document.addEventListener('DOMContentLoaded', () => {
