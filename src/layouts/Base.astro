@@ -169,6 +169,11 @@ const localBusinessSchema = {
         }
       };
 
+      window.gtag_report_conversion = function(url) {
+        window.trackLeadConversion('whatsapp', url);
+        return false;
+      };
+
       document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
           const target = e.target.closest('a');
