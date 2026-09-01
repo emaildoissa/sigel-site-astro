@@ -33,19 +33,23 @@ const {
 } = Astro.props;
 const siteUrl = "https://sigelinformatica.com.br";
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
-const ogImageUrl = ogImage ? (ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/images/logo.webp`;
+const ogImageUrl = ogImage
+  ? ogImage.startsWith("http")
+    ? ogImage
+    : `${siteUrl}${ogImage}`
+  : `${siteUrl}/images/logo.webp`;
 
 const breadcrumbSchema = breadcrumbs
   ? {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
         ...breadcrumbs.map((b, i) => ({
           "@type": "ListItem" as const,
-          "position": i + 2,
-          "name": b.name,
-          "item": `${siteUrl}${b.path}`,
+          position: i + 2,
+          name: b.name,
+          item: `${siteUrl}${b.path}`,
         })),
       ],
     }
@@ -54,18 +58,18 @@ const breadcrumbSchema = breadcrumbs
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Sigel Soluções em Informática",
-  "image": `${siteUrl}/images/logo.webp`,
-  "url": siteUrl,
-  "telephone": "+5551993257923",
-  "email": "contato@sigelinformatica.com.br",
-  "address": {
+  name: "Sigel Soluções em Informática",
+  image: `${siteUrl}/images/logo.webp`,
+  url: siteUrl,
+  telephone: "+5551993257923",
+  email: "contato@sigelinformatica.com.br",
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Icaraí, 1428 - Cristal",
-    "addressLocality": "Porto Alegre",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  }
+    streetAddress: "Av. Icaraí, 1428 - Cristal",
+    addressLocality: "Porto Alegre",
+    addressRegion: "RS",
+    addressCountry: "BR",
+  },
 };
 ---
 
@@ -95,16 +99,30 @@ const localBusinessSchema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    {preloadImages?.map((img) => (
-      <link rel="preload" as="image" href={img} fetchpriority="high" />
-    ))}
+    {
+      preloadImages?.map((img) => (
+        <link rel="preload" as="image" href={img} fetchpriority="high" />
+      ))
+    }
 
-    {preloadImages?.some(img => img.includes("unsplash.com")) && (
-      <link rel="preconnect" href="https://images.unsplash.com" />
-    )}
+    {
+      preloadImages?.some((img) => img.includes("unsplash.com")) && (
+        <link rel="preconnect" href="https://images.unsplash.com" />
+      )
+    }
 
-    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(localBusinessSchema)}
+    />
+    {
+      breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(breadcrumbSchema)}
+        />
+      )
+    }
     {schema && <script type="application/ld+json" set:html={schema} />}
 
     <!-- Fontes Google -->
@@ -113,78 +131,91 @@ const localBusinessSchema = {
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
       rel="stylesheet"
-      media="print" onload="this.media='all'"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
     </noscript>
 
     <!-- Material Symbols -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-      media="print" onload="this.media='all'"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      />
     </noscript>
 
     <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-1002033487"></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-1002033487"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       window.gtag = gtag;
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'G-YEFCC96J8B');
-      gtag('config', 'AW-1002033487');
+      gtag("config", "G-YEFCC96J8B");
+      gtag("config", "AW-1002033487");
 
       function gtag_report_conversion(url) {
         var callback = function () {
-          if (typeof(url) != 'undefined' && url) {
+          if (typeof url != "undefined" && url) {
             window.location = url;
           }
         };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-1002033487/WS7uCITI--gcEM-i590D',
-            'value': 1.0,
-            'currency': 'BRL',
-            'event_callback': callback
+        gtag("event", "conversion", {
+          send_to: "AW-1002033487/WS7uCITI--gcEM-i590D",
+          value: 1.0,
+          currency: "BRL",
+          event_callback: callback,
         });
         return false;
       }
       window.gtag_report_conversion = gtag_report_conversion;
 
-      window.trackLeadConversion = function(channel, details) {
+      window.trackLeadConversion = function (channel, details) {
         try {
           window.dataLayer.push({
-            event: 'lead_conversion',
-            conversion_channel: channel || 'whatsapp',
-            conversion_details: details || window.location.pathname
+            event: "lead_conversion",
+            conversion_channel: channel || "whatsapp",
+            conversion_details: details || window.location.pathname,
           });
 
-          gtag('event', 'generate_lead', {
-            event_category: 'contact',
-            event_label: channel || 'whatsapp',
-            page_path: window.location.pathname
+          gtag("event", "generate_lead", {
+            event_category: "contact",
+            event_label: channel || "whatsapp",
+            page_path: window.location.pathname,
           });
 
           gtag_report_conversion();
         } catch (err) {
-          console.debug('Conversion tracking notice:', err);
+          console.debug("Conversion tracking notice:", err);
         }
       };
 
-      document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('click', (e) => {
-          const target = e.target.closest('a');
+      document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("click", (e) => {
+          const target = e.target.closest("a");
           if (!target) return;
-          const href = target.getAttribute('href') || '';
-          if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-            window.trackLeadConversion('whatsapp', href);
-          } else if (href.startsWith('tel:')) {
-            window.trackLeadConversion('phone_call', href);
+          const href = target.getAttribute("href") || "";
+          if (href.includes("wa.me") || href.includes("whatsapp.com")) {
+            window.trackLeadConversion("whatsapp", href);
+          } else if (href.startsWith("tel:")) {
+            window.trackLeadConversion("phone_call", href);
           }
         });
       });

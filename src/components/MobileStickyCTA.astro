@@ -20,12 +20,14 @@ const {
   class="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-black/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-10px_25px_rgba(0,0,0,0.5)] transition-transform duration-300"
   id="mobile-sticky-cta"
 >
-  {badge && (
-    <div class="flex items-center justify-center gap-1.5 pb-2 text-[11px] font-semibold text-gray-400">
-      <span class="w-2 h-2 rounded-full bg-green-500 animate-ping inline-block"></span>
-      <span>{badge}</span>
-    </div>
-  )}
+  {
+    badge && (
+      <div class="flex items-center justify-center gap-1.5 pb-2 text-[11px] font-semibold text-gray-400">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-ping inline-block" />
+        <span>{badge}</span>
+      </div>
+    )
+  }
 
   <div class="grid grid-cols-2 gap-2.5">
     {/* Botão Ligar */}
@@ -34,7 +36,9 @@ const {
       class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 active:scale-95 text-white font-bold text-sm py-3 px-3 rounded-xl border border-white/15 transition-all shadow-md"
       aria-label="Ligar para a Sigel Informática"
     >
-      <span class="material-symbols-outlined text-[20px] text-primary">call</span>
+      <span class="material-symbols-outlined text-[20px] text-primary"
+        >call</span
+      >
       <span class="truncate">{phoneText}</span>
     </a>
 

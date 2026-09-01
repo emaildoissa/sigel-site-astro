@@ -603,11 +603,14 @@ const webSchema = JSON.stringify({
     <div class="max-w-7xl mx-auto">
       <div class="flex items-end justify-between mb-10 md:mb-14">
         <div>
-          <h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          <h2
+            class="text-white text-3xl md:text-4xl font-bold tracking-tight mb-3"
+          >
             Últimos do Blog
           </h2>
           <p class="text-gray-400 text-base md:text-lg max-w-xl">
-            Artigos, tutoriais e insights para acelerar o crescimento do seu negócio.
+            Artigos, tutoriais e insights para acelerar o crescimento do seu
+            negócio.
           </p>
         </div>
         <a
@@ -615,55 +618,88 @@ const webSchema = JSON.stringify({
           class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-white transition-colors shrink-0"
         >
           Ver todos
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
+              points="12 5 19 12 12 19"></polyline></svg
+          >
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        {latestPosts.map((post) => {
-          const catColors = {
-            web: "#f65e37", hardware: "#3b82f6", automacao: "#10b981",
-            copywriting: "#8b5cf6", negocios: "#f59e0b",
-          };
-          const catLabels = {
-            web: "Web", hardware: "Hardware", automacao: "Automação",
-            copywriting: "Copywriting", negocios: "Negócios",
-          };
-          const cat = post.data.category || "web";
-          const catColor = catColors[cat] || "#f65e37";
-          return (
-            <a
-              href={`/blog/${post.id}`}
-              class="group block bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/20 transition-all hover:-translate-y-0.5"
-            >
-              {post.data.image ? (
-                <div class="w-full h-44 overflow-hidden">
-                  <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        {
+          latestPosts.map((post) => {
+            const catColors = {
+              web: "#f65e37",
+              hardware: "#3b82f6",
+              automacao: "#10b981",
+              copywriting: "#8b5cf6",
+              negocios: "#f59e0b",
+            };
+            const catLabels = {
+              web: "Web",
+              hardware: "Hardware",
+              automacao: "Automação",
+              copywriting: "Copywriting",
+              negocios: "Negócios",
+            };
+            const cat = post.data.category || "web";
+            const catColor = catColors[cat] || "#f65e37";
+            return (
+              <a
+                href={`/blog/${post.id}`}
+                class="group block bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/20 transition-all hover:-translate-y-0.5"
+              >
+                {post.data.image ? (
+                  <div class="w-full h-44 overflow-hidden">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div class="w-full h-44 bg-white/[0.02]" />
+                )}
+                <div class="p-5 md:p-6">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span
+                      class="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider"
+                      style={`color: ${catColor}`}
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full"
+                        style={`background: ${catColor}`}
+                      />
+                      {catLabels[cat] || cat}
+                    </span>
+                    <span class="text-[11px] text-gray-600">·</span>
+                    <span class="text-[11px] text-gray-500">
+                      {post.data.pubDate.toLocaleDateString("pt-BR", {
+                        day: "2-digit",
+                        month: "short",
+                      })}
+                    </span>
+                  </div>
+                  <h3 class="text-white font-bold text-base leading-snug mb-2 group-hover:text-gray-200 transition-colors line-clamp-2">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">
+                    {post.data.description}
+                  </p>
                 </div>
-              ) : (
-                <div class="w-full h-44 bg-white/[0.02]"></div>
-              )}
-              <div class="p-5 md:p-6">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider" style={`color: ${catColor}`}>
-                    <span class="w-1.5 h-1.5 rounded-full" style={`background: ${catColor}`}></span>
-                    {catLabels[cat] || cat}
-                  </span>
-                  <span class="text-[11px] text-gray-600">·</span>
-                  <span class="text-[11px] text-gray-500">
-                    {post.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}
-                  </span>
-                </div>
-                <h3 class="text-white font-bold text-base leading-snug mb-2 group-hover:text-gray-200 transition-colors line-clamp-2">
-                  {post.data.title}
-                </h3>
-                <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          );
-        })}
+              </a>
+            );
+          })
+        }
       </div>
 
       <div class="mt-10 text-center sm:hidden">
@@ -672,7 +708,18 @@ const webSchema = JSON.stringify({
           class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
         >
           Ver todos os artigos
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
+              points="12 5 19 12 12 19"></polyline></svg
+          >
         </a>
       </div>
     </div>

@@ -4,13 +4,21 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const serviceSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Automação de Processos para Empresas em Porto Alegre",
-  "description": "Automação inteligente com IA, agendamento via WhatsApp, fluxos personalizados. Transforme processos manuais em sistemas que trabalham 24/7.",
-  "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
-  "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
-  "serviceType": "Automação de Processos"
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Automação de Processos para Empresas em Porto Alegre",
+    description:
+        "Automação inteligente com IA, agendamento via WhatsApp, fluxos personalizados. Transforme processos manuais em sistemas que trabalham 24/7.",
+    provider: {
+        "@type": "LocalBusiness",
+        name: "Sigel Soluções em Informática",
+        url: "https://sigelinformatica.com.br",
+    },
+    areaServed: [
+        { "@type": "City", name: "Porto Alegre" },
+        { "@type": "Country", name: "Brasil" },
+    ],
+    serviceType: "Automação de Processos",
 });
 ---
 
@@ -67,7 +75,16 @@ const serviceSchema = JSON.stringify({
                 >
                     Você traz o gargalo da sua operação, nós construímos a
                     solução. Transformamos processos manuais repetitivos em
-                    fluxos inteligentes que trabalham por você. Combinamos automação com <a href="/web" class="text-primary hover:text-accent transition-colors">desenvolvimento web</a> e <a href="/copywriting" class="text-primary hover:text-accent transition-colors">copywriting estratégico</a> para resultados completos.
+                    fluxos inteligentes que trabalham por você. Combinamos
+                    automação com <a
+                        href="/web"
+                        class="text-primary hover:text-accent transition-colors"
+                        >desenvolvimento web</a
+                    > e <a
+                        href="/copywriting"
+                        class="text-primary hover:text-accent transition-colors"
+                        >copywriting estratégico</a
+                    > para resultados completos.
                 </p>
 
                 {/* Avatars + Stats */}
