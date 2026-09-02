@@ -1,0 +1,396 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileStickyCTA from "../components/MobileStickyCTA.astro";
+
+const locationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Sigel Soluções em Informática - Assistência Técnica & Sede",
+      "image": "https://sigelinformatica.com.br/images/logo.webp",
+      "url": "https://sigelinformatica.com.br/onde-estamos",
+      "telephone": "+5551993257923",
+      "email": "contato@sigelinformatica.com.br",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Icaraí, 1428 - Cristal",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "postalCode": "90810-000",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -30.0768,
+        "longitude": -51.2384
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:30",
+          "closes": "18:30"
+        }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Porto Alegre" },
+        { "@type": "AdministrativeArea", "name": "Zona Sul Porto Alegre" },
+        { "@type": "AdministrativeArea", "name": "Bairro Cristal" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Preciso agendar horário para entregar meu equipamento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não é obrigatório agendar! Você pode trazer seu notebook ou computador de segunda a sexta, das 09:30 às 18:30. Se preferir avisar antes pelo WhatsApp (51) 99325-7923, nossa equipe já deixa a bancada preparada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é o estacionamento no local?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Temos fácil estacionamento em frente e na via principal da Av. Icaraí, garantindo comodidade e segurança para você desembarcar seu equipamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são os pontos de referência próximos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Estamos localizados no Bairro Cristal em Porto Alegre, bem próximos ao BarraShoppingSul, com acesso rápido pela Av. Diário de Notícias ou Av. Otto Niemeyer."
+          }
+        }
+      ]
+    }
+  ]
+});
+
+const faqs = [
+  {
+    pergunta: "Preciso agendar horário para entregar meu computador ou notebook?",
+    resposta: "Não é estritamente necessário agendar! Atendemos de <strong>segunda a sexta-feira, das 09:30 às 18:30</strong>. Se desejar agilidade extra, basta nos enviar uma mensagem no WhatsApp avisando que está a caminho."
+  },
+  {
+    pergunta: "Como é o estacionamento perto da Sigel?",
+    resposta: "O local possui <strong>fácil estacionamento</strong> na própria Av. Icaraí e ruas transversais do Bairro Cristal, permitindo estacionar com total segurança e comodidade a poucos metros da recepção."
+  },
+  {
+    pergunta: "Quais bairros de Porto Alegre ficam mais próximos?",
+    resposta: "Nossa localização no Bairro Cristal é de facílimo acesso para clientes do <strong>Cristal, Tristeza, Menino Deus, Praia de Belas, Cavalhada, Ipanema, Nonoai, Santa Tereza e Centro Histórico</strong>."
+  },
+  {
+    pergunta: "Posso solicitar um orçamento preliminar antes de levar o equipamento?",
+    resposta: "Com certeza! Chame no WhatsApp <strong>(51) 99325-7923</strong> informando o modelo e o defeito apresentado. Passamos uma estimativa prévia e tiramos suas dúvidas na hora."
+  }
+];
+---
+
+<Base
+  title="Onde Estamos | Sigel Assistência Técnica e Informática em Porto Alegre"
+  description="Localização da Sigel Soluções em Informática na Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre - RS. Fácil acesso, estacionamento, bancada própria e diagnóstico rápido."
+  canonical="/onde-estamos"
+  breadcrumbs={[{ name: "Onde Estamos", path: "/onde-estamos" }]}
+  schema={locationSchema}
+>
+  <Header />
+
+  <main class="mx-auto w-full max-w-7xl px-5 md:px-12 pt-8 md:pt-14 pb-24">
+    {/* Hero Header */}
+    <section class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-[#0a0f1d] via-surface-dark to-black border border-white/10 p-6 md:p-14 shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-accent/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        {/* Badges */}
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-6">
+          <div class="inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 px-4 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+            <span class="text-xs font-bold text-gray-200">Sede Própria & Bancada Técnica em POA</span>
+          </div>
+          <div class="inline-flex items-center gap-1.5 bg-yellow-500/10 border border-yellow-500/30 px-3.5 py-1.5 rounded-full">
+            <span class="text-yellow-400 font-black text-xs">★★★★★</span>
+            <span class="text-xs font-bold text-gray-200">5.0 no Google (Avaliações Reais)</span>
+          </div>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+          Onde Estamos em <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Porto Alegre</span>
+        </h1>
+
+        <p class="mt-4 text-gray-300 text-base md:text-xl max-w-2xl leading-relaxed">
+          Visite nosso laboratório próprio no <strong class="text-white">Bairro Cristal</strong>. Fácil acesso com estacionamento, diagnóstico rápido e atendimento transparente.
+        </p>
+
+        {/* Action Buttons for GPS */}
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
+          <a
+            href="https://maps.google.com/?q=Av.+Icara%C3%AD,+1428+-+Cristal,+Porto+Alegre+-+RS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-primary hover:bg-primary-dark text-white font-black text-base h-14 px-7 shadow-xl shadow-primary/25 transition-all hover:scale-105 active:scale-[0.98]"
+          >
+            <span class="material-symbols-outlined text-[22px]">map</span>
+            <span>Abrir no Google Maps</span>
+          </a>
+
+          <a
+            href="https://waze.com/ul?q=Av.+Icara%C3%AD+1428+Cristal+Porto+Alegre"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base h-14 px-7 shadow-xl shadow-blue-500/20 transition-all hover:scale-105 active:scale-[0.98]"
+          >
+            <span class="material-symbols-outlined text-[22px]">navigation</span>
+            <span>Navegar pelo Waze</span>
+          </a>
+
+          <a
+            href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20como%20chegar%20%C3%A0%20assist%C3%AAncia%20da%20Sigel."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base h-14 px-7 shadow-xl shadow-green-500/20 transition-all hover:scale-105 active:scale-[0.98]"
+          >
+            <span class="material-symbols-outlined text-[22px]">chat</span>
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* Map & Main Information Grid */}
+    <section class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* Left Column: Interactive Map */}
+      <div class="lg:col-span-7 bg-surface-dark border border-white/10 rounded-3xl p-4 md:p-6 shadow-2xl overflow-hidden flex flex-col">
+        <div class="flex items-center justify-between mb-4 px-2">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-2xl">pin_drop</span>
+            <h2 class="text-xl font-bold text-white">Mapa Interativo</h2>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Bairro Cristal • POA</span>
+        </div>
+
+        {/* Embedded Google Map */}
+        <div class="relative w-full h-[380px] md:h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-inner">
+          <iframe
+            title="Mapa de localização da Sigel Soluções em Informática na Av. Icaraí, 1428 - Porto Alegre"
+            src="https://maps.google.com/maps?q=Av.+Icara%C3%AD,+1428+-+Cristal,+Porto+Alegre+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full filter contrast-[1.05] brightness-[0.95]"
+          ></iframe>
+        </div>
+
+        <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-2 pt-2 text-xs text-gray-400">
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-green-400 text-[18px]">verified</span>
+            Endereço verificado no Google Meu Negócio
+          </span>
+          <a
+            href="https://maps.google.com/?q=Av.+Icara%C3%AD,+1428+-+Cristal,+Porto+Alegre+-+RS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary hover:text-accent font-bold transition-colors inline-flex items-center gap-1"
+          >
+            <span>Ver rota completa no mapa</span>
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Right Column: Address Details & Contact Info */}
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        {/* Endereço Card */}
+        <div class="bg-surface-dark border border-white/10 rounded-3xl p-6 md:p-8 shadow-xl flex flex-col gap-5">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-3xl">location_on</span>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-primary">Sede Própria</span>
+              <h2 class="text-xl font-bold text-white mt-0.5">Endereço Completo</h2>
+              <p class="text-gray-300 text-sm mt-1 leading-relaxed">
+                <strong class="text-white">Av. Icaraí, 1428</strong> - Bairro Cristal<br />
+                Porto Alegre - RS, CEP 90810-000<br />
+                Brasil
+              </p>
+            </div>
+          </div>
+
+          <hr class="border-white/10" />
+
+          {/* Horário & Telefone */}
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-gray-400 text-[20px] shrink-0 mt-0.5">schedule</span>
+              <div>
+                <span class="text-xs text-gray-400 block font-medium">Horário de Funcionamento</span>
+                <span class="text-white font-bold">Segunda a Sexta: 09:30 às 18:30</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-gray-400 text-[20px] shrink-0 mt-0.5">call</span>
+              <div>
+                <span class="text-xs text-gray-400 block font-medium">Telefone / WhatsApp</span>
+                <a href="tel:+5551993257923" class="text-white font-bold hover:text-primary transition-colors block">
+                  (51) 99325-7923
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-gray-400 text-[20px] shrink-0 mt-0.5">mail</span>
+              <div>
+                <span class="text-xs text-gray-400 block font-medium">E-mail Comercial</span>
+                <a href="mailto:contato@sigelinformatica.com.br" class="text-gray-300 hover:text-white transition-colors block text-xs md:text-sm">
+                  contato@sigelinformatica.com.br
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20manuten%C3%A7%C3%A3o%20em%20Porto%20Alegre."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-accent hover:bg-accent-dark text-white font-bold py-3.5 text-sm transition-all hover:scale-[1.02] shadow-md shadow-accent/20 mt-2"
+          >
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+            <span>Chamar no WhatsApp Agora</span>
+          </a>
+        </div>
+
+        {/* Facilidade Card */}
+        <div class="bg-surface-dark/80 border border-white/10 rounded-3xl p-6 shadow-xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-500/20 border border-green-500/30 flex items-center justify-center text-green-400 shrink-0">
+            <span class="material-symbols-outlined text-2xl">local_parking</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Estacionamento Fácil</h3>
+            <p class="text-xs text-gray-400 mt-0.5 leading-relaxed">
+              Vagas disponíveis na frente da sede para desembarque rápido e seguro de computadores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Highlights Strip */}
+    <section class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-surface-dark border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
+        <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary mb-4">
+          <span class="material-symbols-outlined text-3xl">near_me</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Pontos de Referência</h3>
+        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+          Próximo ao <strong>BarraShoppingSul</strong>, com acesso rápido via Av. Diário de Notícias, Otto Niemeyer e Icaraí.
+        </p>
+      </div>
+
+      <div class="bg-surface-dark border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
+        <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary mb-4">
+          <span class="material-symbols-outlined text-3xl">build_circle</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Bancada Técnica Completa</h3>
+        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+          Laboratório equipado para troca de tela, teclado, upgrade de SSD, formatação e reparo eletrônico de placa.
+        </p>
+      </div>
+
+      <div class="bg-surface-dark border border-white/10 rounded-2xl p-6 text-center flex flex-col items-center">
+        <div class="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary mb-4">
+          <span class="material-symbols-outlined text-3xl">verified_user</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Garantia Formal de 90 Dias</h3>
+        <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+          Todos os serviços com emissão de Ordem de Serviço, teste presencial na retirada e garantia total.
+        </p>
+      </div>
+    </section>
+
+    {/* Bairros Atendidos */}
+    <section class="mt-16 bg-gradient-to-r from-surface-dark via-[#0f1424] to-surface-dark border border-white/10 rounded-3xl p-8 md:p-12">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent">Área de Atendimento</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mt-1">Bairros Atendidos em Porto Alegre</h2>
+        <p class="text-gray-400 text-sm mt-2">
+          Atendemos presencialmente em nosso laboratório clientes de toda a capital gaúcha e Região Metropolitana.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+        {[
+          "Bairro Cristal", "Tristeza", "Menino Deus", "Praia de Belas", "Cavalhada",
+          "Ipanema", "Nonoai", "Santa Tereza", "Centro Histórico", "Cidade Baixa",
+          "Petrópolis", "Bela Vista", "Moinhos de Vento", "Zona Sul Porto Alegre"
+        ].map((bairro) => (
+          <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm font-semibold text-gray-200">
+            📍 {bairro}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    {/* FAQ Section */}
+    <section class="mt-16 max-w-3xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">Tire Suas Dúvidas</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mt-1">Perguntas Frequentes sobre a Visita</h2>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {faqs.map((faq) => (
+          <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-white/10 shadow-sm">
+            <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
+              <span>{faq.pergunta}</span>
+              <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
+            </summary>
+            <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed" set:html={faq.resposta} />
+          </details>
+        ))}
+      </div>
+    </section>
+
+    {/* Final Call to Action */}
+    <section class="mt-20 text-center">
+      <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-surface-dark via-[#13192b] to-surface-dark border border-white/10 p-10 md:p-14 shadow-2xl">
+        <div class="relative z-10 max-w-2xl mx-auto">
+          <h2 class="text-2xl md:text-4xl font-black text-white mb-3">
+            Precisa Trazer seu Computador Hoje?
+          </h2>
+          <p class="text-gray-300 text-sm md:text-base mb-8 leading-relaxed">
+            Fale com nossa equipe no WhatsApp para avisar sobre sua visita ou tirar dúvidas sobre o trânsito e estacionamento.
+          </p>
+          <a
+            href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Estou%20indo%20at%C3%A9%20a%20assist%C3%AAncia%20da%20Sigel%20na%20Av.%20Icara%C3%AD."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-3 rounded-2xl bg-accent hover:bg-accent-dark text-white font-black text-base md:text-lg h-16 px-10 shadow-xl shadow-accent/20 transition-all hover:scale-105 active:scale-[0.98]"
+          >
+            <span class="material-symbols-outlined text-[24px]">chat</span>
+            <span>Avisar Visita no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <MobileStickyCTA
+    whatsappUrl="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20como%20chegar%20ou%20agendar%20uma%20visita."
+    badge="Bancada Técnica • Cristal POA"
+  />
+
+  <Footer />
+</Base>

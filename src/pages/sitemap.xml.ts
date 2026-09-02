@@ -24,6 +24,7 @@ export const GET: APIRoute = async () => {
     { url: "planos", priority: "0.8", changefreq: "monthly" },
     { url: "sobre", priority: "0.8", changefreq: "monthly" },
     { url: "contato", priority: "0.8", changefreq: "monthly" },
+    { url: "onde-estamos", priority: "0.9", changefreq: "weekly" },
     { url: "contratos", priority: "0.9", changefreq: "monthly" },
     { url: "locais/porto-alegre", priority: "0.8", changefreq: "monthly" },
     { url: "servicos/hardware", priority: "0.9", changefreq: "weekly" },
