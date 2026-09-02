@@ -38,7 +38,7 @@ export const GET: APIRoute = async () => {
   }));
 
   const blogPages = posts.map(post => ({
-    url: `blog/${post.slug}`,
+    url: `blog/${post.id}`,
     priority: "0.8",
     changefreq: "monthly"
   }));
