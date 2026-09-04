@@ -17,7 +17,44 @@ export async function getStaticPaths() {
   ];
 }
 
-const servicos = {
+interface EtapaMetodo {
+  numero: string;
+  titulo: string;
+  descricao: string;
+  icone: string;
+}
+
+interface MetodoServico {
+  titulo: string;
+  subtitulo: string;
+  etapas: EtapaMetodo[];
+}
+
+interface FaqExtraItem {
+  pergunta: string;
+  resposta: string;
+}
+
+interface ServicoItem {
+  titulo: string;
+  description: string;
+  h1: string;
+  subtitulo: string;
+  conteudo: string;
+  sintomas: string[];
+  preco: string;
+  prazo: string;
+  garantia: string;
+  icone: string;
+  badge?: string;
+  whatsappMsg: string;
+  faqPergunta: string;
+  faqResposta: string;
+  faqExtra?: FaqExtraItem[];
+  metodo?: MetodoServico;
+}
+
+const servicos: Record<string, ServicoItem> = {
   "troca-de-tela": {
     titulo: "Troca de Tela de Notebook em Porto Alegre | Sigel",
     description: "Troca de tela de notebook quebrada, trincada ou com manchas em Porto Alegre. Orçamento rápido no WhatsApp, peças originais, garantia de 90 dias e atendimento no Bairro Cristal.",
@@ -63,26 +100,26 @@ const servicos = {
     faqResposta: "A formatação completa custa <strong>R$ 110</strong> com backup integral e pacote de aplicativos essenciais inclusos. <strong>Você não perde nada!</strong> Realizamos cópia preventiva de todos os seus dados antes da formatação e entregamos seu computador pronto em até 24 horas.",
   },
   "troca-de-teclado": {
-    titulo: "Troca de Teclado de Notebook em Porto Alegre | Sigel",
-    description: "Troca de teclado de notebook em Porto Alegre. Teclas falhando, presas, derramamento de café/água ou teclas que não digitam. Orçamento rápido pelo WhatsApp.",
-    h1: "Troca de Teclado de Notebook em Porto Alegre",
-    subtitulo: "Teclas falhando, disparando sozinhas ou pararam após cair líquido? Substituímos por teclado novo original com garantia.",
-    conteudo: "O teclado é um dos componentes mais sensíveis do notebook. Sujeira acumulada, derramamento acidental de líquidos ou desgaste nas membranas mecânicas fazem as teclas falharem ou digitarem sozinhas. Realizamos a substituição completa por teclados novos padrão ABNT2 (com Ç) ou internacionais, compatíveis com seu modelo exato.",
+    titulo: "Substituição de Teclado de Notebook em Porto Alegre | Sigel",
+    description: "Substituição de teclado para notebook em Porto Alegre. Teclados novos originais ABNT2 e internacionais com instalação e garantia de 90 dias.",
+    h1: "Substituição de Teclado para Notebook",
+    subtitulo: "Teclas falhando ou danificadas? Substituímos por teclados novos originais ABNT2 com instalação e garantia de 90 dias.",
+    conteudo: "O teclado é o componente principal de digitação do notebook. Com o tempo, desgaste nas membranas ou contatos acidentais com líquidos podem afetar a resposta das teclas. Oferecemos a substituição por teclados novos no padrão ABNT2 (com Ç) ou internacional, com encaixe perfeito e garantia.",
     sintomas: [
-      "Teclas específicas que pararam de responder (como Enter, Barra de Espaço ou vogais)",
-      "Teclado disparando letras sozinho sem parar",
-      "Teclas grudando, duras ou emperradas após derramamento de líquido",
-      "Teclado desconfigurado trocando letras por números",
-      "Iluminação do teclado (backlight) que parou de funcionar"
+      "Teclas específicas que pararam de responder (como Enter, Espaço ou atalhos)",
+      "Teclas digitando repetidamente ao serem pressionadas",
+      "Teclas rígidas ou soltas devido ao desgaste mecânico",
+      "Necessidade de alteração para layout ABNT2 (com Ç)",
+      "Iluminação interna do teclado (backlight) inativa"
     ],
     preco: "R$ 150 a R$ 400",
     prazo: "1 a 2 dias úteis",
     garantia: "90 dias de garantia",
     icone: "keyboard",
-    badge: "Peças Originais ABNT2",
-    whatsappMsg: "Olá! Vi no Google e preciso trocar o teclado do meu notebook em Porto Alegre.",
-    faqPergunta: "Vale a pena consertar ou trocar o teclado do notebook?",
-    faqResposta: "A substituição do teclado é o procedimento mais seguro e durável, pois a tentativa de reparar trilhas internas costuma voltar a dar defeito. Em média, a troca completa custa entre <strong>R$ 150 e R$ 400</strong> dependendo do modelo.",
+    badge: "Teclados Novos ABNT2",
+    whatsappMsg: "Olá! Vi no site e gostaria de verificar a disponibilidade de teclado para o meu notebook em Porto Alegre.",
+    faqPergunta: "Por que optar pela substituição do teclado de notebook?",
+    faqResposta: "A instalação de um teclado novo é o procedimento mais seguro e durável para restabelecer a digitação original. Em média, a substituição completa com peça e instalação fica entre <strong>R$ 150 e R$ 400</strong> dependendo do modelo do notebook.",
   },
   "upgrade-ssd": {
     titulo: "Upgrade de HDD para SSD em Porto Alegre | Sigel",
@@ -167,6 +204,7 @@ const servicos = {
     prazo: "1 a 5 dias úteis conforme o tamanho e gravidade",
     garantia: "Cobrança baseada no sucesso da recuperação",
     icone: "cloud_download",
+    badge: "Alta Taxa de Sucesso",
     whatsappMsg: "Olá! Vi no Google e preciso recuperar dados e arquivos de um HD/SSD/pen drive em Porto Alegre.",
     faqPergunta: "Se não for possível recuperar os dados, eu pago alguma coisa?",
     faqResposta: "Na maioria dos casos de recuperação lógica, se nenhum dado útil for resgatado, você não paga pelo serviço de recuperação. A análise inicial é transparente.",
@@ -331,7 +369,7 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
     <nav class="flex items-center gap-2 text-xs text-gray-400 mb-6">
       <a href="/" class="hover:text-white transition-colors">Início</a>
       <span>/</span>
-      <a href="/servicos/hardware" class="hover:text-white transition-colors">Hardware & Manutenção</a>
+      <a href="/servicos/hardware" class="hover:text-white transition-colors">Hardware & Componentes</a>
       <span>/</span>
       <span class="text-primary font-bold">{h1}</span>
     </nav>
@@ -459,7 +497,7 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
     {/* Symptoms / Quando Fazer Section */}
     <section class="mt-14 bg-surface-dark border border-white/10 rounded-3xl p-6 md:p-12">
       <div class="max-w-3xl mb-8">
-        <span class="text-xs font-bold uppercase tracking-wider text-primary">Diagnóstico Rápido</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">Sinais para Substituição</span>
         <h2 class="text-2xl md:text-3xl font-black text-white mt-1">
           Identifique os Sinais no seu Equipamento
         </h2>
@@ -558,7 +596,7 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
     <section class="mt-16 bg-gradient-to-r from-surface-dark to-[#0f1424] border border-white/10 rounded-3xl p-8 md:p-12">
       <div class="text-center max-w-xl mx-auto mb-10">
         <span class="text-xs font-bold uppercase tracking-wider text-accent">Passo a Passo</span>
-        <h2 class="text-2xl md:text-3xl font-black text-white mt-1">Como Solicitar seu Reparo</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-white mt-1">Como Solicitar a Substituição de Peça</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -568,7 +606,7 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Envie uma Mensagem</h3>
           <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-            Diga o modelo do notebook e o defeito no WhatsApp para receber uma prévia de orçamento imediata.
+            Informe o modelo do seu notebook pelo WhatsApp para consultar a disponibilidade do teclado e valores.
           </p>
         </div>
 
@@ -586,9 +624,9 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
           <div class="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-black text-xl mx-auto mb-4">
             3
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Reparo Rápido com Garantia</h3>
+          <h3 class="text-lg font-bold text-white mb-2">Instalação Rápida com Garantia</h3>
           <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-            Executamos o serviço com peças de qualidade e garantia de 90 dias para sua total segurança.
+            Realizamos a instalação de peças novas com teste completo e garantia de 90 dias para sua total segurança.
           </p>
         </div>
       </div>
@@ -644,7 +682,7 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
     {/* Other Services Navigation */}
     <section class="mt-20 border-t border-white/10 pt-12">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl md:text-2xl font-bold text-white">Outros Serviços de Manutenção</h2>
+        <h2 class="text-xl md:text-2xl font-bold text-white">Outros Componentes e Peças</h2>
         <a href="/servicos/hardware" class="text-sm text-primary hover:text-accent font-bold transition-colors">Ver todos</a>
       </div>
 
