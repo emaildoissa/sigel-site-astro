@@ -10,7 +10,7 @@ const serviceSchema = JSON.stringify({
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "name": "Sigel Soluções em Informática - Assistência Técnica",
+      "name": "Sigel Soluções em Informática - Sede Porto Alegre",
       "image": "https://sigelinformatica.com.br/images/logo.webp",
       "url": "https://sigelinformatica.com.br/servicos/hardware",
       "telephone": "+5551993257923",
@@ -40,10 +40,10 @@ const serviceSchema = JSON.stringify({
     {
       "@type": "Service",
       "name": "Manutenção de Computadores e Notebooks em Porto Alegre",
-      "description": "Assistência técnica especializada em notebooks e computadores: troca de tela, teclado, upgrade de SSD, formatação, recuperação de dados e reparo em Porto Alegre.",
+      "description": "Substituição de peças e componentes para notebooks e computadores: troca de tela, teclado, upgrade de SSD e manutenção de hardware em Porto Alegre.",
       "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
       "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "State", "name": "Rio Grande do Sul" }],
-      "serviceType": "Assistência Técnica em Informática"
+      "serviceType": "Substituição de Componentes e Hardware"
     }
   ]
 });
@@ -70,7 +70,7 @@ const faqSchema = JSON.stringify({
     },
     {
       "@type": "Question",
-      "name": "Onde fica a assistência técnica em Porto Alegre?",
+      "name": "Onde fica a Sigel em Porto Alegre?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Estamos localizados na Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre - RS. Próximo ao BarraShoppingSul e com fácil estacionamento."
@@ -155,8 +155,8 @@ const services = [
   {
     slug: "assistencia-tecnica",
     icon: "support_agent",
-    title: "Assistência Técnica Completa",
-    description: "Diagnóstico eletrônico em placas-mãe, reparo de conectores de carga (DC Jack), curto-circuito e suporte técnico geral.",
+    title: "Substituição de Componentes",
+    description: "Diagnóstico técnico em placas-mãe, substituição de conectores de carga (DC Jack), curto-circuito e componentes de hardware.",
     price: "Sob Consulta",
     badge: "Especialistas"
   }
@@ -168,8 +168,8 @@ const brands = [
 ---
 
 <Base
-  title="Assistência Técnica e Manutenção de Notebook em Porto Alegre | Sigel"
-  description="Conserto de notebook em Porto Alegre: troca de tela, teclado, upgrade de SSD, formatação e reparo. Diagnóstico rápido, garantia de 90 dias e atendimento no Bairro Cristal."
+  title="Substituição de Peças e Manutenção de Notebook em Porto Alegre | Sigel"
+  description="Substituição de peças para notebook em Porto Alegre: troca de tela, teclado, upgrade de SSD e componentes. Peças com garantia de 90 dias e atendimento no Bairro Cristal."
   canonical="/servicos/hardware"
   breadcrumbs={[
     { name: "Serviços", path: "/servicos" },
@@ -200,7 +200,7 @@ const brands = [
         </div>
 
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-          Assistência Técnica & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Conserto de Notebook</span> em Porto Alegre
+          Substituição de Peças & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Hardware de Notebook</span> em Porto Alegre
         </h1>
 
         <p class="mt-5 text-gray-300 text-base md:text-xl max-w-2xl leading-relaxed">
@@ -455,7 +455,7 @@ const brands = [
 
         <details class="group bg-surface-dark rounded-2xl overflow-hidden border border-white/10 shadow-sm">
           <summary class="flex justify-between items-center font-bold cursor-pointer p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors">
-            <span>Onde fica a assistência técnica e como entrego?</span>
+            <span>Onde fica a Sigel e como entrego?</span>
             <span class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full">expand_more</span>
           </summary>
           <div class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed">
@@ -486,7 +486,7 @@ const brands = [
             Chame nossos técnicos no WhatsApp agora mesmo. Informamos o orçamento sem compromisso e tiramos todas as suas dúvidas.
           </p>
           <a
-            href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Preciso%20de%20suporte%20t%C3%A9cnico%20para%20o%20meu%20notebook%2Fcomputador."
+            href="https://wa.me/5551993257923?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20substitui%C3%A7%C3%A3o%20de%20pe%C3%A7as%20para%20notebook."
             target="_blank"
             rel="noreferrer"
             class="inline-flex items-center justify-center gap-3 rounded-2xl bg-accent hover:bg-accent-dark text-white font-black text-lg h-16 px-10 shadow-xl shadow-accent/20 transition-all hover:scale-105 active:scale-[0.98]"
