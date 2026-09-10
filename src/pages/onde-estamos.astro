@@ -12,7 +12,7 @@ const locationSchema = JSON.stringify({
       "name": "Sigel Soluções em Informática - Sede Porto Alegre",
       "image": "https://sigelinformatica.com.br/images/logo.webp",
       "url": "https://sigelinformatica.com.br/onde-estamos",
-      "telephone": "+5551993257923",
+      "telephone": ["+555135083008", "+5551993257923"],
       "email": "contato@sigelinformatica.com.br",
       "priceRange": "$$",
       "address": {
@@ -243,9 +243,12 @@ const faqs = [
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-gray-400 text-[20px] shrink-0 mt-0.5">call</span>
               <div>
-                <span class="text-xs text-gray-400 block font-medium">Telefone / WhatsApp</span>
+                <span class="text-xs text-gray-400 block font-medium">Telefones de Contato</span>
+                <a href="tel:+555135083008" class="text-white font-bold hover:text-primary transition-colors block">
+                  (51) 3508-3008 <span class="text-xs font-normal text-gray-400">(Fixo)</span>
+                </a>
                 <a href="tel:+5551993257923" class="text-white font-bold hover:text-primary transition-colors block">
-                  (51) 99325-7923
+                  (51) 99325-7923 <span class="text-xs font-normal text-gray-400">(WhatsApp)</span>
                 </a>
               </div>
             </div>
