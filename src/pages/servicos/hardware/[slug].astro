@@ -79,25 +79,81 @@ const servicos: Record<string, ServicoItem> = {
   },
   "formatacao-pc": {
     titulo: "Formatação de PC e Notebook com Backup em Porto Alegre | Sigel",
-    description: "Formatação de computador e notebook em Porto Alegre por R$ 110 com backup e aplicativos inclusos. Windows 10/11 limpo e otimizado em 24 horas.",
+    description: "Formatação de computador e notebook em Porto Alegre por R$ 110 com backup seguro e aplicativos inclusos. Windows 10/11 limpo e otimizado em 24 horas.",
     h1: "Formatação de PC e Notebook com Backup Seguro",
-    subtitulo: "Computador travando, lento ou com vírus? Deixe seu PC novo de novo com backup completo e aplicativos essenciais em até 24 horas.",
-    conteudo: "Com o tempo de uso, o sistema acumula arquivos temporários, vírus e registros corrompidos que deixam o computador arrastado. Nossa formatação é profissional e completa por apenas R$ 110: realizamos o backup integral de todos os seus arquivos, instalação limpa do Windows/Linux com todas as atualizações de segurança, drivers certificados pelo fabricante e o pacote de aplicativos essenciais. Entregamos seu equipamento pronto para uso em até 24 horas.",
+    subtitulo: "Computador lento ou acumulando arquivos desnecessários? Restaure o desempenho original com backup completo dos seus dados e aplicativos essenciais em até 24 horas.",
+    conteudo: "Com o tempo de uso, o sistema operacional acumula atualizações antigas, cache e arquivos temporários desnecessários que reduzem o desempenho do computador. Nosso serviço de formatação e restauração por R$ 110 inclui a cópia preventiva (backup) integral de todos os seus documentos e fotos, instalação limpa e oficial do Windows 10/11 ou Linux, atualizações de segurança do fabricante, drivers certificados e o pacote de aplicativos essenciais. Entregamos seu equipamento otimizado e pronto para uso em até 24 horas.",
     sintomas: [
-      "Computador demora vários minutos para ligar ou abrir pastas",
-      "Travamentos constantes, tela azul ou reinicializações repentinas",
-      "Presença de vírus, pop-ups indesejados ou programas que você não instalou",
-      "Disco rígido acusando 100% de uso constante no Gerenciador de Tarefas",
-      "Erros ao atualizar o Windows ou abrir aplicativos básicos"
+      "Computador apresentando demoras ao inicializar ou carregar a área de trabalho",
+      "Lentidão constante durante a navegação na internet ou abertura de pastas",
+      "Excesso de softwares acumulados reduzindo a velocidade de processamento",
+      "Disco rígido (HD ou SSD) acusando alto uso constante no Gerenciador de Tarefas",
+      "Necessidade de reinstalação limpa do sistema operacional para máximo desempenho"
     ],
     preco: "R$ 110 (com backup e aplicativos)",
     prazo: "24 horas",
-    garantia: "Garantia de estabilidade e suporte pós-formatação",
+    garantia: "Garantia de 90 dias na instalação",
     icone: "settings",
     badge: "Pronto em 24h",
     whatsappMsg: "Olá! Vi no Google e gostaria de agendar a formatação do meu computador/notebook por R$ 110 com backup em Porto Alegre.",
     faqPergunta: "Quanto custa e eu perco meus arquivos ao formatar o computador?",
     faqResposta: "A formatação completa custa <strong>R$ 110</strong> com backup integral e pacote de aplicativos essenciais inclusos. <strong>Você não perde nada!</strong> Realizamos cópia preventiva de todos os seus dados antes da formatação e entregamos seu computador pronto em até 24 horas.",
+    faqExtra: [
+      {
+        pergunta: "Meus arquivos (fotos, documentos, relatórios) ficam totalmente salvos?",
+        resposta: "<strong>Sim, com total segurança!</strong> Antes de qualquer procedimento no sistema operacional, fazemos a cópia preventiva (backup) de todas as suas pastas de documentos, fotos, downloads e arquivos de trabalho. Após a restauração do sistema, todos os seus dados são recolocados nos mesmos locais."
+      },
+      {
+        pergunta: "Quais programas e aplicativos já vêm instalados?",
+        resposta: "Entregamos o computador pronto para uso diário, incluindo <strong>navegadores de internet atualizados, leitores de PDF, suíte de escritório para documentos e planilhas, reprodutores de mídia e utilitários essenciais</strong>, além de todos os drivers oficiais do fabricante."
+      },
+      {
+        pergunta: "Qual versão do sistema operacional será instalada?",
+        resposta: "Instalamos a versão oficial e mais adequada ao hardware do seu equipamento (<strong>Windows 10, Windows 11 ou Linux</strong>), garantindo a máxima compatibilidade, fluidez e estabilidade para o seu dia a dia."
+      }
+    ],
+    metodo: {
+      titulo: "Processo Sigel de Formatação e Instalação Limpa de Sistema",
+      subtitulo: "Conheça os passos do nosso procedimento técnico para renovar o desempenho do seu computador com segurança e cópia integral de dados:",
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Cópia Preventiva e Backup Integral de Dados",
+          descricao: "Salvamos todos os seus arquivos pessoais, fotos, vídeos, documentos e planilhas em unidade segura de bancada antes de iniciar.",
+          icone: "cloud_upload"
+        },
+        {
+          numero: "02",
+          titulo: "Higienização Lógica do Armazenamento",
+          descricao: "Formatamos a partição do HD ou SSD eliminando resíduos antigos, partições orfãs e arquivos temporários desnecessários.",
+          icone: "cleaning_services"
+        },
+        {
+          numero: "03",
+          titulo: "Instalação Limpa do Sistema Operacional",
+          descricao: "Efetuamos a instalação oficial e limpa do Windows 10, Windows 11 ou Linux com as mais recentes atualizações de segurança.",
+          icone: "laptop_windows"
+        },
+        {
+          numero: "04",
+          titulo: "Instalação de Drivers Homologados",
+          descricao: "Baixamos e configuramos os drivers originais de fábrica para áudio, placa de vídeo, chipset, rede Wi-Fi e Bluetooth.",
+          icone: "tune"
+        },
+        {
+          numero: "05",
+          titulo: "Pacote de Softwares e Utilidades",
+          descricao: "Instalamos o pacote de aplicativos essenciais para uso imediato: navegadores, leitor de PDF, reprodutores e suíte de escritório.",
+          icone: "apps"
+        },
+        {
+          numero: "06",
+          titulo: "Otimização de Inicialização e Entrega",
+          descricao: "Configuramos a inicialização rápida do sistema e realizamos testes de estabilidade. Seu PC fica pronto para busca em até 24 horas.",
+          icone: "task_alt"
+        }
+      ]
+    }
   },
   "troca-de-teclado": {
     titulo: "Substituição de Teclado de Notebook em Porto Alegre | Sigel",
@@ -210,39 +266,39 @@ const servicos: Record<string, ServicoItem> = {
     faqResposta: "Na maioria dos casos de recuperação lógica, se nenhum dado útil for resgatado, você não paga pelo serviço de recuperação. A análise inicial é transparente.",
   },
   "reparo-carcaca": {
-    titulo: "Reparo de Carcaça e Dobradiças de Notebook em Porto Alegre | Sigel",
-    description: "Conserto profissional de carcaça quebrada, dobradiça travada ou tampa solta de notebook em Porto Alegre. Reconstrução estrutural com resina de alta densidade e regulagem de dobradiças.",
-    h1: "Reparo de Carcaça e Dobradiças de Notebook",
-    subtitulo: "A tampa do seu notebook está dura, estalando ou quebrando o plástico? Recuperamos a estrutura original com resina de alta resistência, ancoragem de torres e alívio de pressão.",
-    conteudo: "As dobradiças metálicas dos notebooks modernos costumam acumular atrito e endurecer com o tempo. A cada abertura da tampa, uma pressão mecânica enorme é transferida para as torres de fixação plásticas da carcaça até que elas estourem. Se o problema for ignorado, a tampa torta pode partir o display de vidro e romper os cabos flat de vídeo. Nosso serviço realiza a reconstrução estrutural técnica da carcaça com polímero bi-componente de alta densidade, fixação por insertos metálicos e regulagem fina de tensão das dobradiças para garantir durabilidade de longo prazo.",
+    titulo: "Reconstrução de Carcaça e Dobradiças de Notebook em Porto Alegre | Sigel",
+    description: "Reconstrução estrutural de carcaça, alívio de dobradiças travadas e restauração de tampa de notebook em Porto Alegre. Aplicação de resina de alta densidade e regulagem mecânica.",
+    h1: "Reconstrução de Carcaça e Regulagem de Dobradiças",
+    subtitulo: "A tampa do seu notebook está dura, estalando ou com folga na estrutura? Recuperamos a estrutura original com resina de alta resistência, ancoragem de torres e alívio de pressão.",
+    conteudo: "As dobradiças metálicas dos notebooks modernos costumam acumular atrito e endurecer com o tempo. A cada abertura da tampa, uma pressão mecânica enorme é transferida para as torres de fixação plásticas da carcaça até que ocorram folgas ou trincas. Se o problema não for corrigido a tempo, a pressão pode afetar o painel de vídeo e os cabos flat. Nosso serviço realiza a reconstrução estrutural técnica da carcaça com polímero bi-componente de alta densidade, fixação por insertos metálicos e regulagem fina de tensão das dobradiças para garantir durabilidade de longo prazo.",
     sintomas: [
-      "Notebook estalando ou abrindo frestas na carcaça ao movimentar a tampa",
-      "Dobradiça solta, torta ou que rompeu as roscas de fixação internas",
-      "Tampa do notebook travada ou extremamente dura para abrir e fechar",
-      "Plástico quebrado ou trincado perto da tela, bordas ou área do teclado",
-      "Tela caindo sozinha ou tombando para trás por falta de sustentação",
-      "Tentativas anteriores de colar com 'super bonder' que voltaram a soltar"
+      "Notebook estalando ou apresentando folgas na carcaça ao movimentar a tampa",
+      "Dobradiça com resistência mecânica excessiva ou desalinhamento interno",
+      "Tampa do notebook travada ou com atrito elevado para abrir e fechar",
+      "Plástico da estrutura com trincas ou áreas fragilizadas perto da tela ou teclado",
+      "Tela com desalinhamento ou tombando para trás por falta de sustentação mecânica",
+      "Tentativas anteriores de fixação com colas convencionais que voltaram a soltar"
     ],
     preco: "R$ 80 a R$ 350",
     prazo: "1 a 3 dias úteis",
     garantia: "90 dias de garantia estrutural",
     icone: "construction",
-    badge: "Evita Quebra de Tela",
-    whatsappMsg: "Olá! Vi no Google e gostaria de um orçamento para reparo de carcaça e dobradiças do meu notebook em Porto Alegre.",
-    faqPergunta: "Vale a pena consertar a carcaça ou preciso comprar uma nova?",
+    badge: "Protege o Painel",
+    whatsappMsg: "Olá! Vi no Google e gostaria de um orçamento para reconstrução de carcaça e dobradiças do meu notebook em Porto Alegre.",
+    faqPergunta: "Vale a pena fazer a reconstrução da carcaça ou preciso comprar uma nova?",
     faqResposta: "A reconstrução técnica estrutural com resina especial de alta densidade e ancoragem metálica recupera a carcaça original com resistência igual ou superior à de fábrica, custando até <strong>70% menos</strong> do que comprar ou importar uma carcaça plástica nova.",
     faqExtra: [
       {
-        pergunta: "Por que passar cola instantânea (super bonder) não funciona?",
-        resposta: "Colas instantâneas criam uma película rígida e cristalizada que resseca e quebra no primeiro movimento de alavanca da tampa. Nosso método utiliza <strong>resina bi-componente de alta densidade com insertos metálicos roscados</strong> e regulagem da pressão das dobradiças, resolvendo a causa raiz da quebra."
+        pergunta: "Por que a aplicação de colas instantâneas convencionais não funciona?",
+        resposta: "Colas instantâneas criam uma película rígida e cristalizada que resseca e rompe no primeiro movimento de alavanca da tampa. Nosso procedimento utiliza <strong>resina bi-componente de alta densidade com insertos metálicos roscados</strong> e regulagem da pressão das dobradiças, resolvendo a causa raiz do problema."
       },
       {
-        pergunta: "Se eu não consertar a carcaça, posso quebrar a tela do notebook?",
-        resposta: "<strong>Sim, o risco é altíssimo!</strong> Com a carcaça quebrada, o esforço mecânico ao abrir a tampa é exercido diretamente sobre o painel de vidro e sobre o cabo flat de vídeo, o que frequentemente resulta em tela trincada ou cabos rompidos."
+        pergunta: "Se eu não realizar a restauração da carcaça, posso danificar a tela do notebook?",
+        resposta: "<strong>Sim, o risco é elevado!</strong> Com a carcaça desalinhada, o esforço mecânico ao movimentar a tampa é exercido diretamente sobre o painel de vidro e sobre o cabo flat de vídeo, o que pode causar trincas no display."
       },
       {
-        pergunta: "Vocês ajustam a tensão da dobradiça durante o reparo?",
-        resposta: "<strong>Com certeza.</strong> O alívio e a regulagem de pressão das dobradiças de aço é uma etapa obrigatória em todos os nossos reparos. Regulamos a tensão exata para que a tampa fique firme em qualquer ângulo sem exercer força excessiva sobre o plástico."
+        pergunta: "Vocês realizam a regulagem de pressão da dobradiça durante o procedimento?",
+        resposta: "<strong>Com certeza.</strong> O alívio e a regulagem de pressão das dobradiças de aço é uma etapa obrigatória no processo de restauração. Regulamos a tensão exata para que a tampa movimente-se suavemente sem exercer força de torção sobre a carcaça."
       }
     ],
     metodo: {
@@ -251,8 +307,8 @@ const servicos: Record<string, ServicoItem> = {
       etapas: [
         {
           numero: "01",
-          titulo: "Diagnóstico e Teste de Tensão Mecânica",
-          descricao: "Avaliamos o nível de esforço das dobradiças, trincas na carcaça, alinhamento dos cabos de vídeo e estado do painel de tela.",
+          titulo: "Avaliação Mecânica e Teste de Tensão",
+          descricao: "Avaliamos o nível de esforço das dobradiças, alinhamento da estrutura, cabos de vídeo e estado do painel de tela.",
           icone: "search"
         },
         {
