@@ -83,11 +83,11 @@ body {
     }
 }
 
-@media (max-w: 767px) {
-    body.has-mobile-cta .wpp-float-container {
-        bottom: 5.5rem !important; /* Clears standard bottom bar (~88px) */
-    }
-    body.has-mobile-cta-high .wpp-float-container {
-        bottom: 7.5rem !important; /* Clears high bottom bar (~120px) */
+@media (max-width: 767px) {
+    /* Quando a página possui a barra inferior de CTA (MobileStickyCTA), ocultar o botão redondo para evitar sobreposição */
+    body.has-mobile-cta .wpp-float-container,
+    body.has-mobile-cta-high .wpp-float-container,
+    body:has(#mobile-sticky-cta) .wpp-float-container {
+        display: none !important;
     }
 }
