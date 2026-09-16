@@ -28,15 +28,19 @@
 
   // 2. Determinar a origem do visitante
   function detectSource() {
-    // Verificar se já temos origem guardada na sessão (navegação entre páginas internas)
-    try {
-      const saved = sessionStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        return saved;
-      }
-    } catch (e) {}
-
     const p = getUrlParams();
+    const hasAdParams = Boolean(p.gclid || p.gbraid || p.wbraid || p.fbclid || p.utm_source || p.utm_medium);
+
+    // Se NÃO há novos parâmetros de tráfego na URL, reaproveita a origem salva da sessão
+    if (!hasAdParams) {
+      try {
+        const saved = sessionStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          return saved;
+        }
+      } catch (e) {}
+    }
+
     let source = 'Site';
 
     // Google Ads (gclid, gbraid, wbraid ou UTMs explícitas)

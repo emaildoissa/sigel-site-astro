@@ -211,11 +211,6 @@ const localBusinessSchema = {
       const SIGEL_STORAGE_KEY = "sigel_lead_source";
 
       function detectLeadOrigin() {
-        try {
-          const saved = sessionStorage.getItem(SIGEL_STORAGE_KEY);
-          if (saved) return saved;
-        } catch (e) {}
-
         const params = new URLSearchParams(window.location.search);
         const utmSource = (params.get("utm_source") || "").toLowerCase();
         const utmMedium = (params.get("utm_medium") || "").toLowerCase();
@@ -223,6 +218,18 @@ const localBusinessSchema = {
         const gbraid = params.get("gbraid");
         const wbraid = params.get("wbraid");
         const fbclid = params.get("fbclid");
+
+        const hasAdParams = Boolean(
+          gclid || gbraid || wbraid || fbclid || utmSource || utmMedium
+        );
+
+        // Se NÃO há novos parâmetros de tráfego na URL, reaproveita a origem salva da sessão
+        if (!hasAdParams) {
+          try {
+            const saved = sessionStorage.getItem(SIGEL_STORAGE_KEY);
+            if (saved) return saved;
+          } catch (e) {}
+        }
 
         let origin = "Site";
 
