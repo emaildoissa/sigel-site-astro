@@ -207,18 +207,172 @@ const localBusinessSchema = {
         }
       };
 
-      document.addEventListener("DOMContentLoaded", () => {
-        document.addEventListener("click", (e) => {
+      // --- SIGEL CRM: Rastreamento Inteligente de Origem de Leads (Google Ads / Meta Ads / Site) ---
+      const SIGEL_STORAGE_KEY = "sigel_lead_source";
+
+      function detectLeadOrigin() {
+        try {
+          const saved = sessionStorage.getItem(SIGEL_STORAGE_KEY);
+          if (saved) return saved;
+        } catch (e) {}
+
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = (params.get("utm_source") || "").toLowerCase();
+        const utmMedium = (params.get("utm_medium") || "").toLowerCase();
+        const gclid = params.get("gclid");
+        const gbraid = params.get("gbraid");
+        const wbraid = params.get("wbraid");
+        const fbclid = params.get("fbclid");
+
+        let origin = "Site";
+
+        // Google Ads: gclid, gbraid, wbraid ou UTMs de tráfego pago do Google
+        if (
+          gclid ||
+          gbraid ||
+          wbraid ||
+          (utmSource.includes("google") &&
+            (utmMedium.includes("cpc") ||
+              utmMedium.includes("ads") ||
+              utmMedium.includes("paid")))
+        ) {
+          origin = "Google Ads";
+        }
+        // Meta Ads: fbclid ou UTMs pagas do Facebook/Instagram
+        else if (
+          fbclid ||
+          ((utmSource.includes("meta") ||
+            utmSource.includes("insta") ||
+            utmSource.includes("face")) &&
+            (utmMedium.includes("cpc") ||
+              utmMedium.includes("ads") ||
+              utmMedium.includes("paid")))
+        ) {
+          origin = "Meta Ads";
+        }
+        // Outros anúncios pagos
+        else if (
+          utmMedium.includes("cpc") ||
+          utmMedium.includes("ads") ||
+          utmMedium.includes("paid")
+        ) {
+          origin = utmSource ? `Anúncio (${utmSource})` : "Anúncio Pago";
+        }
+        // Tráfego de busca orgânica
+        else if (document.referrer && document.referrer.includes("google.")) {
+          origin = "Google Orgânico";
+        }
+        // Tráfego de redes sociais orgânico
+        else if (
+          document.referrer &&
+          (document.referrer.includes("instagram.") ||
+            document.referrer.includes("facebook."))
+        ) {
+          origin = "Redes Sociais";
+        }
+        // Acesso direto ou pelo site institucional
+        else {
+          origin = "Site";
+        }
+
+        try {
+          sessionStorage.setItem(SIGEL_STORAGE_KEY, origin);
+        } catch (e) {}
+
+        return origin;
+      }
+
+      function appendOriginToHref(rawHref) {
+        if (!rawHref) return rawHref;
+        if (!rawHref.includes("wa.me") && !rawHref.includes("whatsapp.com"))
+          return rawHref;
+        if (rawHref.includes("[Origem:")) return rawHref;
+
+        try {
+          const url = new URL(rawHref, window.location.href);
+
+          // Ignorar links de compartilhamento geral sem número de destino
+          const phoneDigits = (url.pathname || "").replace(/\D/g, "");
+          if (phoneDigits.length < 8 && !url.searchParams.get("phone")) {
+            return rawHref;
+          }
+
+          const origin = detectLeadOrigin();
+          const tag = `[Origem: ${origin}]`;
+
+          let text = url.searchParams.get("text") || "";
+          if (!text.trim()) {
+            text = "Olá! Gostaria de um orçamento para meu equipamento.";
+          }
+          url.searchParams.set("text", `${text.trim()} ${tag}`);
+          return url.toString();
+        } catch (e) {
+          const origin = detectLeadOrigin();
+          const tag = `[Origem: ${origin}]`;
+          const sep = rawHref.includes("?") ? "&" : "?";
+          return `${rawHref}${sep}text=${encodeURIComponent(
+            "Olá! Gostaria de um orçamento. " + tag
+          )}`;
+        }
+      }
+
+      function updateAllWhatsAppLinks() {
+        const links = document.querySelectorAll(
+          'a[href*="wa.me"], a[href*="whatsapp.com"], [data-whatsapp-btn]'
+        );
+        links.forEach((link) => {
+          const currentHref = link.getAttribute("href");
+          if (currentHref && !currentHref.includes("[Origem:")) {
+            const newHref = appendOriginToHref(currentHref);
+            if (newHref !== currentHref) {
+              link.setAttribute("href", newHref);
+            }
+          }
+        });
+      }
+
+      // Inicializar detecção e escaneamento inicial do DOM
+      detectLeadOrigin();
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", updateAllWhatsAppLinks);
+      } else {
+        updateAllWhatsAppLinks();
+      }
+
+      window.addEventListener("popstate", updateAllWhatsAppLinks);
+      document.addEventListener("astro:page-load", updateAllWhatsAppLinks);
+
+      // Expor utilitário global para Astro e botões dinâmicos
+      window.SigelTracker = {
+        getOrigin: detectLeadOrigin,
+        refresh: updateAllWhatsAppLinks,
+        buildUrl: function (phoneNumber, baseMessage) {
+          const cleanPhone = (phoneNumber || "5551993257923").replace(/\D/g, "");
+          const origin = detectLeadOrigin();
+          const msg = `${baseMessage || "Olá! Gostaria de um orçamento."} [Origem: ${origin}]`;
+          return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+        },
+      };
+
+      // Interceptor de cliques em links (useCapture para rodar antes da navegação do navegador)
+      document.addEventListener(
+        "click",
+        (e) => {
           const target = e.target.closest("a");
           if (!target) return;
           const href = target.getAttribute("href") || "";
           if (href.includes("wa.me") || href.includes("whatsapp.com")) {
-            window.trackLeadConversion("whatsapp", href);
+            const updatedHref = appendOriginToHref(href);
+            if (updatedHref !== href) {
+              target.setAttribute("href", updatedHref);
+            }
+            window.trackLeadConversion("whatsapp", updatedHref);
           } else if (href.startsWith("tel:")) {
             window.trackLeadConversion("phone_call", href);
           }
-        });
-      });
+        },
+        true
+      );
     </script>
   </head>
 
