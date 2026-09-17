@@ -142,10 +142,33 @@
     getOrigin: detectSource,
     refresh: updateWhatsAppLinks,
     buildWhatsAppUrl: function (phoneNumber, baseMessage) {
-      const cleanPhone = (phoneNumber || '').replace(/\\D/g, '');
+      const cleanPhone = (phoneNumber || '').replace(/\D/g, '');
       const origin = detectSource();
       const msg = `${baseMessage || 'Olá! Gostaria de um orçamento para meu equipamento.'} [Origem: ${origin}]`;
       return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
     }
   };
+
+  // Interceptor de cliques para garantir navegação com a tag atualizada
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('a');
+    if (!target) return;
+    const href = target.getAttribute('href') || '';
+    if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+      if (!href.includes('[Origem:')) {
+        const origin = detectSource();
+        const tag = `[Origem: ${origin}]`;
+        try {
+          const url = new URL(href, window.location.href);
+          let text = url.searchParams.get('text') || 'Olá! Gostaria de um orçamento para meu equipamento.';
+          url.searchParams.set('text', `${text.trim()} ${tag}`);
+          const newHref = url.toString();
+          target.setAttribute('href', newHref);
+          e.preventDefault();
+          const targetWindow = target.getAttribute('target') || '_blank';
+          window.open(newHref, targetWindow);
+        } catch (err) {}
+      }
+    }
+  }, true);
 })();

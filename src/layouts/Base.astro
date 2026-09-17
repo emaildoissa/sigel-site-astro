@@ -372,6 +372,9 @@ const localBusinessSchema = {
             const updatedHref = appendOriginToHref(href);
             if (updatedHref !== href) {
               target.setAttribute("href", updatedHref);
+              e.preventDefault();
+              const targetWindow = target.getAttribute("target") || "_blank";
+              window.open(updatedHref, targetWindow);
             }
             window.trackLeadConversion("whatsapp", updatedHref);
           } else if (href.startsWith("tel:")) {
