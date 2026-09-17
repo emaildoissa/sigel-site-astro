@@ -76,10 +76,16 @@
     return source;
   }
 
+  function getRefTag(origin) {
+    if (origin === 'Google Ads') return '(Ref: #SG-GAD)';
+    if (origin === 'Meta Ads') return '(Ref: #SG-MET)';
+    return '(Ref: #SG-WEB)';
+  }
+
   // 3. Atualizar todos os links de WhatsApp na página
   function updateWhatsAppLinks() {
     const origin = detectSource();
-    const tag = `[Origem: ${origin}]`;
+    const tag = getRefTag(origin);
 
     // Seleciona links comuns do WhatsApp
     const selectors = [
@@ -96,13 +102,17 @@
         const href = link.getAttribute('href');
         if (!href) return;
 
+        const decodedHref = decodeURIComponent(href);
+        if (decodedHref.includes('#SG-') || decodedHref.includes('[Origem:') || decodedHref.includes('Ref:')) {
+          return;
+        }
+
         const url = new URL(href, window.location.href);
 
-        // Se for wa.me ou api.whatsapp.com
         let text = url.searchParams.get('text') || '';
 
         // Se já tiver a tag, não duplicar
-        if (text.includes('[Origem:')) {
+        if (text.includes('#SG-') || text.includes('[Origem:') || text.includes('Ref:')) {
           return;
         }
 
@@ -111,14 +121,14 @@
           text = 'Olá! Gostaria de um orçamento para meu equipamento.';
         }
 
-        // Adicionar a tag no final da mensagem
+        // Adicionar a tag de referência no final da mensagem
         url.searchParams.set('text', `${text.trim()} ${tag}`);
 
         link.setAttribute('href', url.toString());
       } catch (err) {
-        // Fallback para hrefs relativos ou strings manuais
         const href = link.getAttribute('href') || '';
-        if (href.includes('wa.me') && !href.includes('[Origem:')) {
+        const decoded = decodeURIComponent(href);
+        if (href.includes('wa.me') && !decoded.includes('#SG-') && !decoded.includes('[Origem:')) {
           const sep = href.includes('?') ? '&' : '?';
           const defaultMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para meu equipamento. ${tag}`);
           link.setAttribute('href', `${href}${sep}text=${defaultMsg}`);
@@ -144,7 +154,8 @@
     buildWhatsAppUrl: function (phoneNumber, baseMessage) {
       const cleanPhone = (phoneNumber || '').replace(/\D/g, '');
       const origin = detectSource();
-      const msg = `${baseMessage || 'Olá! Gostaria de um orçamento para meu equipamento.'} [Origem: ${origin}]`;
+      const tag = getRefTag(origin);
+      const msg = `${baseMessage || 'Olá! Gostaria de um orçamento para meu equipamento.'} ${tag}`;
       return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
     }
   };
@@ -155,13 +166,16 @@
     if (!target) return;
     const href = target.getAttribute('href') || '';
     if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-      if (!href.includes('[Origem:')) {
+      const decodedHref = decodeURIComponent(href);
+      if (!decodedHref.includes('#SG-') && !decodedHref.includes('[Origem:')) {
         const origin = detectSource();
-        const tag = `[Origem: ${origin}]`;
+        const tag = getRefTag(origin);
         try {
           const url = new URL(href, window.location.href);
           let text = url.searchParams.get('text') || 'Olá! Gostaria de um orçamento para meu equipamento.';
-          url.searchParams.set('text', `${text.trim()} ${tag}`);
+          if (!text.includes('#SG-')) {
+            url.searchParams.set('text', `${text.trim()} ${tag}`);
+          }
           const newHref = url.toString();
           target.setAttribute('href', newHref);
           e.preventDefault();

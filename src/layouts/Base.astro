@@ -289,11 +289,27 @@ const localBusinessSchema = {
         return origin;
       }
 
+      function getRefTag(origin) {
+        if (origin === "Google Ads") return "(Ref: #SG-GAD)";
+        if (origin === "Meta Ads") return "(Ref: #SG-MET)";
+        return "(Ref: #SG-WEB)";
+      }
+
       function appendOriginToHref(rawHref) {
         if (!rawHref) return rawHref;
         if (!rawHref.includes("wa.me") && !rawHref.includes("whatsapp.com"))
           return rawHref;
-        if (rawHref.includes("[Origem:")) return rawHref;
+
+        try {
+          const decodedHref = decodeURIComponent(rawHref);
+          if (
+            decodedHref.includes("#SG-") ||
+            decodedHref.includes("[Origem:") ||
+            decodedHref.includes("Ref: #SG-")
+          ) {
+            return rawHref;
+          }
+        } catch (e) {}
 
         try {
           const url = new URL(rawHref, window.location.href);
@@ -304,10 +320,18 @@ const localBusinessSchema = {
             return rawHref;
           }
 
-          const origin = detectLeadOrigin();
-          const tag = `[Origem: ${origin}]`;
-
           let text = url.searchParams.get("text") || "";
+          if (
+            text.includes("#SG-") ||
+            text.includes("[Origem:") ||
+            text.includes("Ref:")
+          ) {
+            return rawHref;
+          }
+
+          const origin = detectLeadOrigin();
+          const tag = getRefTag(origin);
+
           if (!text.trim()) {
             text = "Olá! Gostaria de um orçamento para meu equipamento.";
           }
@@ -315,7 +339,7 @@ const localBusinessSchema = {
           return url.toString();
         } catch (e) {
           const origin = detectLeadOrigin();
-          const tag = `[Origem: ${origin}]`;
+          const tag = getRefTag(origin);
           const sep = rawHref.includes("?") ? "&" : "?";
           return `${rawHref}${sep}text=${encodeURIComponent(
             "Olá! Gostaria de um orçamento. " + tag
@@ -329,11 +353,16 @@ const localBusinessSchema = {
         );
         links.forEach((link) => {
           const currentHref = link.getAttribute("href");
-          if (currentHref && !currentHref.includes("[Origem:")) {
-            const newHref = appendOriginToHref(currentHref);
-            if (newHref !== currentHref) {
-              link.setAttribute("href", newHref);
-            }
+          if (currentHref) {
+            try {
+              const decoded = decodeURIComponent(currentHref);
+              if (!decoded.includes("#SG-") && !decoded.includes("[Origem:")) {
+                const newHref = appendOriginToHref(currentHref);
+                if (newHref !== currentHref) {
+                  link.setAttribute("href", newHref);
+                }
+              }
+            } catch (e) {}
           }
         });
       }
@@ -356,7 +385,8 @@ const localBusinessSchema = {
         buildUrl: function (phoneNumber, baseMessage) {
           const cleanPhone = (phoneNumber || "5551993257923").replace(/\D/g, "");
           const origin = detectLeadOrigin();
-          const msg = `${baseMessage || "Olá! Gostaria de um orçamento."} [Origem: ${origin}]`;
+          const tag = getRefTag(origin);
+          const msg = `${baseMessage || "Olá! Gostaria de um orçamento."} ${tag}`;
           return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
         },
       };
