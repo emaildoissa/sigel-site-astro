@@ -404,7 +404,7 @@ const landingSchema = JSON.stringify({
   ]
 });
 
-const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Samsung", "Vaio", "Positivo"];
+const deviceCategories = ["Notebooks Convencionais", "Ultrabooks & Slim", "Notebooks Gamers", "Linha Corporativa", "Computadores Desktop", "All-in-One"];
 ---
 
 <Base
@@ -634,15 +634,15 @@ const brands = ["Dell", "Lenovo", "HP", "Acer", "Apple (MacBook)", "Asus", "Sams
       </section>
     )}
 
-    {/* Brands Strip */}
+    {/* Categories Strip */}
     <section class="mt-14 py-6 border-y border-white/10">
       <p class="text-center text-xs uppercase tracking-widest font-bold text-gray-400 mb-4">
-        Atendemos com peças originais e compatíveis para todas as marcas
+        Atendimento presencial especializado para diversos formatos e modelos
       </p>
       <div class="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-        {brands.map((b) => (
+        {deviceCategories.map((cat) => (
           <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm font-semibold text-gray-300">
-            {b}
+            {cat}
           </span>
         ))}
       </div>
