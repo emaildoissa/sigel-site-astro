@@ -1,6 +1,6 @@
 ---
-title: "Teclado com Defeito? Como Resolver e Vantagens de Trocar"
-description: "Teclado do notebook falhando? Guia com causas comuns, soluções rápidas e benefícios da troca. Assistência técnica em Porto Alegre."
+title: "Teclado do Notebook Parou? Teste em 2 Minutos e Como Resolver"
+description: "Teclado falhando, digitando sozinho ou com teclas presas? Faça o teste rápido de software vs. defeito físico e veja como resolver com segurança."
 pubDate: 2026-06-17
 author: "Equipe Sigel"
 image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1200&q=80"

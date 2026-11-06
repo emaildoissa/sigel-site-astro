@@ -1,6 +1,6 @@
 ---
-title: "Sinais de que seu PC Precisa de Formatação [Guia 2026]"
-description: "PC lento, travando ou com erros estranhos? Saiba identificar os sinais de que seu computador precisa ser formatado e como fazer isso sem perder seus dados."
+title: "Quando Formatar o PC? 5 Sinais Claros e Como Não Perder Dados"
+description: "PC lento, travando ou com tela azul? Veja os 5 sintomas de que seu computador precisa ser formatado, quando vale a pena e como manter seus arquivos salvos."
 pubDate: 2026-06-17
 author: "Equipe Sigel"
 image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=1200&q=80"
