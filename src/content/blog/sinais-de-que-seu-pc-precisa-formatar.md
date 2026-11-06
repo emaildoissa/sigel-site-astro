@@ -17,6 +17,11 @@ Seu computador está cada vez mais lento, programas abrem aos trancos e barranco
 
 A formatação é uma solução radical, mas muitas vezes necessária para devolver a vida ao seu PC. Neste guia, você vai aprender a identificar os sinais de que chegou a hora, como se preparar e o que esperar do processo.
 
+> **Diagnóstico rápido: Seu computador precisa mesmo de formatação?**  
+> 1. **Lentidão persistente ou travamentos:** Se o PC demora minutos para ligar, trava em tarefas simples ou exibe telas azuis com frequência, o sistema está sobrecarregado ou corrompido e a reinstalação limpa é o caminho definitivo.  
+> 2. **Medo de perder arquivos?** Uma formatação profissional não apaga seus dados: todos os documentos, fotos e favoritos são preservados com backup prévio obrigatório.  
+> 3. **Quer seu computador rápido e seguro de novo?** Veja como funciona a [formatação de PC e notebook com backup](/servicos/hardware/formatacao-pc) da Sigel ou solicite um orçamento direto pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20meu%20PC%20est%C3%A1%20muito%20lento%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20formata%C3%A7%C3%A3o) para atendimento em Porto Alegre.
+
 ## O que significa formatar o PC?
 
 Formatar é reinstalar o sistema operacional do zero. É como fazer uma limpeza profunda: todos os arquivos temporários, programas obsoletos, erros de registro e possíveis malwares são removidos. O Windows volta ao estado original de fábrica.
