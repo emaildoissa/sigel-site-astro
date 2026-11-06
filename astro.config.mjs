@@ -7,19 +7,20 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sigelinformatica.com.br',
+  trailingSlash: 'never',
   integrations: [
     sitemap({
       // Personaliza prioridade e frequência por página
       customPages: [
-        'https://sigelinformatica.com.br/',
-        'https://sigelinformatica.com.br/servicos/',
-        'https://sigelinformatica.com.br/web/',
-        'https://sigelinformatica.com.br/automacao/',
-        'https://sigelinformatica.com.br/copywriting/',
-        'https://sigelinformatica.com.br/planos/',
-        'https://sigelinformatica.com.br/sobre/',
-        'https://sigelinformatica.com.br/servicos/hardware/',
-        'https://sigelinformatica.com.br/contratos/',
+        'https://sigelinformatica.com.br',
+        'https://sigelinformatica.com.br/servicos',
+        'https://sigelinformatica.com.br/web',
+        'https://sigelinformatica.com.br/automacao',
+        'https://sigelinformatica.com.br/copywriting',
+        'https://sigelinformatica.com.br/planos',
+        'https://sigelinformatica.com.br/sobre',
+        'https://sigelinformatica.com.br/servicos/hardware',
+        'https://sigelinformatica.com.br/contratos',
       ],
       serialize(item) {
         // Homepage
