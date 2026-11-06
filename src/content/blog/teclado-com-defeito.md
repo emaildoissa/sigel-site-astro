@@ -15,6 +15,11 @@ readingTime: 5
 
 O teclado é a ferramenta principal para a inserção de informações em um notebook, sendo essencial para a produtividade diária. No entanto, por ser um componente exposto, ele é suscetível a diversos problemas que podem variar de simples falhas de configuração a danos físicos permanentes. Entender se o seu teclado precisa de uma limpeza, um ajuste de software ou uma substituição completa é fundamental para manter o bom funcionamento do seu equipamento.
 
+> **Teste rápido em 2 minutos (Problema lógico ou defeito físico?):**  
+> 1. Conecte um teclado USB externo ou abra o **Teclado Virtual** do Windows (`Win + Ctrl + O`).  
+> 2. Se o teclado externo ou virtual digitar normalmente, o defeito é **físico** no teclado do notebook (oxidação, trilha rompida ou tecla presa).  
+> 3. Se comprovado o defeito físico, confira os detalhes da [troca de teclado de notebook](/servicos/hardware/troca-de-teclado) na Sigel ou solicite um orçamento direto pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20meu%20teclado%20de%20notebook%20parou%20e%20gostaria%20de%20um%20or%C3%A7amento) para atendimento em Porto Alegre.
+
 ## Principais problemas que um teclado com defeito pode apresentar
 
 Os defeitos nos teclados geralmente são divididos entre falhas de **hardware** (físicas) e de **software** (configuração).
