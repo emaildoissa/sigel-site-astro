@@ -3,94 +3,95 @@ import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const serviceSchema = JSON.stringify({
+const contractSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Contratos de Manutenção Preventiva de TI",
-  description:
-    "Suporte técnico ágil, help desk remoto, otimização contínua de desempenho e manutenção física preventiva para empresas em Porto Alegre por um valor mensal fixo.",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Sigel Soluções em Informática",
-    url: "https://sigelinformatica.com.br",
-  },
-  areaServed: [
-    { "@type": "City", name: "Porto Alegre" },
-    { "@type": "Country", name: "Brasil" },
-  ],
-  serviceType: "Manutenção Preventiva de TI",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Planos de Assinatura",
-    itemListElement: [
-      { "@type": "Offer", name: "Starter", price: "97", priceCurrency: "BRL" },
-      {
-        "@type": "Offer",
-        name: "Business",
-        price: "247",
-        priceCurrency: "BRL",
-      },
-      {
-        "@type": "Offer",
-        name: "Corporate",
-        price: "497",
-        priceCurrency: "BRL",
-      },
-    ],
-  },
-});
-
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+  "@graph": [
     {
-      "@type": "Question",
-      name: "Preciso assinar por quanto tempo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos 3 meses para sentir os benefícios reais da manutenção preventiva e otimização contínua.",
+      "@type": "Service",
+      name: "Contratos de Manutenção e Suporte de TI para Empresas em Porto Alegre",
+      description:
+        "Suporte técnico ágil, help desk remoto, otimização contínua de desempenho e manutenção física preventiva para empresas em Porto Alegre por um valor mensal fixo.",
+      provider: {
+        "@id": "https://sigelinformatica.com.br/#localbusiness",
+      },
+      areaServed: [
+        { "@type": "City", name: "Porto Alegre" },
+        { "@type": "State", name: "Rio Grande do Sul" },
+        { "@type": "Country", name: "Brasil" },
+      ],
+      serviceType: "Suporte e Manutenção de TI para Empresas",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Planos de Assinatura Mensal de TI",
+        itemListElement: [
+          { "@type": "Offer", name: "Starter", price: "97", priceCurrency: "BRL" },
+          {
+            "@type": "Offer",
+            name: "Business",
+            price: "247",
+            priceCurrency: "BRL",
+          },
+          {
+            "@type": "Offer",
+            name: "Corporate",
+            price: "497",
+            priceCurrency: "BRL",
+          },
+        ],
       },
     },
     {
-      "@type": "Question",
-      name: "E se nenhum computador quebrar, ainda assim pago?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim, porque o objetivo da manutenção preventiva é exatamente evitar que as máquinas quebrem ou fiquem lentas. Realizamos otimizações periódicas de sistema, limpeza física preventiva e você tem help desk imediato para qualquer dúvida do dia a dia.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Vocês atendem presencialmente em Porto Alegre?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados e dúvidas de rotina é resolvida por acesso remoto em minutos, e realizamos visitas para limpeza física periódica ou problemas que exijam suporte no local.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso cancelar quando quiser?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Sem multa, sem burocracia. Basta avisar com 30 dias de antecedência.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "O que está incluso na manutenção preventiva?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Inclui suporte remoto e help desk para problemas do dia a dia (impressoras, rede, e-mail, lentidão), otimização periódica do Windows, limpeza de arquivos desnecessários, manutenção física com troca de pasta térmica e consultoria para upgrades de equipamentos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quanto tempo leva para ativar o plano?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "O onboarding completo leva de 2 a 5 dias úteis. Realizamos um diagnóstico inicial em todas as máquinas, fazemos a primeira otimização de sistema e alinhamos o canal direto de suporte no WhatsApp.",
-      },
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Preciso assinar por quanto tempo?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nossos planos são mensais e podem ser cancelados quando você quiser, sem multa. Recomendamos permanecer pelo menos 3 meses para sentir os benefícios reais da manutenção preventiva e otimização contínua.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "E se nenhum computador quebrar, ainda assim pago?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim, porque o objetivo da manutenção preventiva é exatamente evitar que as máquinas quebrem ou fiquem lentas. Realizamos otimizações periódicas de sistema, limpeza física preventiva e você tem help desk imediato para qualquer dúvida do dia a dia.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Vocês atendem presencialmente em Porto Alegre?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim, atendemos presencialmente em Porto Alegre e região metropolitana. A maioria dos chamados e dúvidas de rotina é resolvida por acesso remoto em minutos, e realizamos visitas para limpeza física periódica ou problemas que exijam suporte no local.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Posso cancelar quando quiser?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim. Sem multa, sem burocracia. Basta avisar com 30 dias de antecedência.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O que está incluso na manutenção preventiva?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Inclui suporte remoto e help desk para problemas do dia a dia (impressoras, rede, e-mail, lentidão), otimização periódica do Windows, limpeza de arquivos desnecessários, manutenção física com troca de pasta térmica e consultoria para upgrades de equipamentos.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quanto tempo leva para ativar o plano?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O onboarding completo leva de 2 a 5 dias úteis. Realizamos um diagnóstico inicial em todas as máquinas, fazemos a primeira otimização de sistema e alinhamos o canal direto de suporte no WhatsApp.",
+          },
+        },
+      ],
     },
   ],
 });
@@ -188,11 +189,11 @@ const planos = [
 ---
 
 <Base
-  title="Contratos de Manutenção de TI | Sigel"
-  description="Suporte técnico ágil para empresas em Porto Alegre. Help desk remoto, otimização contínua de desempenho e manutenção física preventiva por valor fixo."
+  title="Contratos de Manutenção e Suporte de TI em Porto Alegre | Sigel"
+  description="Suporte técnico e manutenção preventiva de TI para empresas em Porto Alegre. Help desk remoto, visitas e estabilidade com planos mensais a partir de R$ 97."
   canonical="/contratos"
-  breadcrumbs={[{ name: "Contratos", path: "/contratos" }]}
-  schema={serviceSchema}
+  breadcrumbs={[{ name: "Contratos de TI", path: "/contratos" }]}
+  schema={contractSchema}
   bodyClass="has-mobile-cta"
 >
   <Header />
@@ -232,8 +233,7 @@ const planos = [
         <h1
           class="text-3xl md:text-5xl lg:text-6xl text-white font-black leading-[1.1] tracking-tight max-w-4xl"
         >
-          Sua empresa não<br class="hidden md:block" />
-          pode <span class="text-primary">parar</span>
+          Contratos de Manutenção e Suporte de TI para Empresas em <span class="text-primary">Porto Alegre</span>
         </h1>
         <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
           Suporte técnico ágil, otimização contínua de desempenho, manutenção
@@ -756,7 +756,6 @@ const planos = [
             Tudo que você precisa saber antes de contratar.
           </p>
         </div>
-        <script type="application/ld+json" set:html={faqSchema} />
         <div class="flex flex-col gap-4">
           <details
             class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm"

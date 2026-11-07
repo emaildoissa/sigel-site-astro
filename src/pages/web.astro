@@ -8,21 +8,33 @@ const pageSchema = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "name": "Desenvolvimento Web para PMEs em Porto Alegre",
-      "description": "Websites de alta performance para PMEs. Design estratégico, SEO otimizado, ultra rápido. Pronto para gerar vendas 24/7.",
-      "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
-      "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "Country", "name": "Brasil" }],
-      "serviceType": "Desenvolvimento Web"
+      "name": "Criação de Sites e Desenvolvimento Web em Porto Alegre",
+      "description": "Criação de sites profissionais e desenvolvimento web para empresas em Porto Alegre. Design estratégico, carregamento ultra rápido e otimizado para SEO no Google.",
+      "provider": { "@id": "https://sigelinformatica.com.br/#localbusiness" },
+      "areaServed": [
+        { "@type": "City", "name": "Porto Alegre" },
+        { "@type": "State", "name": "Rio Grande do Sul" },
+        { "@type": "Country", "name": "Brasil" }
+      ],
+      "serviceType": "Criação de Sites e Desenvolvimento Web"
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Preciso pagar mensalidade para manter o site?",
+          "name": "Quanto custa criar um site profissional em Porto Alegre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não pela criação ou código do site. O site passa a ser 100% seu. Você terá apenas os custos normais de infraestrutura: hospedagem e renovação do domínio anual, que são serviços pagos diretamente aos provedores como HostGator, Locaweb, AWS, etc."
+            "text": "O investimento para um site institucional profissional em Porto Alegre varia geralmente de R$ 1.500 a R$ 5.000, dependendo do número de páginas, complexidade visual e integrações. Lojas virtuais e e-commerce iniciam a partir de R$ 5.000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Meu site vai aparecer na primeira página do Google (SEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Todos os nossos projetos são desenvolvidos com arquitetura técnica nativa de SEO: carregamento ultra rápido com notas altas no Google PageSpeed, dados estruturados Schema.org, metadados otimizados para busca local em Porto Alegre e indexação imediata no Google Search Console."
           }
         },
         {
@@ -35,10 +47,26 @@ const pageSchema = JSON.stringify({
         },
         {
           "@type": "Question",
+          "name": "Preciso pagar mensalidade para manter o site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não pela criação ou código do site. O site passa a ser 100% seu. Você terá apenas os custos normais de infraestrutura: hospedagem e renovação do domínio anual, que são serviços pagos diretamente aos provedores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre um site comum em WordPress e um site desenvolvido em Astro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sites convencionais em WordPress dependem de dezenas de plugins pesados e bancos de dados dinâmicos lentos. A Sigel desenvolve sites estáticos ultrarrápidos utilizando Astro e Tailwind CSS, garantindo carregamento instantâneo em menos de 1 segundo e nota máxima em Core Web Vitals."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Vocês mesmos criam o conteúdo e os textos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende de como preferir! Caso não possua equipe, oferecemos um serviço avulso especializado de Copywriting focado em vendas. Nossa equipe entrevistará você e escreverá todos os textos altamente persuasivos para suas páginas."
+            "text": "Oferecemos serviço especializado de Copywriting estratégico e redação de conteúdo voltado a conversão de vendas e palavras-chave locais. Entrevistamos você e produzimos toda a estrutura textual necessária."
           }
         }
       ]
@@ -48,10 +76,10 @@ const pageSchema = JSON.stringify({
 ---
 
 <Base
-    title="Desenvolvimento Web - Sigel | Websites para PMEs em Porto Alegre"
-    description="Websites de alta performance para PMEs. Design estratégico, SEO otimizado, ultra rápido. Pronto para gerar vendas 24/7."
+    title="Criação de Sites e Desenvolvimento Web em Porto Alegre | Sigel"
+    description="Criação de sites profissionais e desenvolvimento web para empresas em Porto Alegre. Design estratégico, carregamento ultra rápido e otimizado para SEO no Google."
     canonical="/web"
-    breadcrumbs={[{ name: "Desenvolvimento Web", path: "/web" }]}
+    breadcrumbs={[{ name: "Criação de Sites", path: "/web" }]}
     schema={pageSchema}
     preloadImages={["https://lh3.googleusercontent.com/aida-public/AB6AXuBftRyDFLEPL_JCZ5K9ezyBFMzDFLBzcufSRTMt2rLi0r26deRSIh41rVZylPGOLfwvlrr4w36zQVEYstH_k263tJIwNoydIe5EcqHG3DTZXRNNJ5VfMbeHBO0YePNfHxsKrK8mD-8nDZWeTx9WG9PyexZsX4IfsQjoaXgnrFsdDAELMYZoCScrj1WmhgZF6MJ56j69Hi7wLsbnUnAIN6wXg4u6k8vY4POf4mUy3YW0-eRn1g1xN4H7YL7uJKVZlo3gMIxfm1JFfM8"]}
     bodyClass="has-mobile-cta-high"
@@ -78,7 +106,7 @@ const pageSchema = JSON.stringify({
                 <h1
                     class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white"
                 >
-                    Desenvolvimento Web para PMEs em <span class="text-primary"
+                    Criação de Sites e Desenvolvimento Web para Empresas em <span class="text-primary"
                         >Porto Alegre</span
                     >
                 </h1>
@@ -589,9 +617,7 @@ const pageSchema = JSON.stringify({
                         <summary
                             class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
                         >
-                            <span
-                                >Preciso pagar mensalidade para manter o site?</span
-                            >
+                            <span>Quanto custa criar um site profissional em Porto Alegre?</span>
                             <span
                                 class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
                                 >expand_more</span
@@ -600,11 +626,26 @@ const pageSchema = JSON.stringify({
                         <div
                             class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
                         >
-                            Não pela criação ou código do site. O site passa a
-                            ser 100% seu. Você terá apenas os custos normais de
-                            infraestrutura: hospedagem e renovação do domínio
-                            anual, que são serviços pagos diretamente aos
-                            provedores como HostGator, Locaweb, AWS, etc.
+                            O investimento para um site institucional profissional em Porto Alegre varia geralmente de R$ 1.500 a R$ 5.000, dependendo do número de páginas, complexidade visual e integrações. Lojas virtuais e e-commerce iniciam a partir de R$ 5.000. Veja um detalhamento completo dos valores e escopos no nosso artigo: <a href="/blog/quanto-custa-criar-site-porto-alegre" class="text-primary hover:text-accent font-semibold transition-colors">quanto custa criar um site em Porto Alegre</a>.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span>Meu site vai aparecer na primeira página do Google (SEO)?</span>
+                            <span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
+                            >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Sim. Todos os nossos projetos são desenvolvidos com arquitetura técnica nativa de SEO: carregamento ultra rápido com notas altas no Google PageSpeed, dados estruturados Schema.org, metadados otimizados para busca local em Porto Alegre e indexação imediata no Google Search Console.
                         </div>
                     </details>
 
@@ -637,9 +678,49 @@ const pageSchema = JSON.stringify({
                         <summary
                             class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
                         >
+                            <span>Preciso pagar mensalidade para manter o site?</span>
                             <span
-                                >Vocês mesmos criam o conteúdo e os textos?</span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
                             >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Não pela criação ou código do site. O site passa a
+                            ser 100% seu. Você terá apenas os custos normais de
+                            infraestrutura: hospedagem e renovação do domínio
+                            anual, que são serviços pagos diretamente aos
+                            provedores como HostGator, Locaweb, AWS, etc. Caso sua empresa queira suporte contínuo de TI e manutenção de máquinas, oferecemos também nossos <a href="/contratos" class="text-primary hover:text-accent font-semibold transition-colors">planos de suporte mensal de TI</a>.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span>Qual a diferença entre um site comum em WordPress e um site em Astro?</span>
+                            <span
+                                class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
+                                >expand_more</span
+                            >
+                        </summary>
+                        <div
+                            class="text-gray-400 text-sm md:text-base px-6 pb-6 pt-2 leading-relaxed"
+                        >
+                            Sites convencionais em WordPress dependem de dezenas de plugins pesados e bancos de dados dinâmicos lentos. A Sigel desenvolve sites estáticos ultrarrápidos utilizando Astro e Tailwind CSS, garantindo carregamento instantâneo em menos de 1 segundo, segurança impenetrável sem banco de dados exposto e notas máximas em Core Web Vitals no Google.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-surface-dark rounded-2xl overflow-hidden border border-gray-800 shadow-sm transition-all duration-300"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-white text-base md:text-lg hover:bg-white/5 transition-colors"
+                        >
+                            <span>Vocês mesmos criam o conteúdo e os textos?</span>
                             <span
                                 class="transition group-open:rotate-180 material-symbols-outlined text-gray-400 bg-white/10 p-1.5 rounded-full"
                                 >expand_more</span

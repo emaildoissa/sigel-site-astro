@@ -30,6 +30,7 @@ A verdade é que não existe um preço único. O valor depende do tipo de site, 
 > **Nota:** Os valores acima são uma média do mercado de Porto Alegre para projetos entregues por agências especializadas em **PMEs**. Sites feitos por freelancers podem custar menos, mas geralmente entregam menos suporte e garantia.
 
 > **Planejando o site da sua empresa em Porto Alegre?**  
+> - **Desenvolvimento sob medida:** Conheça nossa metodologia de [criação de sites em Porto Alegre](/web) com foco em velocidade e conversão.  
 > - **Entenda o investimento:** Veja os critérios de escopo, prazos médios de entrega e capacidade de atendimento na nossa página de [Planos e Prazos da Sigel](/planos).  
 > - **Diagnóstico rápido sem compromisso:** Fale direto com nossa equipe pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site%20em%20Porto%20Alegre) para receber uma estimativa alinhada à necessidade do seu negócio.
 
@@ -62,7 +63,7 @@ Precisa do site em 7 dias? A alocação prioritária da equipe tem custo adicion
 
 Muitas empresas em Porto Alegre caem na tentação dos "sites prontos" de plataformas como Wix ou GoDaddy. Eles são mais baratos? Sim. Mas trazem desvantagens sérias:
 
-| Aspecto | Site Pronto (Wix, GoDaddy) | [Site Personalizado](/web) |
+| Aspecto | Site Pronto (Wix, GoDaddy) | [Criação de Sites na Sigel](/web) |
 |---|---|---|---|
 | SEO | Limitado, difícil de ranquear | Estrutura otimizada para o Google |
 | Velocidade | Lento, cheio de código desnecessário | Rápido, carrega em menos de 2s |
