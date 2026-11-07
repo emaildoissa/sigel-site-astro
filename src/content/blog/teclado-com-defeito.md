@@ -18,7 +18,7 @@ O teclado é a ferramenta principal para a inserção de informações em um not
 > **Teste rápido em 2 minutos (Problema lógico ou defeito físico?):**  
 > 1. Conecte um teclado USB externo ou abra o **Teclado Virtual** do Windows (`Win + Ctrl + O`).  
 > 2. Se o teclado externo ou virtual digitar normalmente, o defeito é **físico** no teclado do notebook (oxidação, trilha rompida ou tecla presa).  
-> 3. Se comprovado o defeito físico, confira os detalhes da [troca de teclado de notebook](/servicos/hardware/troca-de-teclado) na Sigel ou solicite um orçamento direto pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20meu%20teclado%20de%20notebook%20parou%20e%20gostaria%20de%20um%20or%C3%A7amento) para atendimento em Porto Alegre.
+> 3. Se comprovado o defeito físico, confira os detalhes da [troca e conserto de teclado de notebook em Porto Alegre](/servicos/hardware/troca-de-teclado) na Sigel ou solicite um orçamento direto pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20meu%20teclado%20de%20notebook%20parou%20e%20gostaria%20de%20um%20or%C3%A7amento) para atendimento em Porto Alegre.
 
 ## Principais problemas que um teclado com defeito pode apresentar
 
@@ -61,4 +61,4 @@ Para evitar que os problemas voltem, adote hábitos de conservação simples:
 *   **Utilize capas protetoras de silicone**, que são acessíveis e protegem contra o desgaste natural e poeira.
 *   **Mantenha o sistema atualizado** para garantir a compatibilidade constante dos drivers.
 
-Se o seu teclado apresenta falhas persistentes após quedas ou contato com líquidos, o ideal é procurar uma <a href="/servicos/hardware">assistência técnica especializada</a> para realizar a troca com segurança.
+Se o seu teclado apresenta falhas persistentes após quedas, desgaste ou contato com líquidos, o ideal é procurar assistência técnica especializada: confira como funciona a [troca e conserto de teclado de notebook em Porto Alegre](/servicos/hardware/troca-de-teclado) na Sigel, com modelos padrão ABNT2 originais, técnica de solda plástica para carcaças rebitadas e garantia formal de 90 dias.
