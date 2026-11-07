@@ -56,26 +56,68 @@ interface ServicoItem {
 
 const servicos: Record<string, ServicoItem> = {
   "troca-de-tela": {
-    titulo: "Substituição de Tela de Notebook em Porto Alegre | Sigel",
-    description: "Substituição de tela para notebook em Porto Alegre. Telas novas originais e compatíveis (HD, Full HD, IPS) com instalação e garantia de 90 dias.",
-    h1: "Substituição de Tela para Notebook",
-    subtitulo: "Tela danificada ou com manchas? Substituímos por telas novas originais e compatíveis com instalação e garantia de 90 dias.",
-    conteudo: "A substituição do painel de vídeo restaura a exibição perfeita do seu equipamento. Disponibilizamos telas novas e originais no padrão HD, Full HD, IPS e Touch, compatíveis com as principais marcas do mercado, com encaixe sob medida e garantia.",
+    titulo: "Troca de Tela de Notebook em Porto Alegre | HD, Full HD e IPS - Sigel",
+    description: "Troca de tela de notebook em Porto Alegre (Bairro Cristal). Telas novas HD, Full HD e IPS para Dell, Lenovo, Acer, Samsung e HP com garantia de 90 dias.",
+    h1: "Troca de Tela de Notebook em Porto Alegre",
+    subtitulo: "Tela trincada, com listras ou sem imagem? Substituímos por telas novas originais e compatíveis (HD, Full HD e IPS) para Dell, Lenovo, Acer e outras marcas com garantia de 90 dias.",
+    conteudo: "A troca do display restaura a nitidez e a integridade visual do seu notebook com total precisão. Trabalhamos com painéis novos de alta resolução nos padrões HD, Full HD e IPS, perfeitamente compatíveis com as principais marcas do mercado (Dell, Lenovo, Acer, Samsung e HP), garantindo encaixe sob medida, calibração correta e garantia formal de 90 dias.",
     sintomas: [
-      "Linhas verticais ou manchas na exibição do painel",
-      "Diferenças de iluminação ou brilho reduzido na tela",
-      "Necessidade de alteração para resolução Full HD ou IPS",
-      "Display com falha na iluminação traseira (backlight)",
-      "Substituição de painéis LED, Slim, HD e Full HD"
+      "Tela trincada, quebrada ou com vazamento de cristal líquido",
+      "Linhas verticais, horizontais ou manchas escuras na exibição",
+      "Display com tela preta ou iluminação de fundo inoperante (falha de backlight)",
+      "Brilho reduzido, oscilações constantes ou tela tremendo",
+      "Upgrade de painel básico HD para resolução superior Full HD ou IPS"
     ],
     preco: "R$ 250 a R$ 800",
     prazo: "1 a 3 dias úteis (ou mesmo dia c/ estoque)",
     garantia: "90 dias de garantia formal",
     icone: "smart_display",
-    badge: "Telas Originais ABNT2",
+    badge: "Telas Novas HD, Full HD e IPS",
     whatsappMsg: "Olá! Vi no site e gostaria de verificar a disponibilidade de tela para o meu notebook em Porto Alegre.",
-    faqPergunta: "Por que optar pela substituição da tela de notebook?",
-    faqResposta: "A instalação de uma tela nova original garante a nitidez e as cores de fábrica. O valor da substituição varia conforme o tamanho (14\", 15.6\", etc.), resolução e tecnologia (LED, Slim, IPS). Em média, a substituição completa com peça e instalação fica entre <strong>R$ 250 e R$ 800</strong>.",
+    faqPergunta: "Quanto custa a troca de tela de notebook em Porto Alegre?",
+    faqResposta: "O valor da troca varia conforme o tamanho (14\", 15.6\", etc.), tipo de conector e tecnologia do painel (HD, Full HD ou IPS). Em média, a substituição completa com tela nova, instalação profissional e garantia de 90 dias fica entre <strong>R$ 250 e R$ 800</strong>. No laboratório do Bairro Cristal fazemos o orçamento exato na hora.",
+    faqExtra: [
+      {
+        pergunta: "Quais marcas e modelos de notebook vocês atendem para troca de tela?",
+        resposta: "Atendemos todas as principais marcas do mercado: <strong>Dell (Inspiron, Vostro, Latitude, G-Series), Lenovo (IdeaPad, ThinkPad, Legion), Acer (Aspire, Nitro), Samsung (Book, Essentials), HP, Asus e Positivo</strong>. Trabalhamos com telas de 11.6\", 14.0\", 15.6\" e 17.3\" nos padrões Slim, LED e IPS."
+      },
+      {
+        pergunta: "Quanto tempo demora a troca de tela do notebook?",
+        resposta: "Para modelos com tela disponível em estoque imediato, a troca e os testes são finalizados em <strong>poucas horas ou no mesmo dia</strong>. Caso seja necessária encomenda de painel específico ou alta resolução, o prazo médio é de <strong>1 a 3 dias úteis</strong>."
+      },
+      {
+        pergunta: "Posso trocar uma tela básica HD por uma Full HD ou IPS?",
+        resposta: "<strong>Sim, na maioria dos modelos é perfeitamente viável!</strong> Desde que o conector e o cabo flat suportem o padrão (geralmente eDP de 30 pinos), realizamos o upgrade para painéis Full HD (1920x1080) com tecnologia IPS, garantindo fidelidade de cores e ângulos de visão muito superiores."
+      },
+      {
+        pergunta: "A tela instalada possui garantia?",
+        resposta: "<strong>Sim!</strong> Todas as peças instaladas na Sigel acompanham <strong>garantia formal de 90 dias</strong> cobrindo o display e a mão de obra especializada."
+      }
+    ],
+    metodo: {
+      titulo: "Procedimento Técnico Sigel para Troca de Tela de Notebook",
+      subtitulo: "Conheça as etapas do nosso protocolo de bancada para garantir a substituição precisa e segura do display do seu computador:",
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Diagnóstico do Painel e Desconexão Segura da Energia",
+          descricao: "Identificamos o part number exato do display, tipo de conector (30 ou 40 pinos) e taxa de atualização. Desconectamos a bateria interna e a alimentação para proteger o circuito de vídeo da placa-mãe.",
+          icone: "tune"
+        },
+        {
+          numero: "02",
+          titulo: "Desmontagem Cuidadosa da Moldura e Instalação do Painel",
+          descricao: "Removemos a moldura sem danificar as travas plásticas nem as dobradiças, fixamos o novo display original/compatível e conectamos o cabo flat com trava de segurança reforçada.",
+          icone: "build"
+        },
+        {
+          numero: "03",
+          titulo: "Calibração de Cor, Teste de Backlight e Burn-in",
+          descricao: "Executamos testes rigorosos de uniformidade de iluminação, ausência de dead pixels, fidelidade de cores e fechamento correto da carcaça antes de liberar o equipamento com garantia de 90 dias.",
+          icone: "verified"
+        }
+      ]
+    },
   },
   "formatacao-pc": {
     titulo: "Formatação de PC e Notebook com Backup em Porto Alegre | Sigel",
@@ -357,27 +399,14 @@ const landingSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "name": "Sigel Soluções em Informática",
-      "image": "https://sigelinformatica.com.br/images/logo.webp",
-      "url": `https://sigelinformatica.com.br/servicos/hardware/${slug}`,
-      "telephone": ["+555135083008", "+5551993257923"],
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Icaraí, 1428 - Cristal",
-        "addressLocality": "Porto Alegre",
-        "addressRegion": "RS",
-        "postalCode": "90810-000",
-        "addressCountry": "BR"
-      }
-    },
-    {
       "@type": "Service",
       "name": h1,
       "description": description,
-      "provider": { "@type": "LocalBusiness", "name": "Sigel Soluções em Informática", "url": "https://sigelinformatica.com.br" },
-      "areaServed": [{ "@type": "City", "name": "Porto Alegre" }, { "@type": "State", "name": "Rio Grande do Sul" }],
+      "provider": { "@id": "https://sigelinformatica.com.br/#localbusiness" },
+      "areaServed": [
+        { "@type": "City", "name": "Porto Alegre" },
+        { "@type": "State", "name": "Rio Grande do Sul" }
+      ],
       "serviceType": h1
     },
     {
@@ -398,7 +427,17 @@ const landingSchema = JSON.stringify({
             "@type": "Answer",
             "text": `O prazo médio estimado é de ${prazo.toLowerCase()}, com garantia formal de 90 dias.`
           }
-        }
+        },
+        ...(currentService.faqExtra
+          ? currentService.faqExtra.map((item) => ({
+              "@type": "Question",
+              "name": item.pergunta,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.resposta.replace(/<[^>]*>/g, "")
+              }
+            }))
+          : [])
       ]
     }
   ]
