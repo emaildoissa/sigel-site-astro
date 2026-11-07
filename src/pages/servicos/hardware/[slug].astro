@@ -24,10 +24,17 @@ interface EtapaMetodo {
   icone: string;
 }
 
+interface MetodoDestaque {
+  titulo: string;
+  descricao: string;
+  ctaTexto: string;
+}
+
 interface MetodoServico {
   titulo: string;
   subtitulo: string;
   etapas: EtapaMetodo[];
+  destaque?: MetodoDestaque;
 }
 
 interface FaqExtraItem {
@@ -431,25 +438,79 @@ const servicos: Record<string, ServicoItem> = {
   },
   "recuperacao-dados": {
     titulo: "Recuperação de Dados de HD e SSD em Porto Alegre | Sigel",
-    description: "Recuperação de arquivos perdidos, HDs danificados, SSDs, pen drives e cartões de memória em Porto Alegre. Sigilo absoluto e alta taxa de sucesso.",
-    h1: "Recuperação de Dados de HD, SSD e Pen Drive",
-    subtitulo: "Perdeu fotos de família, arquivos de trabalho ou planilhas financeiras? Recuperamos seus dados com sigilo e ferramentas especializadas.",
-    conteudo: "Falhas lógicas (formatação acidental, exclusão, vírus ransomware) ou falhas físicas (queda de HD, setores defeituosos, memória flash corrompida) não significam a perda definitiva dos seus dados. Nossa equipe utiliza softwares forenses e técnicas avançadas de recuperação para resgatar o máximo possível de arquivos com total confidencialidade.",
+    description: "Recuperação de dados de HD, SSD, pen drive e cartão em Porto Alegre (Bairro Cristal). Protocolo forense com imagem raw, sigilo LGPD e alta taxa de sucesso.",
+    h1: "Recuperação de Dados de HD, SSD e Pen Drive em Porto Alegre",
+    subtitulo: "Perdeu fotos de família, planilhas financeiras ou documentos de trabalho? Recuperamos seus arquivos com protocolo forense de espelhamento e sigilo total em Porto Alegre.",
+    conteudo: "Falhas lógicas (formatação acidental, partições RAW, infecção por malware) ou falhas físicas (quedas de HD mecânico, setores defeituosos e bloqueio de controladora de SSD) não significam perda definitiva. Em nosso laboratório no Bairro Cristal, operamos com protocolo forense estrito: geramos uma imagem binária raw bit-a-bit do dispositivo em bancada isolada, preservando a mídia original sem qualquer risco de sobregravação, e resgatamos seus arquivos com total sigilo em conformidade com a LGPD.",
     sintomas: [
-      "Arquivos deletados acidentalmente da Lixeira ou Shift+Del",
-      "HD ou pen drive pedindo para 'Formatar o disco antes de usar'",
-      "HD não é reconhecido pelo Windows ou trava ao conectar",
-      "Sistema corrompido com dados inacessíveis",
-      "Arquivos criptografados ou corrompidos após ataque de malware"
+      "HD externo ou pen drive pedindo para 'Formatar o disco antes de usar' (partição RAW)",
+      "HD não é reconhecido pelo Windows, não monta partições ou trava o computador ao conectar",
+      "Queda física de HD ou barulho mecânico de estalo e clique (tec-tec no cabeçote de leitura)",
+      "SSD que sumiu da BIOS ou parou de ser detectado após desligamento repentino",
+      "Arquivos, pastas ou fotos apagados acidentalmente da Lixeira ou por Shift+Del",
+      "Partições corrompidas, arquivos inacessíveis ou corrompidos após ataque de malware"
     ],
     preco: "Orçamento após análise técnica de viabilidade",
-    prazo: "1 a 5 dias úteis conforme o tamanho e gravidade",
-    garantia: "Cobrança baseada no sucesso da recuperação",
+    prazo: "1 a 5 dias úteis conforme o volume e gravidade",
+    garantia: "Cobrança baseada no sucesso e termo de sigilo LGPD",
     icone: "cloud_download",
-    badge: "Alta Taxa de Sucesso",
-    whatsappMsg: "Olá! Vi no Google e preciso recuperar dados e arquivos de um HD/SSD/pen drive em Porto Alegre.",
+    badge: "Protocolo Forense e Sigilo LGPD",
+    whatsappMsg: "Olá! Vi no site da Sigel e preciso recuperar arquivos de um HD/SSD/pen drive com urgência em Porto Alegre.",
     faqPergunta: "Se não for possível recuperar os dados, eu pago alguma coisa?",
-    faqResposta: "Na maioria dos casos de recuperação lógica, se nenhum dado útil for resgatado, você não paga pelo serviço de recuperação. A análise inicial é transparente.",
+    faqResposta: "Na grande maioria dos casos de recuperação lógica e diagnóstico de viabilidade, <strong>se nenhum dado útil for resgatado, você não paga pelo serviço</strong>. Nossa análise inicial em laboratório no Bairro Cristal é transparente, sem falsas promessas e com laudo técnico claro antes de qualquer cobrança.",
+    faqExtra: [
+      {
+        pergunta: "O que fazer se o HD externo caiu no chão ou começou a fazer barulho de clique (tec-tec)?",
+        resposta: "<strong>Desconecte o cabo imediatamente e não tente ligar novamente ao computador.</strong> Barulhos mecânicos (estalos do cabeçote ou atrito no prato magnético) indicam dano físico severo. Cada nova tentativa de leitura pode riscar a superfície magnética e tornar a perda de dados irreversível. Traga o equipamento diretamente ao nosso laboratório para triagem segura sem energização desnecessária."
+      },
+      {
+        pergunta: "Fazer tentativas de recuperação por conta própria com programas baixados na internet é seguro?",
+        resposta: "<strong>Não é recomendado</strong>, especialmente se o programa for instalado ou se você salvar os arquivos recuperados dentro do mesmo disco afetado. Essa prática causa a sobregravação definitiva dos setores onde estavam os dados originais. Além disso, se o disco possuir setores defeituosos (bad blocks), a varredura pesada de programas caseiros pode queimar a controladora ou travar a mídia permanentemente."
+      },
+      {
+        pergunta: "Meus dados pessoais, fotos de família e documentos de empresas estão protegidos por sigilo?",
+        resposta: "<strong>Sim, com sigilo absoluto e conformidade com a LGPD.</strong> Nosso procedimento em laboratório no Bairro Cristal é executado em bancadas de recuperação isoladas de redes externas. Trabalhamos exclusivamente sobre cópias forenses bit-a-bit e todas as imagens temporárias de trabalho são destruídas com segurança após a conferência e entrega dos arquivos ao cliente."
+      },
+      {
+        pergunta: "É possível recuperar dados de SSD que não é reconhecido pela BIOS ou travou?",
+        resposta: "<strong>Sim!</strong> Diferente dos HDs mecânicos com partes móveis, o SSD falha por esgotamento de células de memória NAND flash, picos elétricos ou corrupção no firmware da controladora. Em laboratório, utilizamos ferramentas dedicadas capazes de acessar o modo de serviço da controladora (Safe Mode / ROM Mode) para reconstruir a tabela de tradução de blocos lógicos e extrair os arquivos com integridade."
+      }
+    ],
+    metodo: {
+      titulo: "Protocolo Forense Sigel de Recuperação Segura de Dados",
+      subtitulo: "Conheça as etapas técnicas que adotamos em bancada para resgatar seus arquivos sem colocar a mídia original em risco:",
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Diagnóstico Preliminar e Triagem de Integridade",
+          descricao: "Avaliamos parâmetros elétricos e mecânicos sem tentativas destrutivas de escrita, distinguindo falhas lógicas (partição RAW, exclusão) de físicas (bad blocks, cabeçote).",
+          icone: "tune"
+        },
+        {
+          numero: "02",
+          titulo: "Espelhamento Forense Bit-a-Bit (Raw Image)",
+          descricao: "Geramos uma imagem binária exata e completa do dispositivo original em unidade segura, garantindo que o disco do cliente fique preservado de qualquer estresse adicional.",
+          icone: "cloud_upload"
+        },
+        {
+          numero: "03",
+          titulo: "Reconstrução Lógica de Setores e Varredura Profunda",
+          descricao: "Executamos algoritmos avançados de reconstrução de sistemas de arquivos (NTFS, FAT32, exFAT, APFS, EXT4) diretamente sobre a imagem forense para resgatar pastas e arquivos íntegros.",
+          icone: "build"
+        },
+        {
+          numero: "04",
+          titulo: "Homologação de Arquivos, Sigilo LGPD e Entrega Segura",
+          descricao: "Conferimos os dados restaurados com o cliente, gravamos em uma nova mídia de armazenamento confiável e realizamos a destruição segura das imagens temporárias sob termo de sigilo.",
+          icone: "verified"
+        }
+      ],
+      destaque: {
+        titulo: "Por que a Recuperação Profissional em Laboratório é Essencial?",
+        descricao: "Cobrança baseada no sucesso da recuperação lógica + protocolo forense com imagem raw bit-a-bit e sigilo total LGPD.",
+        ctaTexto: "Avaliar Recuperação no WhatsApp"
+      }
+    },
   },
   "reparo-carcaca": {
     titulo: "Reconstrução de Carcaça e Dobradiças de Notebook em Porto Alegre | Sigel",
@@ -800,8 +861,12 @@ const deviceCategories = ["Notebooks Convencionais", "Ultrabooks & Slim", "Noteb
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-green-400 text-3xl shrink-0">workspace_premium</span>
             <div>
-              <h3 class="text-sm font-bold text-white">Por que o Conserto Estrutural Vale a Pena?</h3>
-              <p class="text-xs text-gray-300">Economia de até 70% em relação a carcaças novas + regulagem preventiva de dobradiças inclusa.</p>
+              <h3 class="text-sm font-bold text-white">
+                {currentService.metodo.destaque?.titulo || (slug === "reparo-carcaca" ? "Por que o Conserto Estrutural Vale a Pena?" : "Por que o Procedimento em Laboratório Vale a Pena?")}
+              </h3>
+              <p class="text-xs text-gray-300">
+                {currentService.metodo.destaque?.descricao || (slug === "reparo-carcaca" ? "Economia de até 70% em relação a carcaças novas + regulagem preventiva de dobradiças inclusa." : "Segurança técnica de bancada, equipamentos dedicados e garantia formal com laudo de ordem de serviço.")}
+              </p>
             </div>
           </div>
           <a
@@ -810,7 +875,7 @@ const deviceCategories = ["Notebooks Convencionais", "Ultrabooks & Slim", "Noteb
             rel="noopener noreferrer"
             class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#128C7E] to-[#25D366] text-white font-bold text-xs px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-md shrink-0"
           >
-            <span>Avaliar Carcaça no WhatsApp</span>
+            <span>{currentService.metodo.destaque?.ctaTexto || (slug === "reparo-carcaca" ? "Avaliar Carcaça no WhatsApp" : "Falar com Técnico no WhatsApp")}</span>
             <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
           </a>
         </div>

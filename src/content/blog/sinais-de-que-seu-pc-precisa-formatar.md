@@ -53,7 +53,7 @@ Antes de passar o PC adiante, formatar é essencial para garantir que seus dados
 
 Antes de formatar, siga estes passos:
 
-1. **Faça backup dos seus arquivos** — fotos, documentos, vídeos e configurações importantes devem ser copiados para um HD externo, nuvem ou pendrive
+1. **Faça backup dos seus arquivos** — fotos, documentos, vídeos e configurações importantes devem ser copiados para um HD externo, nuvem ou pendrive. *(Se o seu HD externo ou pen drive já estiver corrompido, inacessível ou pedindo para formatar, não tente gravar nada por cima: consulte nosso laboratório de [recuperação de dados em Porto Alegre](/servicos/hardware/recuperacao-dados) para resgate forense seguro).*
 2. **Anote seus programas** — lista dos softamentos que você usa para reinstalar depois
 3. **Tenha as licenças em mãos** — chaves de produtos como Microsoft Office, Adobe, etc.
 4. **Garanta os drivers** — especialmente drivers de rede (placa de Wi-Fi), para conseguir acessar a internet depois da formatação
@@ -69,6 +69,8 @@ Se você não tem experiência ou não quer arriscar perder seus dados, a Sigel 
 - **Garantia** de que o serviço foi bem executado
 
 <a href="/servicos/hardware/formatacao-pc" class="text-primary hover:text-accent font-bold transition-colors">Solicite a formatação por R$ 110 com backup e aplicativos (pronto em 24h)</a> para seu PC ou notebook no Bairro Cristal em Porto Alegre.
+
+> **Atenção antes de formatar um disco com erro:** Se o seu HD ou SSD apresenta barulhos de estalo (tec-tec), partição RAW ou lentidão extrema ao conectar, formatar pode destruir os dados em definitivo. Conheça nosso serviço especializado de [recuperação de dados de HD e SSD em Porto Alegre](/servicos/hardware/recuperacao-dados) para resgatar seus arquivos antes de qualquer procedimento.
 
 ---
 
