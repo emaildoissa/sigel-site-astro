@@ -1,5 +1,5 @@
 ---
-title: "Quanto Custa Criar Site em Porto Alegre? Valores e Prazos - Sigel"
+title: "Quanto Custa Criar Site em Porto Alegre? Valores e Prazos"
 description: "Veja quanto custa criar um site em Porto Alegre (de R$ 1.500 a R$ 5.000). Confira tabela de preços, prazos de entrega e conheça os planos sob medida da Sigel."
 pubDate: 2026-06-16
 author: "Equipe Sigel"
@@ -28,6 +28,10 @@ A verdade é que não existe um preço único. O valor depende do tipo de site, 
 | Site com Sistema Personalizado | Sob consulta | 45 a 60 dias úteis |
 
 > **Nota:** Os valores acima são uma média do mercado de Porto Alegre para projetos entregues por agências especializadas em **PMEs**. Sites feitos por freelancers podem custar menos, mas geralmente entregam menos suporte e garantia.
+
+> **Planejando o site da sua empresa em Porto Alegre?**  
+> - **Entenda o investimento:** Veja os critérios de escopo, prazos médios de entrega e capacidade de atendimento na nossa página de [Planos e Prazos da Sigel](/planos).  
+> - **Diagnóstico rápido sem compromisso:** Fale direto com nossa equipe pelo [WhatsApp (51) 99325-7923](https://wa.me/5551993257923?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20cria%C3%A7%C3%A3o%20de%20site%20em%20Porto%20Alegre) para receber uma estimativa alinhada à necessidade do seu negócio.
 
 ## O que Está Incluso no Preço?
 
