@@ -129,7 +129,7 @@ const servicos: Record<string, ServicoItem> = {
   "formatacao-pc": {
     titulo: "Formatação de PC e Notebook com Backup em Porto Alegre | Sigel",
     description: "Formatação de computador e notebook em Porto Alegre por R$ 110 com backup seguro e aplicativos inclusos. Windows 10/11 limpo e otimizado em 24 horas.",
-    h1: "Formatação de PC e Notebook com Backup Seguro",
+    h1: "Formatação de PC e Notebook em Porto Alegre",
     subtitulo: "Computador lento ou acumulando arquivos desnecessários? Restaure o desempenho original com backup completo dos seus dados e aplicativos essenciais em até 24 horas.",
     conteudo: "Com o tempo de uso, o sistema operacional acumula atualizações antigas, cache e arquivos temporários desnecessários que reduzem o desempenho do computador. Nosso serviço de formatação e restauração por R$ 110 inclui a cópia preventiva (backup) integral de todos os seus documentos e fotos, instalação limpa e oficial do Windows 10/11 ou Linux, atualizações de segurança do fabricante, drivers certificados e o pacote de aplicativos essenciais. Entregamos seu equipamento otimizado e pronto para uso em até 24 horas.",
     sintomas: [
@@ -415,26 +415,76 @@ const servicos: Record<string, ServicoItem> = {
     },
   },
   "assistencia-tecnica": {
-    titulo: "Substituição de Peças e Hardware no Bairro Cristal em Porto Alegre | Sigel",
-    description: "Laboratório especializado em substituição de componentes e peças de hardware em Porto Alegre. Sede no Bairro Cristal, fácil estacionamento e atendimento de confiança.",
-    h1: "Substituição de Peças e Componentes em Porto Alegre",
-    subtitulo: "Laboratório completo para substituição de componentes eletrônicos, telas, teclados, SSDs e conectores de carga com garantia.",
-    conteudo: "Com mais de 7 anos de atuação no mercado gaúcho, a Sigel Soluções em Informática oferece substituição de componentes e hardware com excelência para empresas e clientes locais. Do diagnóstico inicial à entrega final com garantia, tratamos seu equipamento com o máximo cuidado, sigilo e peças de procedência garantida.",
+    titulo: "Assistência Técnica e Conserto de Notebook em Porto Alegre | Sigel",
+    description: "Assistência técnica e conserto de notebook em Porto Alegre (Bairro Cristal). Reparo de placa-mãe, conector DC Jack e eletrônica com orçamento e 90 dias de garantia.",
+    h1: "Assistência Técnica e Conserto de Notebook em Porto Alegre",
+    subtitulo: "Seu notebook não liga, não carrega ou está com defeito na placa-mãe? Diagnóstico avançado em laboratório de microeletrônica no Bairro Cristal com orçamento e garantia formal.",
+    conteudo: "Nem todo problema de placa-mãe exige a compra de um notebook novo ou a troca cara de toda a placa. Na Sigel Soluções em Informática, contamos com laboratório próprio de microeletrônica no Bairro Cristal em Porto Alegre, equipado com estação de solda SMD, fonte de alimentação assimétrica e gravadores dedicados de firmware. Diagnosticamos e reparamos falhas elétricas em nível de componentes (MOSFETs, capacitores, CI de carga PWM, conector DC Jack e regravação de BIOS), devolvendo a funcionalidade original da sua máquina por uma fração do custo de um aparelho novo, com transparência e garantia formal em Ordem de Serviço.",
     sintomas: [
-      "Notebook não liga, não dá sinal de luz e não carrega a bateria",
-      "Conector de energia (DC Jack) frouxo ou com mau contato",
-      "Curto-circuito ou cheiro de queimado após pico de energia ou raio",
-      "Necessidade de laudo técnico para seguradora ou empresa",
-      "Problemas complexos de hardware em placa-mãe"
+      "Notebook não liga, não acende LEDs de status e não responde ao botão power",
+      "Conector de energia (DC Jack) com mau contato, solto ou só carrega em determinada posição",
+      "Notebook liga, acende luzes e gira o cooler, mas a tela permanece preta (sem vídeo)",
+      "Curto-circuito, cheiro de queimado ou superaquecimento repentino após pico de luz ou raio",
+      "Notebook molhou ou sofreu queda e parou de funcionar completamente",
+      "Placa-mãe condenada por outras assistências técnicas que sugeriram comprar outro notebook"
     ],
-    preco: "Diagnóstico inicial sem compromisso",
-    prazo: "Conforme complexidade técnica",
-    garantia: "90 dias com emissão de Ordem de Serviço",
+    preco: "Orçamento sem compromisso",
+    prazo: "1 a 3 dias úteis",
+    garantia: "90 dias de garantia em Ordem de Serviço",
     icone: "support_agent",
-    badge: "+7 Anos de Tradição",
-    whatsappMsg: "Olá! Vi no Google e preciso de substituição de peças para meu computador em Porto Alegre.",
-    faqPergunta: "Onde fica a Sigel em Porto Alegre?",
-    faqResposta: "Nossa sede fica na <strong>Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre - RS</strong> (próximo ao BarraShoppingSul e com fácil estacionamento).",
+    badge: "Laboratório de Microeletrônica Próprio",
+    whatsappMsg: "Olá! Vi no Google e preciso de assistência técnica e conserto para meu notebook em Porto Alegre.",
+    faqPergunta: "Vale a pena consertar a placa-mãe do notebook ou é melhor comprar outro aparelho?",
+    faqResposta: "<strong>Com certeza vale a pena!</strong> O reparo em nível de componente em nosso laboratório de microeletrônica (substituindo apenas os chips, MOSFETs ou conectores danificados) custa tipicamente entre <strong>60% e 75% menos</strong> do que comprar uma placa-mãe nova ou trocar de notebook, restaurando a durabilidade original com 90 dias de garantia formal.",
+    faqExtra: [
+      {
+        pergunta: "O notebook não liga e não acende luzes: pode ser apenas o conector de carga (DC Jack)?",
+        resposta: "<strong>Sim, é um dos defeitos mais frequentes em bancada!</strong> O conector DC Jack sofre esforço físico diário do cabo e pode romper as soldas internas ou quebrar a agulha central de contato. Nesse caso, realizamos a substituição ou ressolda do conector original na placa-mãe sem necessidade de trocar peças desnecessárias."
+      },
+      {
+        pergunta: "Vocês realizam reparo em notebooks molhados ou que sofreram curto por pico de energia?",
+        resposta: "<strong>Sim.</strong> Realizamos o protocolo de desoxidação química em banho ultrassônico para neutralizar resíduos corrosivos de líquidos e analisamos as linhas de alimentação com fonte assimétrica para mapear e substituir os componentes que entraram em curto."
+      },
+      {
+        pergunta: "O orçamento tem custo e quanto tempo leva o diagnóstico?",
+        resposta: "O diagnóstico inicial para identificação do defeito é realizado de forma <strong>transparente e sem compromisso</strong>. A triagem elétrica costuma levar de 24 a 48 horas úteis, com apresentação de orçamento detalhado antes de qualquer execução."
+      },
+      {
+        pergunta: "Quais marcas de notebook vocês consertam no laboratório?",
+        resposta: "Atendemos todas as principais marcas do mercado: <strong>Dell, Lenovo, Acer, HP, Asus, Samsung, Positivo, Vaio e Apple</strong>, com acesso a diagramas esquemáticos e componentes originais de reposição."
+      }
+    ],
+    metodo: {
+      titulo: "Protocolo de Bancada em Microeletrônica Sigel",
+      subtitulo: "Conheça as 4 etapas técnicas do nosso laboratório próprio para diagnóstico e conserto de placas e notebooks em Porto Alegre:",
+      destaque: {
+        titulo: "Economia Real e Sustentabilidade para sua Máquina",
+        descricao: "Reparo em nível de componente com economia de até 75% em relação a uma placa nova + garantia formal de 90 dias.",
+        ctaTexto: "Solicitar Orçamento no WhatsApp"
+      },
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Triagem Elétrica e Mapeamento de Linhas",
+          descricao: "Inspeção visual em microscópio e medição de consumo na fonte de alimentação assimétrica para identificar fugas, curtos e falhas nas linhas primárias de alimentação (19V, 3.3V e 5V)."
+        },
+        {
+          numero: "02",
+          titulo: "Reparo em Nível de Componente (SMD) e DC Jack",
+          descricao: "Substituição pontual de componentes defeituosos (MOSFETs de entrada, capacitores em curto, CIs de carga PWM) e reconstrução ou troca de conector DC Jack com solda profissional de alta fusão."
+        },
+        {
+          numero: "03",
+          titulo: "Regravação e Reprogramação de Firmware (BIOS)",
+          descricao: "Dessolda e regravação do chip flash SPI em gravador dedicado de bancada com imagens oficiais limpas (Clean ME/TXE Region) para recuperar placas sem inicialização ou com tela preta."
+        },
+        {
+          numero: "04",
+          titulo: "Estresse Térmico Contínuo e Emissão de Laudo/OS",
+          descricao: "Bateria de testes em carga máxima (CPU, GPU, memórias, portas USB, rede e som), validação de curvas de temperatura e entrega com garantia formal de 90 dias descrita em Ordem de Serviço."
+        }
+      ]
+    }
   },
   "recuperacao-dados": {
     titulo: "Recuperação de Dados de HD e SSD em Porto Alegre | Sigel",
@@ -515,7 +565,7 @@ const servicos: Record<string, ServicoItem> = {
   "reparo-carcaca": {
     titulo: "Reconstrução de Carcaça e Dobradiças de Notebook em Porto Alegre | Sigel",
     description: "Reconstrução estrutural de carcaça, alívio de dobradiças travadas e restauração de tampa de notebook em Porto Alegre. Aplicação de resina de alta densidade e regulagem mecânica.",
-    h1: "Reconstrução de Carcaça e Regulagem de Dobradiças",
+    h1: "Reconstrução de Carcaça e Dobradiças de Notebook em Porto Alegre",
     subtitulo: "A tampa do seu notebook está dura, estalando ou com folga na estrutura? Recuperamos a estrutura original com resina de alta resistência, ancoragem de torres e alívio de pressão.",
     conteudo: "As dobradiças metálicas dos notebooks modernos costumam acumular atrito e endurecer com o tempo. A cada abertura da tampa, uma pressão mecânica enorme é transferida para as torres de fixação plásticas da carcaça até que ocorram folgas ou trincas. Se o problema não for corrigido a tempo, a pressão pode afetar o painel de vídeo e os cabos flat. Nosso serviço realiza a reconstrução estrutural técnica da carcaça com polímero bi-componente de alta densidade, fixação por insertos metálicos e regulagem fina de tensão das dobradiças para garantir durabilidade de longo prazo.",
     sintomas: [
