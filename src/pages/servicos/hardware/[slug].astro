@@ -220,11 +220,11 @@ const servicos: Record<string, ServicoItem> = {
     faqResposta: "A instalação de um teclado novo é o procedimento mais seguro e durável para restabelecer a digitação original. Em média, a substituição completa com peça e instalação fica entre <strong>R$ 150 e R$ 400</strong> dependendo do modelo do notebook.",
   },
   "upgrade-ssd": {
-    titulo: "Upgrade de HDD para SSD em Porto Alegre | Sigel",
-    description: "Deixe seu notebook até 10x mais rápido com upgrade de SSD em Porto Alegre. Migração completa do sistema sem perder nenhum arquivo. Serviço em poucas horas.",
-    h1: "Upgrade de HDD para SSD: Deixe seu PC 10x Mais Rápido",
-    subtitulo: "Transforme aquele notebook antigo e lento em uma máquina ultra veloz que liga em 10 segundos, sem precisar comprar outro.",
-    conteudo: "Trocar o disco rígido mecânico antigo (HD) por um SSD (Solid State Drive) é o melhor investimento de custo-benefício para qualquer computador. O SSD não possui partes móveis, tornando a leitura de dados instantânea: o Windows inicia em segundos, programas abrem na hora e o sistema não trava mais. Realizamos a clonagem/migração completa sem você perder absolutamente nada.",
+    titulo: "Upgrade de SSD para Notebook em Porto Alegre | Instalação Rápida - Sigel",
+    description: "Upgrade de SSD em Porto Alegre (Bairro Cristal). Acelere seu notebook em até 10x com clonagem sem perder arquivos. SATA e NVMe com garantia e entrega em 2 a 4h.",
+    h1: "Upgrade e Instalação de SSD para Notebook em Porto Alegre",
+    subtitulo: "Transforme aquele notebook lento em uma máquina ultra veloz que liga em 10 segundos. Clonagem completa sem perda de arquivos e entrega em 2 a 4 horas.",
+    conteudo: "Trocar o disco rígido mecânico antigo (HD) por um SSD (Solid State Drive) é o melhor investimento em custo-benefício para qualquer computador ou notebook. O SSD não possui partes mecânicas móveis, tornando o acesso aos dados até 10 vezes mais rápido: o Windows inicia em segundos, aplicativos abrem instantaneamente e o sistema não trava com 100% de disco. Realizamos a clonagem bit-a-bit preventiva para que você mantenha todos os seus arquivos, programas, fotos e configurações exatamente como estavam.",
     sintomas: [
       "Computador leva mais de 2 minutos para ligar e carregar a área de trabalho",
       "Notebook trava ao abrir várias abas no navegador ou arquivos PDF",
@@ -236,10 +236,58 @@ const servicos: Record<string, ServicoItem> = {
     prazo: "2 a 4 horas",
     garantia: "90 dias mão de obra + garantia do SSD fabricante",
     icone: "storage",
-    badge: "Maior Custo-Benefício",
-    whatsappMsg: "Olá! Vi no Google e gostaria de fazer um upgrade de SSD no meu notebook em Porto Alegre.",
-    faqPergunta: "Quanto tempo dura o serviço de upgrade para SSD?",
-    faqResposta: "O serviço de instalação e migração completa dos seus dados é concluído em média em <strong>2 a 4 horas</strong>. Você entrega de manhã e já retira seu notebook voando à tarde.",
+    badge: "Entrega Expressa em 2 a 4h",
+    whatsappMsg: "Olá! Vi no site da Sigel e gostaria de fazer o upgrade de SSD no meu notebook em Porto Alegre.",
+    faqPergunta: "Quanto custa e quanto tempo demora o upgrade de SSD em Porto Alegre?",
+    faqResposta: "O serviço de instalação e migração completa é concluído em média em <strong>2 a 4 horas</strong>. A mão de obra especializada de clonagem e montagem fica a partir de <strong>R$ 180</strong>, ou a partir de <strong>R$ 420</strong> no pacote completo com SSD novo (240GB, 480GB ou 1TB) e garantia formal.",
+    faqExtra: [
+      {
+        pergunta: "Eu perco meus arquivos, fotos ou programas ao instalar o SSD?",
+        resposta: "<strong>Não perde absolutamente nada!</strong> Realizamos uma clonagem bit-a-bit integral de todo o disco rígido antigo para o SSD novo. Seu Windows, programas instalados, fotos, documentos, senhas salvas e atalhos na área de trabalho permanecem exatamente idênticos, porém funcionando até 10 vezes mais rápido."
+      },
+      {
+        pergunta: "Qual a diferença entre SSD SATA e SSD M.2 NVMe?",
+        resposta: "O <strong>SSD SATA III de 2,5\"</strong> substitui diretamente o HD mecânico tradicional de qualquer notebook ou PC, atingindo velocidades de até 550 MB/s (cerca de 5x a 10x mais rápido que o HD). Já o <strong>SSD M.2 NVMe</strong> é uma placa ultrafina conectada diretamente à placa-mãe via barramento PCIe, atingindo velocidades de 2.000 MB/s a mais de 5.000 MB/s nos modelos compatíveis. Avaliamos a compatibilidade exata do seu equipamento na bancada."
+      },
+      {
+        pergunta: "O que acontece com meu HD antigo após a troca?",
+        resposta: "O seu HD original continua intacto e é devolvido para você. Você pode guardá-lo como um backup de segurança ou optar por instalá-lo em uma <strong>case USB externa</strong>, transformando-o em um HD externo portátil para guardar arquivos pesados."
+      },
+      {
+        pergunta: "Qual capacidade de SSD devo escolher (240GB, 480GB ou 1TB)?",
+        resposta: "Para uso básico (navegação, estudos e pacote Office), o modelo de <strong>240GB a 256GB</strong> é suficiente. Para usuários com muitas fotos, documentos e programas de trabalho, o de <strong>480GB a 512GB</strong> oferece a melhor relação custo-benefício. Já para gamers, editores de vídeo e profissionais com bancos de dados grandes, indicamos unidades de <strong>1TB ou superiores</strong>."
+      }
+    ],
+    metodo: {
+      titulo: "Procedimento Técnico Sigel para Upgrade de SSD e Clonagem Segura",
+      subtitulo: "Entenda as etapas do nosso protocolo de laboratório para acelerar seu equipamento sem risco de perda de arquivos:",
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Diagnóstico de Barramento e Avaliação SMART do HD",
+          descricao: "Identificamos a interface compatível (SATA III ou M.2 NVMe PCIe) e inspecionamos a saúde dos dados via diagnóstico SMART para garantir uma migração 100% segura.",
+          icone: "tune"
+        },
+        {
+          numero: "02",
+          titulo: "Clonagem Bit-a-Bit sem Perda de Dados",
+          descricao: "Transferimos o sistema operacional, licenças ativas, programas e arquivos pessoais de forma íntegra, mantendo seu ambiente de trabalho pronto para uso imediato.",
+          icone: "storage"
+        },
+        {
+          numero: "03",
+          titulo: "Instalação Física e Montagem com Proteção ESD",
+          descricao: "Abrimos o notebook com ferramentas de precisão e pulseira antiestática, fixamos o novo SSD no slot dedicado ou baia de 2.5\" e aproveitamos para higienizar poeira superficial.",
+          icone: "build"
+        },
+        {
+          numero: "04",
+          titulo: "Otimização de Sistema, Ativação de TRIM e Benchmark",
+          descricao: "Configuramos a inicialização correta na BIOS/UEFI, ativamos o comando TRIM no Windows para máxima vida útil do SSD e validamos o ganho de taxa de leitura/escrita.",
+          icone: "verified"
+        }
+      ]
+    },
   },
   "manutencao-notebook": {
     titulo: "Manutenção Preventiva e Conserto de Notebook em Porto Alegre | Sigel",
