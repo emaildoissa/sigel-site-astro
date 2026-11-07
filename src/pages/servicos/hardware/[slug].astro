@@ -290,26 +290,74 @@ const servicos: Record<string, ServicoItem> = {
     },
   },
   "manutencao-notebook": {
-    titulo: "Manutenção Preventiva e Conserto de Notebook em Porto Alegre | Sigel",
-    description: "Substituição de peças para notebook em Porto Alegre. Limpeza interna, troca de pasta térmica, substituição de placa-mãe, dobradiças e bateria. Diagnóstico rápido.",
-    h1: "Manutenção de Notebook em Porto Alegre",
-    subtitulo: "Superaquecimento, barulho na ventoinha ou notebook desligando sozinho? Cuidamos do seu computador com quem entende do assunto.",
-    conteudo: "A manutenção preventiva periódica evita que seu processador e placa de vídeo queimem por superaquecimento. Realizamos a desmontagem técnica completa, desobstrução das aletas do dissipador, lubrificação do cooler e aplicação de pasta térmica de prata/alta condutividade, além de testes elétricos de bancada.",
+    titulo: "Manutenção e Limpeza de Notebook em Porto Alegre | Sigel",
+    description: "Manutenção preventiva e limpeza de notebook em Porto Alegre (Bairro Cristal). Troca de pasta térmica de alta condutividade, desobstrução de cooler e garantia.",
+    h1: "Manutenção Preventiva e Limpeza de Notebook em Porto Alegre",
+    subtitulo: "Superaquecimento, ventoinha acelerada ou notebook desligando sozinho? Limpeza interna profunda, troca de pasta térmica premium e revisão completa em Porto Alegre.",
+    conteudo: "A manutenção preventiva periódica é o cuidado fundamental para evitar que seu processador e placa de vídeo sofram danos irreversíveis por superaquecimento. Em nosso laboratório no Bairro Cristal, realizamos a desmontagem técnica completa, desobstrução das aletas do dissipador de cobre, higienização do cooler e aplicação de pasta térmica de alta condutividade térmica com partículas de prata/óxido metálico, eliminando o thermal throttling e restabelecendo o silêncio e a velocidade original do seu equipamento.",
     sintomas: [
-      "Notebook esquentando muito na parte inferior ou teclado",
-      "Cooler/ventoinha fazendo barulho alto ou zumbido estranho",
-      "Notebook desligando sozinho após alguns minutos de uso ou jogos",
-      "Lentidão extrema provocada por thermal throttling (queda de clock por calor)",
-      "Mais de 1 ano sem realizar limpeza interna preventiva"
+      "Notebook esquentando excessivamente na base inferior ou na região do teclado",
+      "Cooler/ventoinha fazendo barulho alto, chiado ou trabalhando no giro máximo constante",
+      "Notebook travando, com quedas bruscas de FPS ou desligando sozinho durante o uso",
+      "Lentidão geral causada por thermal throttling (queda automática de clock por calor)",
+      "Mais de 12 meses sem realizar limpeza interna preventiva e troca de pasta térmica"
     ],
     preco: "Limpeza a partir de R$ 80 • Reparos sob consulta",
-    prazo: "1 a 2 dias úteis",
-    garantia: "90 dias de garantia em todos os reparos",
+    prazo: "Em média 24h úteis (ou no mesmo dia c/ agendamento)",
+    garantia: "90 dias de garantia formal com laudo de bancada",
     icone: "build",
-    badge: "Laboratório Próprio",
-    whatsappMsg: "Olá! Vi no Google e preciso de manutenção/limpeza para meu notebook em Porto Alegre.",
-    faqPergunta: "Com qual frequência devo fazer manutenção preventiva no notebook?",
-    faqResposta: "Recomenda-se realizar a limpeza interna e troca da pasta térmica a cada <strong>12 a 18 meses</strong> para evitar superaquecimento e danos irreversíveis ao chip gráfico e processador.",
+    badge: "Prevenção Térmica Completa",
+    whatsappMsg: "Olá! Vi no site da Sigel e gostaria de agendar uma manutenção preventiva e limpeza para meu notebook em Porto Alegre.",
+    faqPergunta: "Quanto custa e quanto tempo demora a manutenção preventiva e limpeza de notebook em Porto Alegre?",
+    faqResposta: "A limpeza preventiva completa com desobstrução de saídas de ar, higienização de ventoinha e troca de pasta térmica premium fica a partir de <strong>R$ 80</strong> e é concluída em média em <strong>24 horas úteis</strong> (podendo ser realizada no mesmo dia com agendamento prévio em nosso laboratório no Bairro Cristal).",
+    faqExtra: [
+      {
+        pergunta: "De quanto em quanto tempo devo fazer a limpeza interna e troca de pasta térmica?",
+        resposta: "Para quem utiliza o notebook diariamente em casa ou no trabalho, o intervalo recomendado é a cada <strong>12 a 18 meses</strong>. Com o passar do tempo, as aletas do dissipador acumulam uma barreira de poeira e a pasta térmica de fábrica resseca, elevando as temperaturas e acelerando o desgaste dos componentes internos."
+      },
+      {
+        pergunta: "O que é thermal throttling e como a manutenção recupera o desempenho?",
+        resposta: "O <em>thermal throttling</em> é uma proteção de segurança ativada automaticamente quando o processador ou a GPU atinge temperaturas críticas (acima de 85°C a 90°C), reduzindo drasticamente a velocidade dos núcleos para não queimar. Isso causa travamentos e lentidão severa. A limpeza e a nova pasta térmica restauram a dissipação correta, permitindo que o computador volte a rodar em 100% da sua capacidade máxima de fábrica."
+      },
+      {
+        pergunta: "Qual a diferença entre pasta térmica comum (branca) e de alta condutividade?",
+        resposta: "Pastas térmicas genéricas de silicone branco possuem baixa eficiência de condução térmica e ressecam em poucos meses sob o calor concentrado de notebooks modernos. Em nosso laboratório utilizamos exclusivamente <strong>pastas térmicas de alta condutividade com compostos de micropartículas de prata e cerâmica metálica</strong>, proporcionando redução de até 15°C a 25°C sob estresse contínuo."
+      },
+      {
+        pergunta: "Quais marcas e modelos de notebook vocês atendem em Porto Alegre?",
+        resposta: "Realizamos a manutenção preventiva multimarca com ferramental e insumos de padrão laboratorial para <strong>Dell (Inspiron, Vostro, Latitude, Alienware e G-Series), Lenovo (IdeaPad, ThinkPad, Legion), Acer (Aspire, Nitro, Predator), HP, Samsung, Asus (ZenBook, Vivobook, TUF, ROG), Positivo e Apple (MacBook Air e Pro)</strong>."
+      }
+    ],
+    metodo: {
+      titulo: "Protocolo Técnico Sigel para Revisão Térmica e Manutenção Preventiva",
+      subtitulo: "Conheça as etapas do nosso protocolo de laboratório com proteção eletrostática (ESD) para manter seu notebook refrigerado e silencioso:",
+      etapas: [
+        {
+          numero: "01",
+          titulo: "Diagnóstico Térmico e Leitura de Sensores",
+          descricao: "Aferimos as curvas de temperatura de CPU e GPU em repouso e sob carga pesada para identificar o nível de thermal throttling e o comportamento da ventoinha.",
+          icone: "tune"
+        },
+        {
+          numero: "02",
+          titulo: "Desmontagem Anti-estática e Limpeza de Arrefecimento",
+          descricao: "Abrimos o equipamento com ferramental de precisão em bancada aterrada, desobstruímos o bloco do dissipador de cobre e higienizamos as pás do cooler.",
+          icone: "build"
+        },
+        {
+          numero: "03",
+          titulo: "Limpeza Química e Aplicação de Pasta Térmica Premium",
+          descricao: "Removemos a pasta antiga ressecada com álcool isopropílico 99,8% e aplicamos nova camada uniforme de composto térmico de alta condutividade (prata/óxido metálico).",
+          icone: "verified"
+        },
+        {
+          numero: "04",
+          titulo: "Teste de Estresse Térmico e Homologação Final",
+          descricao: "Submetemos a máquina a teste de estresse contínuo para atestar a redução das temperaturas (queda típica de 15°C a 25°C), silêncio operacional e estabilidade.",
+          icone: "speed"
+        }
+      ]
+    },
   },
   "assistencia-tecnica": {
     titulo: "Substituição de Peças e Hardware no Bairro Cristal em Porto Alegre | Sigel",
