@@ -8,8 +8,9 @@ const locationSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "name": "Sigel Soluções em Informática - Sede Porto Alegre",
+      "@type": ["LocalBusiness", "ComputerStore"],
+      "name": "Sigel Soluções em Informática - Loja e Assistência Técnica Porto Alegre",
+      "description": "Loja de informática e assistência técnica na Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre. Laboratório próprio, fácil estacionamento e diagnóstico ágil.",
       "image": "https://sigelinformatica.com.br/images/logo.webp",
       "url": "https://sigelinformatica.com.br/onde-estamos",
       "telephone": ["+555135083008", "+5551993257923"],
@@ -39,7 +40,21 @@ const locationSchema = JSON.stringify({
       "areaServed": [
         { "@type": "City", "name": "Porto Alegre" },
         { "@type": "AdministrativeArea", "name": "Zona Sul Porto Alegre" },
-        { "@type": "AdministrativeArea", "name": "Bairro Cristal" }
+        { "@type": "AdministrativeArea", "name": "Bairro Cristal" },
+        { "@type": "AdministrativeArea", "name": "Tristeza" },
+        { "@type": "AdministrativeArea", "name": "Cavalhada" },
+        { "@type": "AdministrativeArea", "name": "Camaquã" },
+        { "@type": "AdministrativeArea", "name": "Ipanema" },
+        { "@type": "AdministrativeArea", "name": "Nonoai" },
+        { "@type": "AdministrativeArea", "name": "Santa Tereza" },
+        { "@type": "AdministrativeArea", "name": "Menino Deus" },
+        { "@type": "AdministrativeArea", "name": "Praia de Belas" },
+        { "@type": "AdministrativeArea", "name": "Azenha" },
+        { "@type": "AdministrativeArea", "name": "Cidade Baixa" },
+        { "@type": "AdministrativeArea", "name": "Centro Histórico" },
+        { "@type": "AdministrativeArea", "name": "Petrópolis" },
+        { "@type": "AdministrativeArea", "name": "Bela Vista" },
+        { "@type": "AdministrativeArea", "name": "Moinhos de Vento" }
       ]
     },
     {
@@ -47,18 +62,18 @@ const locationSchema = JSON.stringify({
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Preciso agendar horário para entregar meu equipamento?",
+          "name": "Preciso agendar horário para visitar a loja ou entregar meu equipamento?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não é obrigatório agendar! Você pode trazer seu notebook ou computador de segunda a sexta, das 09:30 às 18:30. Se preferir avisar antes pelo WhatsApp (51) 99325-7923, nossa equipe já deixa a bancada preparada."
+            "text": "Não é obrigatório agendar! Nossa loja física e laboratório atendem de segunda a sexta, das 09:30 às 18:30. Se preferir avisar antes pelo WhatsApp (51) 99325-7923, nossa equipe já deixa a bancada preparada para seu atendimento."
           }
         },
         {
           "@type": "Question",
-          "name": "Como é o estacionamento no local?",
+          "name": "Como é o estacionamento na loja?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Temos fácil estacionamento em frente e na via principal da Av. Icaraí, garantindo comodidade e segurança para você desembarcar seu equipamento."
+            "text": "Temos fácil estacionamento e vagas em frente à sede na Av. Icaraí, 1428, garantindo comodidade e segurança para desembarque rápido de computadores e notebooks."
           }
         },
         {
@@ -66,7 +81,15 @@ const locationSchema = JSON.stringify({
           "name": "Quais são os pontos de referência próximos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Estamos localizados no Bairro Cristal em Porto Alegre, bem próximos ao BarraShoppingSul, com acesso rápido pela Av. Diário de Notícias ou Av. Otto Niemeyer."
+            "text": "Estamos localizados na Av. Icaraí, 1428, no Bairro Cristal em Porto Alegre, bem ao lado do BarraShoppingSul, com acesso rápido pela Av. Diário de Notícias, Av. Edvaldo Pereira Paiva e Av. Otto Niemeyer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais bairros de Porto Alegre ficam mais próximos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nossa localização no Cristal atende rapidamente tanto a Zona Sul (Tristeza, Cavalhada, Camaquã, Ipanema, Nonoai) quanto a região central e orla (Menino Deus, Praia de Belas, Azenha, Cidade Baixa e Centro Histórico)."
           }
         }
       ]
@@ -76,16 +99,16 @@ const locationSchema = JSON.stringify({
 
 const faqs = [
   {
-    pergunta: "Preciso agendar horário para entregar meu computador ou notebook?",
-    resposta: "Não é estritamente necessário agendar! Atendemos de <strong>segunda a sexta-feira, das 09:30 às 18:30</strong>. Se desejar agilidade extra, basta nos enviar uma mensagem no WhatsApp avisando que está a caminho."
+    pergunta: "Preciso agendar horário para visitar a loja ou entregar meu equipamento?",
+    resposta: "Não é obrigatório agendar! Nossa loja física e laboratório atendem de <strong>segunda a sexta-feira, das 09:30 às 18:30</strong>. Se desejar agilidade extra, basta enviar uma mensagem no WhatsApp avisando que está a caminho."
   },
   {
-    pergunta: "Como é o estacionamento perto da Sigel?",
-    resposta: "O local possui <strong>fácil estacionamento</strong> na própria Av. Icaraí e ruas transversais do Bairro Cristal, permitindo estacionar com total segurança e comodidade a poucos metros da recepção."
+    pergunta: "Como funciona o estacionamento na Sigel?",
+    resposta: "O local conta com <strong>fácil estacionamento e vagas em frente</strong> na própria Av. Icaraí, permitindo estacionar com total segurança e comodidade para desembarcar seu equipamento."
   },
   {
-    pergunta: "Quais bairros de Porto Alegre ficam mais próximos?",
-    resposta: "Nossa localização no Bairro Cristal é de facílimo acesso para clientes do <strong>Cristal, Tristeza, Menino Deus, Praia de Belas, Cavalhada, Ipanema, Nonoai, Santa Tereza e Centro Histórico</strong>."
+    pergunta: "Quais bairros de Porto Alegre têm acesso mais rápido à loja?",
+    resposta: "Estamos estrategicamente no Bairro Cristal, a poucos minutos da <strong>Zona Sul (Tristeza, Cavalhada, Camaquã, Ipanema, Nonoai, Santa Tereza)</strong> e com trajeto expresso de 5 a 10 min para <strong>Menino Deus, Praia de Belas, Azenha, Cidade Baixa e Centro Histórico</strong>."
   },
   {
     pergunta: "Posso solicitar um orçamento preliminar antes de levar o equipamento?",
@@ -95,8 +118,8 @@ const faqs = [
 ---
 
 <Base
-  title="Onde Estamos | Sigel Soluções em Informática em Porto Alegre"
-  description="Localização da Sigel Soluções em Informática na Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre - RS. Fácil acesso, estacionamento, bancada própria e diagnóstico rápido."
+  title="Loja de Informática e Assistência Técnica em Porto Alegre | Sigel"
+  description="Loja de informática e assistência técnica na Av. Icaraí, 1428 - Bairro Cristal, Porto Alegre. Laboratório próprio, fácil estacionamento e diagnóstico ágil."
   canonical="/onde-estamos"
   breadcrumbs={[{ name: "Onde Estamos", path: "/onde-estamos" }]}
   schema={locationSchema}
@@ -123,11 +146,11 @@ const faqs = [
         </div>
 
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-          Onde Estamos em <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Porto Alegre</span>
+          Loja de Informática e <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Laboratório Técnico</span> em Porto Alegre
         </h1>
 
-        <p class="mt-4 text-gray-300 text-base md:text-xl max-w-2xl leading-relaxed">
-          Visite nosso laboratório próprio no <strong class="text-white">Bairro Cristal</strong>. Fácil acesso com estacionamento, diagnóstico rápido e atendimento transparente.
+        <p class="mt-4 text-gray-300 text-base md:text-xl max-w-3xl leading-relaxed">
+          Visite nossa sede própria na <strong class="text-white">Av. Icaraí, 1428</strong> (Bairro Cristal, ao lado do BarraShoppingSul). Vagas para desembarque rápido em frente e laboratório próprio completo para quem busca loja física, atendimento presencial e diagnóstico técnico ágil.
         </p>
 
         {/* Action Buttons for GPS */}
@@ -281,9 +304,9 @@ const faqs = [
             <span class="material-symbols-outlined text-2xl">local_parking</span>
           </div>
           <div>
-            <h3 class="text-base font-bold text-white">Estacionamento Fácil</h3>
+            <h3 class="text-base font-bold text-white">Estacionamento Gratuito em Frente</h3>
             <p class="text-xs text-gray-400 mt-0.5 leading-relaxed">
-              Vagas disponíveis na frente da sede para desembarque rápido e seguro de computadores.
+              Vagas disponíveis na frente da sede para desembarque rápido e seguro de computadores e notebooks.
             </p>
           </div>
         </div>
@@ -298,7 +321,7 @@ const faqs = [
         </div>
         <h3 class="text-lg font-bold text-white mb-2">Pontos de Referência</h3>
         <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-          Próximo ao <strong>BarraShoppingSul</strong>, com acesso rápido via Av. Diário de Notícias, Otto Niemeyer e Icaraí.
+          Ao lado do <strong>BarraShoppingSul</strong>, com acesso rápido via Av. Diário de Notícias, Otto Niemeyer e Icaraí.
         </p>
       </div>
 
@@ -308,7 +331,7 @@ const faqs = [
         </div>
         <h3 class="text-lg font-bold text-white mb-2">Bancada Técnica Completa</h3>
         <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-          Laboratório equipado para troca de tela, teclado, upgrade de SSD, formatação e reparo eletrônico de placa.
+          Laboratório equipado para diagnóstico ágil, troca de tela, teclado, upgrade de SSD, formatação e reparo eletrônico de placa.
         </p>
       </div>
 
@@ -318,31 +341,106 @@ const faqs = [
         </div>
         <h3 class="text-lg font-bold text-white mb-2">Garantia Formal de 90 Dias</h3>
         <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-          Todos os serviços com emissão de Ordem de Serviço, teste presencial na retirada e garantia total.
+          Todos os serviços com emissão de Ordem de Serviço (OS), teste presencial na retirada e garantia total.
         </p>
       </div>
     </section>
 
     {/* Bairros Atendidos */}
     <section class="mt-16 bg-gradient-to-r from-surface-dark via-[#0f1424] to-surface-dark border border-white/10 rounded-3xl p-8 md:p-12">
-      <div class="text-center max-w-2xl mx-auto mb-8">
-        <span class="text-xs font-bold uppercase tracking-wider text-accent">Área de Atendimento</span>
-        <h2 class="text-2xl md:text-3xl font-black text-white mt-1">Bairros Atendidos em Porto Alegre</h2>
-        <p class="text-gray-400 text-sm mt-2">
-          Atendemos presencialmente em nosso laboratório clientes de toda a capital gaúcha e Região Metropolitana.
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-accent">Área de Atendimento Presencial</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-white mt-1">Bairros Atendidos em Porto Alegre</h2>
+        <p class="text-gray-400 text-sm md:text-base mt-2">
+          Localização estratégica na Zona Sul com eixos de deslocamento expresso para receber clientes de toda a capital e Região Metropolitana.
         </p>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
-        {[
-          "Bairro Cristal", "Tristeza", "Menino Deus", "Praia de Belas", "Cavalhada",
-          "Ipanema", "Nonoai", "Santa Tereza", "Centro Histórico", "Cidade Baixa",
-          "Petrópolis", "Bela Vista", "Moinhos de Vento", "Zona Sul Porto Alegre"
-        ].map((bairro) => (
-          <span class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm font-semibold text-gray-200">
-            📍 {bairro}
-          </span>
-        ))}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Eixo Zona Sul Imediato */}
+        <div class="bg-surface-dark/90 border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-primary/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-primary/20 border border-primary/30 text-[11px] font-bold text-primary">
+                A poucos minutos
+              </span>
+              <span class="material-symbols-outlined text-primary text-xl">near_me</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Eixo Zona Sul Imediato</h3>
+            <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+              Acesso rápido e direto pelas avenidas <strong>Icaraí</strong>, <strong>Otto Niemeyer</strong> e <strong>Wenceslau Escobar</strong>.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {[
+                { name: "Cristal (Sede)", badge: true },
+                { name: "Tristeza", badge: false },
+                { name: "Cavalhada", badge: false },
+                { name: "Camaquã", badge: false },
+                { name: "Ipanema", badge: false },
+                { name: "Nonoai", badge: false },
+                { name: "Santa Tereza", badge: false }
+              ].map((item) => (
+                <span class={`px-2.5 py-1 rounded-lg text-xs font-medium border ${
+                  item.badge
+                    ? "bg-primary/20 text-primary border-primary/40 font-bold"
+                    : "bg-white/5 text-gray-300 border-white/10"
+                }`}>
+                  📍 {item.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Eixo Central & Orla */}
+        <div class="bg-surface-dark/90 border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-accent/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-accent/20 border border-accent/30 text-[11px] font-bold text-accent">
+                5 a 10 minutos
+              </span>
+              <span class="material-symbols-outlined text-accent text-xl">directions_car</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Eixo Central & Orla</h3>
+            <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+              Acesso expresso pela <strong>Av. Diário de Notícias</strong> e <strong>Av. Edvaldo Pereira Paiva (Beira-Rio)</strong> sem sinaleiras longas.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {[
+                "Menino Deus", "Praia de Belas", "Azenha", "Cidade Baixa", "Centro Histórico"
+              ].map((bairro) => (
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white/5 border border-white/10 text-gray-300">
+                  📍 {bairro}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Outras Regiões e Grande POA */}
+        <div class="bg-surface-dark/90 border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/30 transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold text-gray-300">
+                Acesso Facilitado
+              </span>
+              <span class="material-symbols-outlined text-gray-300 text-xl">hub</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Outras Regiões & Grande POA</h3>
+            <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+              Conexão facilitada pela <strong>3ª Perimetral</strong> (Salvador França / Dom Pedro II) e rodovias de integração metropolitana.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {[
+                "Petrópolis", "Bela Vista", "Moinhos de Vento", "Santana", "Partenon", "Região Metropolitana"
+              ].map((regiao) => (
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white/5 border border-white/10 text-gray-300">
+                  📍 {regiao}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
